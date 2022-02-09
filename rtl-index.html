@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
   
+<!-- Mirrored from nafie.webrouk.com/rtl-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Aug 2021 07:37:01 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stéphan develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.">
+    <meta name="description" content="Nafie develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.">
     <meta name="keywords" content="portfolio, agency, business, clean, company, corporate, creative, gallery, rtl, modern, photography, vue, vuejs, responsive, sass">
 
     <!-- title of the browser tab -->
-    <title>Stéphan - Portfolio</title>
+    <title>نافع - قالب بورتفوليو HTML</title>
 
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.ico">
 
     <!-- fonts -->
-    <link rel="stylesheet" href="../fonts.googleapis.com/css26d89.css?family=Poppins:wght@700&amp;family=Roboto&amp;family=Saira+Stencil+One&amp;text=Nafie&amp;display=swap">
+    <link rel="stylesheet" href="../fonts.googleapis.com/css29262.css?family=Tajawal:wght@400;700&amp;display=swap">
 
     <!-- css libraries file -->
     <link rel="stylesheet" href="styles/libraries.min.css">
@@ -52,8 +53,8 @@
         }">
           <div class="container">
             <!-- logo -->
-            <div class="logo" title="Stéphan">
-              <h1><a href="index.html">Stéphan</a></h1>
+            <div class="logo" title="نافع">
+              <h1><a href="rtl-index.html">نافع</a></h1>
             </div>
 
             <!-- nav links -->
@@ -63,7 +64,7 @@
               <ul class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
-                    {{ link.title.en }}
+                    {{ link.title.ar }}
                   </a>
                 </li>
               </ul>
@@ -75,37 +76,37 @@
                   <!-- about us -->
                   <div class="about-us">
                     <p>
-                      I love making things simple, intuitive and expertly crafted!
+                      أحب جعل الأشياء بسيطة وبديهية ومصممة بخبرة!
                     </p>
                     <h4 class="block-title">
-                      Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!
+                      المنتج هو الجوهر الحيوي لما أفعله ، المنتج الرائع حقًا يولد من التخطيط الدقيق. هذا هو المكان والأمر الذي تخصصت فيه!
                     </h4>
                   </div>
 
                   <!-- contact info -->
                   <ul class="contact-info row">
                     <li class="col-lg-4">
-                      <h4 class="block-title">Email</h4>
+                      <h4 class="block-title">البريد الإلكتروني</h4>
                       <ul>
-                        <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
-                        <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
+                        <li><a href="mailto:info@nafie.com">info@nafie.com</a></li>
+                        <li><a href="mailto:support@nafie.com">support@nafie.com</a></li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Address</h4>
+                      <h4 class="block-title">العنوان</h4>
                       <ul>
                         <li>
-                          101 Antananarivo, Ankadifotsy
+                          941 طريق صقر قريش ، الأندلس ،
                           <br>
-                          Madagascar
+                          غرناطة ، WA 47122-4194
                         </li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Phone</h4>
+                      <h4 class="block-title">الهاتف</h4>
                       <ul>
-                        <li><a href="tel:+261342090572">(+261) 34 20 905 72</a></li>
-                        <li><a href="tel:+261328468857">(+261) 32 84 688 57</a></li>
+                        <li><a href="tel:02966202290">(02) 966 202 290</a></li>
+                        <li><a href="tel:02966202291">(02) 966 202 291</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -118,21 +119,21 @@
 
               <!-- lang switcher button -->
               <li class="lang-switcher">
-                <a href="fr-index.html" title="switch to french language">
-                  <b>FR</b>
+                <a href="index-2.html" title="View in English">
+                  <img src="assets/images/langs/en.png" alt="English">
                 </a>
               </li>
 
               <!-- theme switcher button -->
               <li class="theme-switcher">
-                <button :class="savedTheme" title="Change Mode" @click="changeAppTheme"></button>
+                <button :class="savedTheme" title="تبديل المظهر" @click="changeAppTheme"></button>
               </li>
 
               <!-- hamburger button -->
               <li class="hamburger-btn" :class="{'open': isNavMenuOpen}">
                 <button @click="toggleNavMenu"
-                  title="Toggle Side Menu"
-                  aria-label="Toggle Side Menu"
+                  title="فتح/غلق القائمة الجانبية"
+                  aria-label="فتح/غلق القائمة الجانبية"
                   ref="navMenuToggleBtn">
                   <span></span>
                   <span></span>
@@ -148,33 +149,33 @@
         <div id="hero" class="hero-section" ref="heroSection">
           <div class="hero-img">
             <div class="layer" v-clone>
-              <img src="assets/images/hero-img.jpg" alt="User Name">
+              <img src="assets/images/hero-img.png" alt="User Name">
             </div>
           </div>
 
           <div class="hero-text">
             <h2>
-              Hi, I'm Stéphan Christian
+              أنا أصمم وأبني
               <br>
-              UI Designer & Application Developer
+              منتجات إبداعية
             </h2>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <a href="#contact" class="btn">تواصل معي</a>
           </div>
 
           <div class="social">
             <ul>
               <li>
-                <a href="https://www.facebook.com/SutefanC30/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'right'}">
+                <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'فيسبوك', dir: 'right'}">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'Twitter', dir: 'right'}">
+                <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'تويتر', dir: 'right'}">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/stephancj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'LinkedIn', dir: 'right'}">
+                <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'لينكد إن', dir: 'right'}">
                   <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
               </li>
@@ -182,7 +183,7 @@
           </div>
 
           <div class="scroll-down">
-            <a href="#about" title="Scroll Down">Scroll</a>
+            <a href="#about" title="تمرير للأسفل">تمرير</a>
           </div>
         </div>
         <!-- end of hero section -->
@@ -195,11 +196,11 @@
                 <li class="col-sm-12 col-md-6 col-lg-4">
                   <a href="#experience">
                     <div class="icon">
-                      <img src="assets/images/icons/emblem.png" alt="Years of Experience">
+                      <img src="assets/images/icons/emblem.png" alt="سنة من الخبرة">
                     </div>
                     <div class="text">
                       <h3>{{ experienceYears }}+</h3>
-                      <strong>Years of Experience</strong>
+                      <strong>سنة من الخبرة</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -207,11 +208,11 @@
                 <li class="col-sm-12 col-md-6 col-lg-4">
                   <a href="#portfolio">
                     <div class="icon">
-                      <img src="assets/images/icons/check-mark.png" alt="Completed Projects">
+                      <img src="assets/images/icons/check-mark.png" alt="مشاريع منجزة">
                     </div>
                     <div class="text">
                       <h3>230+</h3>
-                      <strong>Completed Projects</strong>
+                      <strong>مشاريع منجزة</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -219,11 +220,11 @@
                 <li class="col-sm-12 col-md-6 col-lg-4">
                   <a href="#testimonials">
                     <div class="icon">
-                      <img src="assets/images/icons/happy.png" alt="Happy Clients">
+                      <img src="assets/images/icons/happy.png" alt="عميل سعيد">
                     </div>
                     <div class="text">
                       <h3>95+</h3>
-                      <strong>Happy Clients</strong>
+                      <strong>عميل سعيد</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -249,18 +250,18 @@
               <!-- text box -->
               <div class="about-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">about me</span>
+                  <span class="subtitle">من أنا</span>
                   <h2>
-                    Need a Creative Product?
+                    هل تحتاج إلى منتج إبداعي؟
                     <br>
-                    I can Help You!
+                    أنا أستطيع مساعدتك!
                   </h2>
                   <p>
-                    Hi! I’m Stéphan Josué Christian, and I’m a developer who has passion for building clean web applications with intuitive functionality. I enjoy the process of turning ideas into reality using creative solutions. I’m always curious about learning new skills, tools, and concepts. In addition to working on various solo full stack projects, I have worked with creative teams, which involves daily stand-ups and communications, source control, and project management.
+                    مرحبا! أنا محمد مبروك ، مطور لديه شغف لإنشاء تطبيقات ويب نظيفة بوظائف عالية. أستمتع بتحويل الأفكار إلى واقع باستخدام الحلول الإبداعية. لدي فضول دائمًا بشأن تعلم مهارات وأدوات ومفاهيم جديدة. بالإضافة إلى العمل في العديد من المشاريع الفردية الكاملة ، فقد عملت مع فرق إبداعية ، وكان لدينا اجتماعات واتصالات يومية وتحكم في الاصدارات وإدارة المشاريع.
                   </p>
                   <div class="btns-container">
-                    <a href="#contact" class="btn btn-primary">Hire Me</a>
-                    <a download href="#" class="btn btn-outline-light">Download CV</a>
+                    <a href="#contact" class="btn btn-primary">وظّفني</a>
+                    <a download href="#" class="btn btn-outline-light">تحميل السيرة الذاتية</a>
                   </div>
                 </div>
               </div>
@@ -277,20 +278,20 @@
               <!-- text box -->
               <div class="skills-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">my skills</span>
+                  <span class="subtitle">مهاراتي</span>
                   <h2>
-                    What My Programming
+                    ماذا تضمنت مهارات
                     <br>
-                    Skills Included?
+                    البرمجة الخاصة بي؟
                   </h2>
                   <p>
-                    I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies.
+                    أقوم بتطوير واجهات مستخدم رائعة وبسيطة وسريعة الاستجابة حتى تساعد المستخدمين على إنجاز المهام بأقل وقت وجهد من خلال هذه التقنيات.
                   </p>
                   <div class="toggle-switch-btn">
                     <input id="skills-list" type="radio" name="skillstype" value="skills" v-model="isSkillsOrTools" checked>
-                    <label for="skills-list" class="link-hover">Skills</label>
+                    <label for="skills-list" class="link-hover">المهارات</label>
                     <input id="tools-list" type="radio" name="skillstype" value="tools" v-model="isSkillsOrTools">
-                    <label for="tools-list" class="link-hover">Tools</label>
+                    <label for="tools-list" class="link-hover">الأدوات</label>
                     <span class="switcher-toggle"></span>
                   </div>
                 </div>
@@ -328,51 +329,6 @@
         </div>
         <!-- end of skills section -->
 
-        <!-- start of education section -->
-        <div id="experience" class="experience-section section" tabindex="-1">
-          <div class="container">
-            <div class="section-content row">
-
-              <!-- text box -->
-              <div class="experience-text col-lg-6">
-                <div class="text-box">
-                  <span class="subtitle">education</span> 
-                  <h2>
-                    Education
-                  </h2>
-                  <p>
-                    I have been developing sites and apps for {{ experienceYears }} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.
-                  </p>
-                </div>
-              </div>
-
-              <!-- timeline -->
-              <div class="experience-timeline col-lg-6">
-                <ul class="outer-ul">
-                  <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
-                    <li class="has-ultimate-tooltip"
-                      tabindex="0"
-                      v-for="item in group"
-                      v-for="item in group">
-                      <template v-if="Object.keys(item).length > 0">
-                        <h3>{{ item.date }}</h3>
-                        <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.schoolName.en }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.degreeTitle.en }}</h5>
-                          <p>{{ item.desc.en }}</p>
-                        </div>
-                        <div class="ultimate-tooltip-arrow"></div>
-                      </template>
-                    </li>
-                  </ul>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <!-- end of education section -->
-
         <!-- start of experience section -->
         <div id="experience" class="experience-section section" tabindex="-1">
           <div class="container">
@@ -389,9 +345,9 @@
                       <template v-if="Object.keys(item).length > 0">
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.companyName.en }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.en }}</h5>
-                          <p>{{ item.desc.en }}</p>
+                          <h4 class="ultimate-tooltip-title">{{ item.companyName.ar }}</h4>
+                          <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.ar }}</h5>
+                          <p>{{ item.desc.ar }}</p>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
                       </template>
@@ -403,14 +359,14 @@
               <!-- text box -->
               <div class="experience-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">experience</span>
+                  <span class="subtitle">خبراتي</span>
                   <h2>
-                    {{ experienceYears }}+ Years of Experience
+                    {{ experienceYears }}+ سنة من الخبرة
                     <br>
-                    With Many Awards!
+                    مع العديد من الجوائز!
                   </h2>
                   <p>
-                    I have been developing sites and apps for {{ experienceYears }} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.
+                    لقد عملت على تطوير المواقع والتطبيقات لمدة {{ experienceYears }} عامًا وأنا بالتأكيد أعلم الاتجاهات والمفاهيم الحديثة لتطوير الويب ، لقد كنت شريكًا ذا رؤية وموثوقًا بهندسة البرمجيات للكثير من العلامات التجارية العالمية. سوف تحصل على نتيجة جيدة كما تتوقع.
                   </p>
                 </div>
               </div>
@@ -425,18 +381,18 @@
             <div class="section-content">
 
               <!-- portfolio items -->
-              <ul class="portfolio-items" ref="portfolioItems" data-no-more-works-msg="No more works to load">
+              <ul class="portfolio-items" ref="portfolioItems" data-no-more-works-msg="لا يوجد مزيد من الأعمال">
                 <li>
                   <!-- text box -->
                   <div class="text-box">
-                    <span class="subtitle">my works</span>
+                    <span class="subtitle">أعمالي</span>
                     <h2>
-                      See My Works Which
+                      شاهد أعمالي
                       <br>
-                      Will Amaze You!
+                      التي ستدهشك!
                     </h2>
                     <p>
-                      We develop the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.
+                      أقوم بتطوير أفضل مواقع الويب عالية الجودة والتي تعمل على المدى الطويل. تساعد الواجهة الموثقة جيدًا والنظيفة والسهلة والأنيقة أي عميل غير تقني.
                     </p>
                     <ul class="works-filter">
                       <li v-for="filter in ['All', 'HTML', 'Angular', 'Vue']" :key="filter">
@@ -452,22 +408,22 @@
                 <!-- start items list -->
                 <li class="portfolio-item"
                   v-for="work in portfolioItems"
-                  :key="work.title.en"
+                  :key="work.title.ar"
                   v-show="worksFilter === 'all' || worksFilter === work.category.slug">
                   <a :href="work.url" target="_blank" rel="noopener">
                     <div class="item-img">
-                      <img :src="work.imgUrl" :alt="work.title.en">
+                      <img :src="work.imgUrl" :alt="work.title.ar">
                     </div>
                     <div class="item-details">
-                      <h3 class="title">{{ work.title.en }}</h3>
-                      <div class="desc">{{ work.desc.en }}</div>
+                      <h3 class="title">{{ work.title.ar }}</h3>
+                      <div class="desc">{{ work.desc.ar }}</div>
                     </div>
                   </a>
                 </li>
                 <!-- end items list -->
 
                 <li>
-                  <button class="more" @click="getPortfolioItems">Load more works</button>
+                  <button class="more" @click="getPortfolioItems">تحميل المزيد من الأعمال</button>
                 </li>
               </ul>
             </div>
@@ -479,11 +435,11 @@
         <div id="testimonials" class="testimonials-section section" tabindex="-1">
           <div class="container">
             <div class="section-title">
-              <span class="subtitle">testimonials</span>
+              <span class="subtitle">التوصيات</span>
               <h2>
-                Check What's My Clients
+                شاهد ماذا قال العملاء
                 <br>
-                Say About Me
+                والمتخصصون عني؟
               </h2>
             </div>
           </div>
@@ -493,15 +449,15 @@
               <li class="has-ultimate-tooltip"
                 tabindex="0"
                 v-for="item in testimonialsItems"
-                :key="item.quoteAuthor.en">
+                :key="item.quoteAuthor.ar">
                 <div class="testimonials-item">
                   <div class="testimonial-author-img">
-                    <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'" :alt="item.quoteAuthor.en">
+                    <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'" :alt="item.quoteAuthor.ar">
                   </div>
                   <div class="ultimate-tooltip">
-                    <p>{{ item.quoteContent.en }}</p>
-                    <h4 class="ultimate-tooltip-title">{{ item.quoteAuthor.en }}</h4>
-                    <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.en }}</h5>
+                    <p>{{ item.quoteContent.ar }}</p>
+                    <h4 class="ultimate-tooltip-title">{{ item.quoteAuthor.ar }}</h4>
+                    <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.ar }}</h5>
                   </div>
                   <div class="ultimate-tooltip-arrow"></div>
                 </div>
@@ -519,43 +475,43 @@
               <!-- text box -->
               <div class="contact-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">contact</span>
+                  <span class="subtitle">اتصل بي</span>
                   <h2>
-                    Have You Any Project?
+                    هل لديك اي مشروع؟
                     <br>
-                    Please Drop a Message
+                    الرجاء ترك رسالة
                   </h2>
                   <p>
-                    Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
+                    تواصل معي واسمح لي أن أعرف كيف يمكنني المساعدة. املأ النموذج وسأكون على تواصل في أقرب وقت ممكن.
                   </p>
                 </div>
 
                 <!-- contact info -->
                 <ul class="contact-info">
                   <li>
-                    <img src="assets/images/icons/address.png" alt="Address">
+                    <img src="assets/images/icons/address.png" alt="العنوان">
                     <div>
-                      <strong>Address:</strong>
-                      Ankadifotsy, 101 Antananarivo, Madagascar
+                      <strong>العنوان:</strong>
+                      941 طريق صقر قريش ، الأندلس ، غرناطة ، WA 47122-4194
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/phone.png" alt="Phone">
+                    <img src="assets/images/icons/phone.png" alt="الهاتف">
                     <div>
-                      <strong>Phone:</strong>
+                      <strong>الهاتف:</strong>
                       <ul>
-                        <li><a href="tel:+261342090572">(+261) 34 20 905 72</a></li>
-                        <li><a href="tel:+261328468857">(+261) 32 84 688 57</a></li>
+                        <li><a href="tel:02966202290" class="ltr-dir">(02) 966 202 290</a></li>
+                        <li><a href="tel:02966202291" class="ltr-dir">(02) 966 202 291</a></li>
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/email.png" alt="Email">
+                    <img src="assets/images/icons/email.png" alt="البريد الإلكتروني">
                     <div>
-                      <strong>Email:</strong>
+                      <strong>البريد الإلكتروني:</strong>
                       <ul>
-                        <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
-                        <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
+                        <li><a href="mailto:info@nafie.com">info@nafie.com</a></li>
+                        <li><a href="mailto:support@nafie.com">support@nafie.com</a></li>
                       </ul>
                     </div>
                   </li>
@@ -564,18 +520,23 @@
                 <!-- social links -->
                 <ul class="social">
                   <li>
-                    <a href="https://www.facebook.com/SutefanC30/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'top'}">
+                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'فيسبوك', dir: 'top'}">
                       <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'Twitter', dir: 'top'}">
+                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'تويتر', dir: 'top'}">
                       <i class="fa fa-twitter" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/stephancj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'LinkedIn', dir: 'top'}">
+                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'لينكد إن', dir: 'top'}">
                       <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'يوتيوب', dir: 'top'}">
+                      <i class="fa fa-youtube-play" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
@@ -585,74 +546,74 @@
               <div class="col-lg-6">
                 <form ref="contactForm"
                   class="contact-form form-styled"
-                  action="https://stephancj.mdg.ooo/contact_form.php"
+                  action="https://nafie.webrouk.com/contact_form.php"
                   data-success-msg="Message sent successfully!"
                   data-err-msg="Oops! something went wrong, please try again.">
                   <div class="group">
-                    <label>Name</label>
+                    <label>الاسم الكامل</label>
                     <div class="control has-prefix-icon">
                       <input type="text"
                         name="name"
-                        placeholder="e.g. John Doe"
+                        placeholder="مثل: فلان الفلاني"
                         minlength="3"
                         required>
                       <i class="fa fa-user-circle prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Name is required">
-                        <input class="minLength" type="hidden" value="Name must be at least 3 characters">
+                        <input class="required" type="hidden" value="الاسم مطلوب">
+                        <input class="minLength" type="hidden" value="الاسم يجب أن يكون على الأقل 3 أحرف">
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Email</label>
+                    <label>البريد الإلكتروني</label>
                     <div class="control has-prefix-icon">
                       <input class="ltr-dir"
                         type="email"
                         inputmode="email"
                         name="email"
-                        placeholder="e.g. john.doe@gmail.com"
+                        placeholder="مثل: john.doe@gmail.com"
                         required>
                       <i class="fa fa-envelope prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Email is required">
-                        <input class="invalid" type="hidden" value="Please enter a valid email address">
+                        <input class="required" type="hidden" value="البريد الإلكتروني مطلوب">
+                        <input class="invalid" type="hidden" value="يرجى إدخال عنوان بريد إلكتروني صالح">
                       </div>
                     </div>
                   </div>
                   <div class="group phone-number">
-                    <label>Phone <span class="optional">(Optional)</span></label>
+                    <label>الهاتف <span class="optional">(اختياري)</span></label>
                     <div class="control has-prefix-icon">
                       <input type="tel"
                         inputmode="tel"
                         name="phone"
-                        placeholder="Phone Number">
+                        placeholder="رقم الهاتف">
                       <i class="fa fa-phone prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="invalid" type="hidden" value="Please enter a valid Phone Number">
+                        <input class="invalid" type="hidden" value="يرجى إدخال رقم هاتف صالح">
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Message</label>
+                    <label>الرسالة</label>
                     <div class="control has-prefix-icon">
-                      <textarea name="message" placeholder="Write message..." required></textarea>
+                      <textarea name="message" placeholder="اكتب رسالتك..." required></textarea>
                       <i class="fa fa-comments prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Message is required">
+                        <input class="required" type="hidden" value="الرسالة مطلوبة">
                       </div>
                     </div>
                   </div>
                   <div class="group">
                     <div class="control">
-                      <button class="submit-btn btn btn-dark" type="button" @click="contactFormValidation">Send</button>
+                      <button class="submit-btn btn btn-dark" type="button" @click="contactFormValidation">إرسال</button>
                     </div>
                   </div>
                 </form>
@@ -668,13 +629,13 @@
             <div class="row">
               <div class="col-lg-6">
                 <!-- logo -->
-                <div class="logo" title="Stéphan">
-                  <h1><a href="index-2.html">Stéphan</a></h1>
+                <div class="logo" title="نافع">
+                  <h1><a href="rtl-index.html">نافع</a></h1>
                 </div>
               </div>
               <div class="col-lg-6">
-                &copy; {{ copyrightDate }} Proudly Powered by
-                <a href="https://themeforest.net/user/webrouk/portfolio" target="_blank" rel="noopener">Stéphan J. Christian</a>
+                &copy; {{ copyrightDate }} مدعوم بكل بفخر من
+                <a href="https://themeforest.net/user/webrouk/portfolio" target="_blank" rel="noopener">ويبروك</a>
               </div>
             </div>
           </div>
@@ -684,7 +645,7 @@
         <!-- scroll to top button -->
         <button ref="scrollTopBtn"
           :class="['scroll-to-top', isScrollTopBtnDisplayed && 'show-scrollTop']"
-          title="Back To Top"
+          title="عودة الى الأعلى"
           tabindex="0"
           @click="scrollToTop">
           <i class="fa fa-angle-up" aria-hidden="true"></i>
@@ -721,4 +682,5 @@
     <script src="scripts/main.js"></script>
   </body>
 
+<!-- Mirrored from nafie.webrouk.com/rtl-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Aug 2021 07:37:04 GMT -->
 </html>
