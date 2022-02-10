@@ -526,14 +526,14 @@
               <!-- text box -->
               <div class="contact-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">contact</span>
+                  <span class="subtitle">{{contact.title[getLanguageCode()]}}</span>
                   <h2>
-                    Have You Any Project?
+                    {{contact.subtitle1[getLanguageCode()]}}
                     <br>
-                    Please Drop a Message
+                    {{contact.subtitle2[getLanguageCode()]}}
                   </h2>
                   <p>
-                    Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
+                    {{contact.text[getLanguageCode()]}}
                   </p>
                 </div>
 
@@ -542,27 +542,27 @@
                   <li>
                     <img src="assets/images/icons/address.png" alt="Address">
                     <div>
-                      <strong>Address:</strong>
-                      Ankadifotsy, 101 Antananarivo, Madagascar
+                      <strong>{{contact.addressLabel[getLanguageCode()]}}:</strong>
+                      {{contact.address}}
                     </div>
                   </li>
                   <li>
                     <img src="assets/images/icons/phone.png" alt="Phone">
                     <div>
-                      <strong>Phone:</strong>
+                      <strong>{{contact.phoneLabel[getLanguageCode()]}}:</strong>
                       <ul>
-                        <li><a href="tel:+261342090572">(+261) 34 20 905 72</a></li>
-                        <li><a href="tel:+261328468857">(+261) 32 84 688 57</a></li>
+                        <li><a href="tel:+261342090572">{{contact.phone1}}</a></li>
+                        <li><a href="tel:+261328468857">{{contact.phone2}}</a></li>
                       </ul>
                     </div>
                   </li>
                   <li>
                     <img src="assets/images/icons/email.png" alt="Email">
                     <div>
-                      <strong>Email:</strong>
+                      <strong>{{contact.emailLabel[getLanguageCode()]}}:</strong>
                       <ul>
-                        <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
-                        <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
+                        <li><a href="mailto:christianstephanjosue@gmail.com">{{contact.email1}}</a></li>
+                        <li><a href="mailto:schristian@bocasay.com">{{contact.email2}}</a></li>
                       </ul>
                     </div>
                   </li>
@@ -596,70 +596,70 @@
                   data-success-msg="Message sent successfully!"
                   data-err-msg="Oops! something went wrong, please try again.">
                   <div class="group">
-                    <label>Name</label>
+                    <label>{{contact.form.customerNameLabel[getLanguageCode()]}}</label>
                     <div class="control has-prefix-icon">
                       <input type="text"
                         name="name"
-                        placeholder="e.g. John Doe"
+                        :placeholder='contact.form.customerNamePlaceholder[getLanguageCode()]'
                         minlength="3"
                         required>
                       <i class="fa fa-user-circle prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Name is required">
-                        <input class="minLength" type="hidden" value="Name must be at least 3 characters">
+                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Name is required' : 'Nom requis'">
+                        <input class="minLength" type="hidden" :value="getLanguageCode() === 'en' ? 'Name must be at least 3 characters' : 'Le nom doit au moins contenir 3 caractères'">
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Email</label>
+                    <label>{{contact.form.customerEmailLabel[getLanguageCode()]}}</label>
                     <div class="control has-prefix-icon">
                       <input class="ltr-dir"
                         type="email"
                         inputmode="email"
                         name="email"
-                        placeholder="e.g. john.doe@gmail.com"
+                        :placeholder='contact.form.customerEmailPlaceholder[getLanguageCode()]'
                         required>
                       <i class="fa fa-envelope prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Email is required">
-                        <input class="invalid" type="hidden" value="Please enter a valid email address">
+                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Email is required' : 'Email requis'">
+                        <input class="invalid" type="hidden" :value="getLanguageCode() === 'en' ? 'Please enter a valid email address' : 'Veuillez saisir un adresse email valide'">
                       </div>
                     </div>
                   </div>
                   <div class="group phone-number">
-                    <label>Phone <span class="optional">(Optional)</span></label>
+                    <label>{{contact.form.customerPhoneLabel[getLanguageCode()]}} <span class="optional">({{contact.form.optionalLabel[getLanguageCode()]}})</span></label>
                     <div class="control has-prefix-icon">
                       <input type="tel"
                         inputmode="tel"
                         name="phone"
-                        placeholder="Phone Number">
+                        :placeholder='contact.form.customerPhonePlaceholder[getLanguageCode()]'>
                       <i class="fa fa-phone prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="invalid" type="hidden" value="Please enter a valid Phone Number">
+                        <input class="invalid" type="hidden" :value="getLanguageCode() === 'en' ? 'Please enter a valid phone number' : 'Veuillez saisir un numéro de téléphone valide'">
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Message</label>
+                    <label>{{contact.form.messageLabel[getLanguageCode()]}}</label>
                     <div class="control has-prefix-icon">
-                      <textarea name="message" placeholder="Write message..." required></textarea>
+                      <textarea name="message" :placeholder='contact.form.messagePlaceholder[getLanguageCode()]' required></textarea>
                       <i class="fa fa-comments prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" value="Message is required">
+                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Message is required' : 'Message requis'">
                       </div>
                     </div>
                   </div>
                   <div class="group">
                     <div class="control">
-                      <button class="submit-btn btn btn-dark" type="button" @click="contactFormValidation">Send</button>
+                      <button class="submit-btn btn btn-dark" type="button" @click="contactFormValidation">{{getLanguageCode() === 'en' ? 'Send' : 'Envoyer'}}</button>
                     </div>
                   </div>
                 </form>

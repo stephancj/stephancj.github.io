@@ -365,12 +365,12 @@ const app = Vue.createApp({
           fr: 'témoignages'
         },
         subtitle1: {
-          en: 'Check What\'s My Clients',
-          fr: 'Voyez ce que mes clients disent de moi'
+          en: 'Check What\'s people',
+          fr: 'Voyez Ce Que Les Gens'
         },
         subtitle2: {
           en: 'Say About Me',
-          fr: 'disent de moi'
+          fr: 'Disent De Moi'
         },
       },
       testimonialsItems: [
