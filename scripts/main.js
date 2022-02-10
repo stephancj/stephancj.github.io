@@ -1,16 +1,14 @@
 // -------------------------------------
 // vue app
 // -------------------------------------
+
 const app = Vue.createApp({
   data() {
     return {
-      // the date my career started (change to yours)
-      careerStartDate: 2009,
+      language: 'english',
+      careerStartDate: 2021,
+      copyrightStartDate: 2022,
 
-      // the date copyright started (change to yours)
-      copyrightStartDate: 2021,
-
-      // for the template theme
       appTheme: 'light_theme',
       savedTheme: null,
 
@@ -23,13 +21,13 @@ const app = Vue.createApp({
       // manage loading spinner status
       ajaxLoading: [],
 
-      // for minimizing the header on scrolling down
+      // minimize the header on scrolling down
       startMinimizingHeaderAt: 100,
       isHeaderBig: true,
-      // for toggling the header on scrolling down
+      // toggle the header on scrolling down
       lastScrollPosition: 0,
       isHeaderHidden: false,
-      // for scroll to top button
+      // scroll to top button
       startShowingScrollTopBtnAt: 600,
       isScrollTopBtnDisplayed: false,
 
@@ -38,6 +36,8 @@ const app = Vue.createApp({
 
       // flag to toggle nav menu
       isNavMenuOpen: false,
+
+      experienceNumber : 0,
 
       // list of nav links to loop through it
       navLinks: [
@@ -55,228 +55,299 @@ const app = Vue.createApp({
           title: { en: 'Portfolio', fr: 'Portfolio' }
         }, {
           url: '#contact',
-          title: { en: 'Contact', ar: 'Contact' }
+          title: { en: 'Contact', fr: 'Contact' }
         }
       ],
 
-      // flag to toggle between skills and tools in skills section
+      staticTexts : {
+        presentation: {
+          greeting: {en: 'Hi, I\'m Stéphan Christian', fr: 'Salut, je suis Stéphan Christian'},
+          currentJobTitle: {en: 'Application Developer & UI/UX designer', fr: 'Développeur D\'applications & Designeur UI/UX'}
+        },
+        getInTouch: {en: 'Get In Touch', fr: 'Entrer En Contact'},
+        scroll: {en: 'Scroll', fr: 'Défiler'},
+        experienceYearLabel: {en: 'Year Of Experience', fr: 'Année d\'expérience'},
+        completedProjectLabel: {en: 'Completed Projects', fr: 'Projets Terminés'},
+        happyClientLabel: {en: 'Happy Clients', fr: 'Clients Satisfaits'},
+        hireMe: {en: 'Hire Me', fr: 'Engagez moi'},
+        toCV: {en: 'Download CV', fr: 'Télécharger CV'},
+      },
+
+      aboutMe: {
+        title: {en: 'about Me', fr:'à propos'},
+        subtitle1: {en: 'Need a Creative Product?', fr:"Besoin d'un produit créatif ?"},
+        subtitle2: {en:'I can Help You!', fr:'Je peux vous aider!'},
+        text: {en:"Hi! I’m Stéphan Josué Christian, and I’m a developer who has passion for building clean web applications with intuitive functionality. I enjoy the process of turning ideas into reality using creative solutions. I’m always curious about learning new skills, tools, and concepts. In addition to working on various solo full stack projects, I have worked with creative teams, which involves daily stand-ups and communications, source control, and project management."
+              ,fr:"Salut! Je m'appelle Stéphan Josué Christian et je suis un développeur passionné par la création d'applications propres avec des fonctionnalités intuitives. J'aime le processus de transformer des idées en réalité en utilisant des solutions créatives. Je suis toujours curieux d'apprendre de nouvelles compétences, outils et concepts. En plus de travailler sur divers projets solo full stack, j'ai travaillé avec des équipes créatives, ce qui implique des stand-ups et des communications quotidiennes, le contrôle de source et la gestion de projet."
+        },
+      },
+
+      //SKILLS CONTENT
+
+      // toggle between skills and tools in skills section
       isSkillsOrTools: 'skills',
-
-      // list of skills items to loop through it
-      skillsItems: [
-        {
-          imgUrl: 'assets/images/skills/html5.png',
-          title: 'HTML5'
-        }, {
-          imgUrl: 'assets/images/skills/css3.png',
-          title: 'CSS3'
-        }, {
-          imgUrl: 'assets/images/skills/javascript.png',
-          title: 'JavaScript'
-        }, {
-          imgUrl: 'assets/images/skills/typescript.png',
-          title: 'TypeScript'
-        }, {
-          imgUrl: 'assets/images/skills/dart.png',
-          title: 'Dart'
-        }, {
-          imgUrl: 'assets/images/skills/bootstrap.png',
-          title: 'Bootstrap'
-        }, {
-          imgUrl: 'assets/images/skills/angular.png',
-          title: 'Angular'
-        }, {
-          imgUrl: 'assets/images/skills/vue.png',
-          title: 'Vue'
-        }, {
-          imgUrl: 'assets/images/skills/firebase.png',
-          title: 'Firebase'
-        }, {
-          imgUrl: 'assets/images/skills/flutter.png',
-          title: 'Flutter'
-        }, {
-          imgUrl: 'assets/images/skills/ionic.png',
-          title: 'Ionic'
-        }, {
-          imgUrl: 'assets/images/skills/sass.png',
-          title: 'SASS'
-        }, {
-          imgUrl: 'assets/images/skills/php.png',
-          title: 'PHP'
-        }, {
-          imgUrl: 'assets/images/skills/codeigniter.png',
-          title: 'CodeIgniter'
-        }
-      ],
-
-      // list of tools items to loop through it
-      toolsItems: [
-        // {
-        //   imgUrl: 'assets/images/skills/ajax.png',
-        //   title: 'Ajax'
-        // }, 
-        {
-          imgUrl: 'assets/images/skills/gitlab.png',
-          title: 'Gitlab'
-        }, {
-          imgUrl: 'assets/images/skills/webpack.png',
-          title: 'Webpack'
-        }, {
-          imgUrl: 'assets/images/skills/git.png',
-          title: 'Git (Github)'
-        }, {
-          imgUrl: 'assets/images/skills/npm.png',
-          title: 'Npm'
-        }, {
-          imgUrl: 'assets/images/skills/command.png',
-          title: 'Command Line'
-        }, {
-          imgUrl: 'assets/images/skills/vs-code.png',
-          title: 'VS Code'
-        }, {
-          imgUrl: 'assets/images/skills/lighthouse.png',
-          title: 'Google Lighthouse'
-        }, {
-          imgUrl: 'assets/images/skills/yarn.png',
-          title: 'Yarn'
-        }, {
-          imgUrl: 'assets/images/skills/slack.png',
-          title: 'Slack'
-        }, {
-          imgUrl: 'assets/images/skills/photoshop.png',
-          title: 'Photoshop'
-        }, {
-          imgUrl: 'assets/images/skills/adobe-xd.png',
-          title: 'Adobe XD'
-        }
-      ],
-
-      // list of experience items to loop through it
-      educationItems: [
-        {
-          date: '2014',
-          schoolName: { fr: 'Infocentre de La Salle Soavimbahoaka.', en: 'Infocentre de La Salle Soavimbahoaka' },
-          degreeTitle: { fr: 'Licence en Informatique', en: 'Bachelor degree in Software Engineering' },
-          desc: {
-            fr: 'De 2014 à 2017, un cursus de 3 ans en informatique, parcours Développement Logiciel',
-            en: 'From 2014 to 2017, a 3 years path in computer science, with software development major.'
-          }
+      
+      mySkills: {
+        title: {en: 'my skills', fr:'mes compétences'},
+        subtitle1: {en: 'What My Programming', fr:"Que comprenne mes "},
+        subtitle2: {en:'Skills Included?', fr:'Compétences en programmation?'},
+        text: {en:"I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies."
+              ,fr:"Je développe de simple, intuitive et réactive interface utilisateur qui aide les utilisateurs à faire les choses avec moins d'effort et de temps avec ces technologies."
         },
-        {
-          date: '2018',
-          schoolName: { fr: 'Beijing University of Technology', en: 'Beijing University of Technology' },
-          degreeTitle: { fr: 'Langue & littératue Chinoise', en: 'Chinese Language' },
-          desc: {
-            fr: 'De 2018 en 2019, une formation en langue chinoise, certification HSK 5',
-            en: 'From 2018 to 2019, a one year of Chinese Language Study , HSK 5 level.'
+        skillsLabel: {en: 'Skills', fr: 'Compétences'},
+        toolsLabel: {en: 'Tools', fr: 'Outils'},
+        skillsItems: [
+          {
+            imgUrl: 'assets/images/skills/html5.png',
+            title: 'HTML5'
+          }, {
+            imgUrl: 'assets/images/skills/css3.png',
+            title: 'CSS3'
+          }, {
+            imgUrl: 'assets/images/skills/javascript.png',
+            title: 'JavaScript'
+          }, {
+            imgUrl: 'assets/images/skills/typescript.png',
+            title: 'TypeScript'
+          }, {
+            imgUrl: 'assets/images/skills/dart.png',
+            title: 'Dart'
+          }, {
+            imgUrl: 'assets/images/skills/bootstrap.png',
+            title: 'Bootstrap'
+          }, {
+            imgUrl: 'assets/images/skills/angular.png',
+            title: 'Angular'
+          }, {
+            imgUrl: 'assets/images/skills/vue.png',
+            title: 'Vue'
+          }, {
+            imgUrl: 'assets/images/skills/firebase.png',
+            title: 'Firebase'
+          }, {
+            imgUrl: 'assets/images/skills/flutter.png',
+            title: 'Flutter'
+          }, {
+            imgUrl: 'assets/images/skills/ionic.png',
+            title: 'Ionic'
+          }, {
+            imgUrl: 'assets/images/skills/sass.png',
+            title: 'SASS'
+          }, {
+            imgUrl: 'assets/images/skills/php.png',
+            title: 'PHP'
+          }, {
+            imgUrl: 'assets/images/skills/codeigniter.png',
+            title: 'CodeIgniter'
           }
-        },
-        {
-          date: '2019',
-          schoolName: { fr: 'Beijing University of Technology', en: 'Beijing University of Technology' },
-          degreeTitle: { fr: 'Master en Informatique', en: 'Master degree in computer science' },
-          desc: {
-            fr: 'De 2018 en 2022, un cursus de 3 ans en informatique, parcours vision par ordinateur',
-            en: 'From 2018 to 2022, a 3 year computer science study, with computer vision major.'
+        ],
+        toolsItems: [
+          {
+            imgUrl: 'assets/images/skills/gitlab.png',
+            title: 'Gitlab'
+          }, {
+            imgUrl: 'assets/images/skills/webpack.png',
+            title: 'Webpack'
+          }, {
+            imgUrl: 'assets/images/skills/git.png',
+            title: 'Git (Github)'
+          }, {
+            imgUrl: 'assets/images/skills/npm.png',
+            title: 'Npm'
+          }, {
+            imgUrl: 'assets/images/skills/command.png',
+            title: 'Command Line'
+          }, {
+            imgUrl: 'assets/images/skills/vs-code.png',
+            title: 'VS Code'
+          }, {
+            imgUrl: 'assets/images/skills/lighthouse.png',
+            title: 'Google Lighthouse'
+          }, {
+            imgUrl: 'assets/images/skills/yarn.png',
+            title: 'Yarn'
+          }, {
+            imgUrl: 'assets/images/skills/slack.png',
+            title: 'Slack'
+          }, {
+            imgUrl: 'assets/images/skills/photoshop.png',
+            title: 'Photoshop'
+          }, {
+            imgUrl: 'assets/images/skills/adobe-xd.png',
+            title: 'Adobe XD'
           }
-        },
-        {
-          date: '2021',
-          schoolName: { fr: 'CNTEMAD', en: 'CNTEMAD' },
-          degreeTitle: { fr: 'Master en Informatique', en: 'Master degree in computer science' },
-          desc: {
-            fr: 'Depuis 2021, un cursus de 2 ans, parcours Base de données et Génie Logiciel',
-            en: 'From early 2021, a master degree study in database and software enginering.'
-          }
-        }, {}, {}
-      ],
+        ],
+      },
 
-      // list of experience items to loop through it
-      experienceItems: [
-        {
-          date: '2016',
-          companyName: { fr: 'Sainte Famille, Mahamasina, Antananarivo', en: 'Sainte Famille, Mahamasina, Antananarivo' },
-          jobTitle: { fr: 'Développeur PHP', en: 'PHP Developer' },
-          desc: {
-            fr: 'Application de génération automatique des relevés académiques des étudiants.',
-            en: 'Application for automatic generation of student academic records.'
-          }
-        }, {
-          date: '2017',
-          companyName: { fr: 'BMOI Antaninarenina, Antananarivo', en: 'BMOI Antaninarenina, Antananarivo' },
-          jobTitle: { fr: 'Développeur Fullstack', en: 'Fullstack developer' },
-          desc: {
-            fr: 'Logiciel d&quot;automatisation de tâches au niveau du département parc automobile.',
-            en: 'Software for task automation at the fleet department.'
-          }
-        },
-        {
-          date: '2018',
-          companyName: { fr: 'ONG HABAKA Tsimbazaza, Antananarivo', en: 'ONG HABAKA Tsimbazaza, Antananarivo' },
-          jobTitle: { fr: 'Développeur PHP', en: 'PHP developer' },
-          desc: {
-            fr: 'Système de vérification des entrées et sorties des membres au Fablab.',
-            en: 'Entry and exit verification system for Fablab members.'
-          }
-        },
-        {
-          date: '2021',
-          companyName: { fr: 'Bocasay Madagascar', en: 'Bocasay Madagascar' },
-          jobTitle: { fr: 'Développeur JavaScript', en: 'JavaScript developer' },
-          desc: {
-            fr: 'Plateforme française de cours vidéo en ligne.',
-            en: 'French online video course platform.'
-          }
-        }, {}, {}
-      ],
 
+      // EDUCATION CONTENT 
+      education: {
+        title: {en: 'Education', fr: 'Education',},
+        subtitle: {en: 'Education', fr: 'Education'},
+        text: {
+          en: `I have been developing sites and apps for ${this.experienceNumber} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
+          fr: `Je développe des sites et des applications depuis ${this.experienceNumber} ans et je connais avec certitude les principales tendances et orientations du design moderne, j'ai été un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+        },
+        items: [
+          {
+            date: '2014',
+            schoolName: { fr: 'Infocentre de La Salle Soavimbahoaka.', en: 'Infocentre de La Salle Soavimbahoaka' },
+            degreeTitle: { fr: 'Licence en Informatique', en: 'Bachelor degree in Software Engineering' },
+            desc: {
+              fr: 'De 2014 à 2017, un cursus de 3 ans en informatique, parcours Développement Logiciel',
+              en: 'From 2014 to 2017, a 3 years path in computer science, with software development major.'
+            }
+          },
+          {
+            date: '2018',
+            schoolName: { fr: 'Beijing University of Technology', en: 'Beijing University of Technology' },
+            degreeTitle: { fr: 'Langue & littératue Chinoise', en: 'Chinese Language' },
+            desc: {
+              fr: 'De 2018 en 2019, une formation en langue chinoise, certification HSK 5',
+              en: 'From 2018 to 2019, a one year of Chinese Language Study , HSK 5 level.'
+            }
+          },
+          {
+            date: '2019',
+            schoolName: { fr: 'Beijing University of Technology', en: 'Beijing University of Technology' },
+            degreeTitle: { fr: 'Master en Informatique', en: 'Master degree in computer science' },
+            desc: {
+              fr: 'De 2018 en 2022, un cursus de 3 ans en informatique, parcours vision par ordinateur',
+              en: 'From 2018 to 2022, a 3 year computer science study, with computer vision major.'
+            }
+          },
+          {
+            date: '2021',
+            schoolName: { fr: 'CNTEMAD', en: 'CNTEMAD' },
+            degreeTitle: { fr: 'Master en Informatique', en: 'Master degree in computer science' },
+            desc: {
+              fr: 'Depuis 2021, un cursus de 2 ans, parcours Base de données et Génie Logiciel',
+              en: 'From early 2021, a master degree study in database and software enginering.'
+            }
+          }, {}, {}
+        ],
+      },
+      
+      // EXPERIENCE CONTENT
+      experience: {
+        title: {en: 'Experience', fr: 'Expérience'},
+        subtitle1: {
+          en: `${this.experienceNumber} Years of Experience`,
+          fr: `${this.experienceNumber} Années d'Experience`,
+        },
+        subtitle2:{
+          en: 'With Many Awards!', fr: 'Avec de nombreux prix !'
+        },
+        text:{
+          en: `I have been developing sites and apps for ${this.experienceNumber} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
+          fr: `Je développe des sites et des applications depuis ${this.experienceNumber} ans et je connais avec certitude les principales tendances et orientations du design moderne, j'ai été un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+        },
+        items: [
+          {
+            date: '2016',
+            companyName: { fr: 'Sainte Famille, Mahamasina, Antananarivo', en: 'Sainte Famille, Mahamasina, Antananarivo' },
+            jobTitle: { fr: 'Développeur PHP', en: 'PHP Developer' },
+            desc: {
+              fr: 'Application de génération automatique des relevés académiques des étudiants.',
+              en: 'Application for automatic generation of student academic records.'
+            }
+          }, {
+            date: '2017',
+            companyName: { fr: 'BMOI Antaninarenina, Antananarivo', en: 'BMOI Antaninarenina, Antananarivo' },
+            jobTitle: { fr: 'Développeur Fullstack', en: 'Fullstack developer' },
+            desc: {
+              fr: 'Logiciel d&quot;automatisation de tâches au niveau du département parc automobile.',
+              en: 'Software for task automation at the fleet department.'
+            }
+          },
+          {
+            date: '2018',
+            companyName: { fr: 'ONG HABAKA Tsimbazaza, Antananarivo', en: 'ONG HABAKA Tsimbazaza, Antananarivo' },
+            jobTitle: { fr: 'Développeur PHP', en: 'PHP developer' },
+            desc: {
+              fr: 'Système de vérification des entrées et sorties des membres au Fablab.',
+              en: 'Entry and exit verification system for Fablab members.'
+            }
+          },
+          {
+            date: '2021',
+            companyName: { fr: 'Bocasay Madagascar', en: 'Bocasay Madagascar' },
+            jobTitle: { fr: 'Développeur JavaScript', en: 'JavaScript developer' },
+            desc: {
+              fr: 'Plateforme française de cours vidéo en ligne.',
+              en: 'French online video course platform.'
+            }
+          }, {}, {}
+        ],
+      },
+      
+
+      //PORTFOLIO CONTENT
       // filter type for items in portfolio section
       worksFilter: 'all',
 
-      // list of portfolio items to loop through it
+      myWorks:{
+        title: {en: 'my works', fr: 'Mes Travaux'},
+        subtitle1: {
+          en: `See My Works Which`,
+          fr: `Ici se trouve mes travaux qui`,
+        },
+        subtitle2:{
+          en: 'Will Amaze You!', fr: 'vous étonnera! '
+        },
+        text:{
+          en: `We develop the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.`,
+          fr: `Nous développons le meilleur site Web de qualité qui sert à long terme. Une interface bien documentée, propre, simple et élégante aide tous les clients non techniques.`
+        },
+        loadMore: {
+          en: 'Load more works',
+          fr: 'Charger plus de travaux'
+        }
+      },
+
       allPortfolioItems: [
         {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-1.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'html', name: 'HTML' }
+          category: { slug: 'desktop', name: 'Desktop' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-2.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'angular', name: 'Angular' }
+          category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-3.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'vue', name: 'Vue' }
+          category: { slug: 'mobile', name: 'Mobile' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-4.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'html', name: 'HTML' }
+          category: { slug: 'ui/ux', name: 'UI/UX' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-5.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'angular', name: 'Angular' }
+          category: { slug: 'desktop', name: 'Desktop' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-6.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'vue', name: 'Vue' }
+          category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-7.png',
           title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
           desc: { en: 'April 2021', ar: 'أبريل 2021' },
-          category: { slug: 'html', name: 'HTML' }
+          category: { slug: 'mobile', name: 'Mobile' }
         }
       ].reverse(),
 
@@ -286,7 +357,22 @@ const app = Vue.createApp({
       // viewed portfolio items
       portfolioItems: [],
 
-      // list of testimonials items to loop through it
+
+      //TESTIMONIALS CONTENT
+      testimonials: {
+        title: {
+          en: 'testimonials',
+          fr: 'témoignages'
+        },
+        subtitle1: {
+          en: 'Check What\'s My Clients',
+          fr: 'Voyez ce que mes clients disent de moi'
+        },
+        subtitle2: {
+          en: 'Say About Me',
+          fr: 'disent de moi'
+        },
+      },
       testimonialsItems: [
         {
           imgUrl: 'assets/images/testimonials/testimonials-1.jpg',
@@ -336,113 +422,22 @@ const app = Vue.createApp({
           },
           quoteAuthor: { en: 'Reyna Hammes', ar: 'أمير داوود' },
           jobTitle: { en: 'Motion Graphic Animator', ar: 'مصمم موشن جرافيك' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-7.jpg',
-          quoteContent: {
-            en: 'Muhammad was a real pleasure to work with and we look forward to working with him again. He’s definitely the kind of developer you can trust with a project from start to finish.',
-            ar: 'أنا سعيد حقًا بالعمل مع محمد وأتطلع إلى العمل معه مرة أخرى قريبا. هو بالتأكيد من المطورين الذي يمكنك الوثوق بهم للعمل على مشروعك من البداية إلى النهاية.'
-          },
-          quoteAuthor: { en: 'Jovan Parisian', ar: 'منصور السقاط' },
-          jobTitle: { en: 'Motion Graphic Animator', ar: 'مصمم موشن جرافيك' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-8.jpg',
-          quoteContent: {
-            en: 'I know I can count on your service if I need my project done fast and with the best possible result. I am a regular customer and hope to continue our work!',
-            ar: 'يمكنني الاعتماد على خدمات محمد دائمًا وخاصة إذا كنت بحاجة إلى إنجاز مشروعي في أقل وقت وبأفضل نتيجة ممكنة. أنا عميل منتظم لديه وآمل أن نواصل عملنا معا دائمًا.'
-          },
-          quoteAuthor: { en: 'Pasquale Deckow', ar: 'عطا بن عاشور' },
-          jobTitle: { en: 'Art Director', ar: 'آرت دايركتور' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-9.jpg',
-          quoteContent: {
-            en: 'Nafie worked on a handful of projects for us and has always exceeded our expectations. Nafie team is dedicated, talented and a delight to work with.',
-            ar: 'عمل محمد في عدد كبير من المشاريع لأجلنا وكان دائمًا يفوق توقعاتنا. مطور متخصص وموهوب ونسعد دائمًا بالعمل معه.'
-          },
-          quoteAuthor: { en: 'Rosa Ferry', ar: 'نافع حاتم' },
-          jobTitle: { en: 'Sales Manager', ar: 'مدير مبيعات' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-10.jpg',
-          quoteContent: {
-            en: 'Nafie team is very professional, always delivers high quality results, and is always there to help. Look forward to working with Nafie in other projects.',
-            ar: 'محمد مطور محترف للغاية يقدم دائمًا نتائج عالية الجودة ، وهو دائمًا موجود للمساعدة. نتطلع إلى العمل معه في مشاريع أخرى.'
-          },
-          quoteAuthor: { en: 'Keshaun Robel', ar: 'صدقي الطويل' },
-          jobTitle: { en: 'CEO, Designer', ar: 'أخصائي SEO' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-11.jpg',
-          quoteContent: {
-            en: 'Excellent Team to work with. Always positive to find the most appropriate solution. Nafie is one of the professional web development agency that provides awesome services.',
-            ar: 'فريق ممتاز للعمل معه. إيجابي دائمًا للعثور على الحل الأنسب. هم إحدى شركات تطوير الويب المحترفة التي تقدم خدمات رائعة.'
-          },
-          quoteAuthor: { en: 'Casper Paucek', ar: 'حسان ادريس' },
-          jobTitle: { en: 'Project Manager', ar: 'مدير المشاريع' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-12.jpg',
-          quoteContent: {
-            en: 'Nafie simply provides amazing web development service. Their team is extremely professional and the easiest to meet I have ever worked with. I would recommend Nafie to anyone.',
-            ar: 'محمد يقدم خدمات مذهلة في تطوير الويب، ولديه فريق محترف يجعل التعامل معهم مطمئن للغاية. أوصي بفريقهم للجميع.'
-          },
-          quoteAuthor: { en: 'Archibald Fadel', ar: 'مجد الكافي' },
-          jobTitle: { en: 'Photographer', ar: 'مصور فوتوغرافي' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-13.jpg',
-          quoteContent: {
-            en: 'Nafie simply provides amazing web development service. Their team is extremely professional and the easiest to meet I have ever worked with. I would recommend Nafie to anyone.',
-            ar: 'محمد يقدم خدمات مذهلة في تطوير الويب، ولديه فريق محترف يجعل التعامل معهم مطمئن للغاية. أوصي بفريقهم للجميع.'
-          },
-          quoteAuthor: { en: 'Tabitha Denesik', ar: 'آسر بنسلامة' },
-          jobTitle: { en: 'Photographer', ar: 'مصور فوتوغرافي' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-14.jpg',
-          quoteContent: {
-            en: 'Excellent Team to work with. Always positive to find the most appropriate solution. Nafie is one of the professional web development agency that provides awesome services.',
-            ar: 'فريق ممتاز للعمل معه. إيجابي دائمًا للعثور على الحل الأنسب. هم إحدى شركات تطوير الويب المحترفة التي تقدم خدمات رائعة.'
-          },
-          quoteAuthor: { en: 'Javon Bogan', ar: 'صهيب الشريف' },
-          jobTitle: { en: 'Project Manager', ar: 'مدير المشاريع' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-15.jpg',
-          quoteContent: {
-            en: 'Nafie team is very professional, always delivers high quality results, and is always there to help. Look forward to working with Nafie in other projects.',
-            ar: 'محمد مطور محترف للغاية يقدم دائمًا نتائج عالية الجودة ، وهو دائمًا موجود للمساعدة. نتطلع إلى العمل معه في مشاريع أخرى.'
-          },
-          quoteAuthor: { en: 'Duncan Kemmer', ar: 'سيد كرم' },
-          jobTitle: { en: 'CEO, Designer', ar: 'أخصائي SEO' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-16.jpg',
-          quoteContent: {
-            en: 'Nafie worked on a handful of projects for us and has always exceeded our expectations. Nafie team is dedicated, talented and a delight to work with.',
-            ar: 'عمل محمد في عدد كبير من المشاريع لأجلنا وكان دائمًا يفوق توقعاتنا. مطور متخصص وموهوب ونسعد دائمًا بالعمل معه.'
-          },
-          quoteAuthor: { en: 'Coy Johns', ar: 'هيثم الشريف' },
-          jobTitle: { en: 'Sales Manager', ar: 'مدير مبيعات' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-17.jpg',
-          quoteContent: {
-            en: 'I know I can count on your service if I need my project done fast and with the best possible result. I am a regular customer and hope to continue our work!',
-            ar: 'يمكنني الاعتماد على خدمات محمد دائمًا وخاصة إذا كنت بحاجة إلى إنجاز مشروعي في أقل وقت وبأفضل نتيجة ممكنة. أنا عميل منتظم لديه وآمل أن نواصل عملنا معا دائمًا.'
-          },
-          quoteAuthor: { en: 'Murphy Roberts', ar: 'إسلام مصطفى' },
-          jobTitle: { en: 'Art Director', ar: 'آرت دايركتور' }
-        }, {
-          imgUrl: 'assets/images/testimonials/testimonials-18.jpg',
-          quoteContent: {
-            en: 'Muhammad was a real pleasure to work with and we look forward to working with him again. He’s definitely the kind of developer you can trust with a project from start to finish.',
-            ar: 'أنا سعيد حقًا بالعمل مع محمد وأتطلع إلى العمل معه مرة أخرى قريبا. هو بالتأكيد من المطورين الذي يمكنك الوثوق بهم للعمل على مشروعك من البداية إلى النهاية.'
-          },
-          quoteAuthor: { en: 'Dimitri Lockman', ar: 'وسيم السقا' },
-          jobTitle: { en: 'Motion Graphic Animator', ar: 'مصمم موشن جرافيك' }
-        }
+        }, 
       ]
     }
   },
+
+
   created() {
     // get a theme to use
     this.getAppTheme();
 
     // get portfolio items
     this.getPortfolioItems();
+
   },
+
+
   mounted() {
     if (window.innerWidth >= 992) {
       // initialize circle cursor
@@ -473,7 +468,10 @@ const app = Vue.createApp({
       });
     });
   },
+
+
   methods: {
+
     // initialize circle cursor
     initCircleCursor() {
       const app = this.$refs.appRef;
@@ -532,6 +530,15 @@ const app = Vue.createApp({
 
       // save the new theme in the localStorage
       localStorage.setItem('nafieSavedTheme', this.savedTheme);
+    },
+
+    switchLanguage(){
+      this.language = this.language === 'english' ? 'french' : 'english';
+      console.log(this.language, this.getLanguageCode());
+    },
+
+    getLanguageCode(){
+      return this.language == 'english' ? 'en' : 'fr';
     },
 
     // toggle nav menu
@@ -919,12 +926,12 @@ const app = Vue.createApp({
 
     // split education items into chunks of 3 items
     educationChunks() {
-      return [...Array(Math.ceil(this.educationItems.length / 3))].map(() => this.educationItems.splice(0, 3));
+      return [...Array(Math.ceil(this.education.items.length / 3))].map(() => this.education.items.splice(0, 3));
     },
 
     // split experience items into chunks of 3 items
     experienceChunks() {
-      return [...Array(Math.ceil(this.experienceItems.length / 3))].map(() => this.experienceItems.splice(0, 3));
+      return [...Array(Math.ceil(this.experience.items.length / 3))].map(() => this.experience.items.splice(0, 3));
     },
 
     // get the total years of copyright
@@ -958,5 +965,7 @@ const app = Vue.createApp({
       }
     }
   }
+
 });
+
 app.mount('#app');

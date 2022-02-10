@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Stéphan develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.">
-    <meta name="keywords" content="portfolio, agency, business, clean, company, corporate, creative, gallery, rtl, modern, photography, vue, vuejs, responsive, sass">
+    <meta name="keywords" content="portfolio, Stéphan Christian, Stéphan, Christian, business, clean, creative, gallery, modern, desktop, web, mobile, developer, ui, ux, designer, vue, vuejs, flutter, android, ios">
 
     <!-- title of the browser tab -->
     <title>Stéphan - Portfolio</title>
@@ -63,7 +63,7 @@
               <ul class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
-                    {{ link.title.en }}
+                    {{ link.title[getLanguageCode()] }}
                   </a>
                 </li>
               </ul>
@@ -117,20 +117,29 @@
             <ul class="options-icons">
 
               <!-- lang switcher button -->
-              <li class="lang-switcher">
-                <a href="fr-index.html" title="switch to french language">
-                  <b>FR</b>
-                </a>
+              <li class="lang-switcher" >
+                <button 
+                  @click="switchLanguage('french')" 
+                  aria-label="Switching Language" 
+                  title="Switch Language">
+                  <strong>
+                    {{getLanguageCode().toUpperCase() === 'EN' ? 'FR' : 'EN'}}
+                  </strong>
+                </button>
               </li>
 
               <!-- theme switcher button -->
               <li class="theme-switcher">
-                <button :class="savedTheme" title="Change Mode" @click="changeAppTheme"></button>
+                <button 
+                  :class="savedTheme" 
+                  title="Change Mode" 
+                  @click="changeAppTheme"></button>
               </li>
 
               <!-- hamburger button -->
               <li class="hamburger-btn" :class="{'open': isNavMenuOpen}">
-                <button @click="toggleNavMenu"
+                <button 
+                  @click="toggleNavMenu"
                   title="Toggle Side Menu"
                   aria-label="Toggle Side Menu"
                   ref="navMenuToggleBtn">
@@ -148,17 +157,17 @@
         <div id="hero" class="hero-section" ref="heroSection">
           <div class="hero-img">
             <div class="layer" v-clone>
-              <img src="assets/images/hero-img-1.png" alt="User Name">
+              <img src="assets/images/hero-img-1.png" alt="A photo of me">
             </div>
           </div>
 
           <div class="hero-text">
             <h2>
-              Hi, I'm Stéphan Christian
+              {{ staticTexts.presentation.greeting[getLanguageCode()] }}
               <br>
-              UI Designer & Application Developer
+              {{ staticTexts.presentation.currentJobTitle[getLanguageCode()] }}
             </h2>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <a href="#contact" class="btn">{{ staticTexts.getInTouch[getLanguageCode()] }}</a>
           </div>
 
           <div class="social">
@@ -182,7 +191,7 @@
           </div>
 
           <div class="scroll-down">
-            <a href="#about" title="Scroll Down">Scroll</a>
+            <a href="#about" title="Scroll Down">{{ staticTexts.scroll[getLanguageCode()] }}</a>
           </div>
         </div>
         <!-- end of hero section -->
@@ -198,8 +207,8 @@
                       <img src="assets/images/icons/emblem.png" alt="Years of Experience">
                     </div>
                     <div class="text">
-                      <h3>{{ experienceYears }}+</h3>
-                      <strong>Years of Experience</strong>
+                      <h3>{{ experienceYears }}</h3>
+                      <strong>{{ staticTexts.experienceYearLabel[getLanguageCode()] }}</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -211,7 +220,7 @@
                     </div>
                     <div class="text">
                       <h3>230+</h3>
-                      <strong>Completed Projects</strong>
+                      <strong>{{ staticTexts.completedProjectLabel[getLanguageCode()] }}</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -223,7 +232,7 @@
                     </div>
                     <div class="text">
                       <h3>95+</h3>
-                      <strong>Happy Clients</strong>
+                      <strong>{{ staticTexts.happyClientLabel[getLanguageCode()] }}s</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -249,17 +258,15 @@
               <!-- text box -->
               <div class="about-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">about me</span>
+                  <span class="subtitle">{{aboutMe.title[getLanguageCode()]}}</span>
                   <h2>
-                    Need a Creative Product?
+                    {{ aboutMe.subtitle1[getLanguageCode()] }}
                     <br>
-                    I can Help You!
+                    {{ aboutMe.subtitle2[getLanguageCode()] }}
                   </h2>
-                  <p>
-                    Hi! I’m Stéphan Josué Christian, and I’m a developer who has passion for building clean web applications with intuitive functionality. I enjoy the process of turning ideas into reality using creative solutions. I’m always curious about learning new skills, tools, and concepts. In addition to working on various solo full stack projects, I have worked with creative teams, which involves daily stand-ups and communications, source control, and project management.
-                  </p>
+                  <p>{{ aboutMe.text[getLanguageCode()] }}</p>
                   <div class="btns-container">
-                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#contact" class="btn btn-info">Hire Me</a>
                     <a download href="#" class="btn btn-outline-light">Download CV</a>
                   </div>
                 </div>
@@ -277,20 +284,20 @@
               <!-- text box -->
               <div class="skills-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">my skills</span>
+                  <span class="subtitle">{{mySkills.title[getLanguageCode()]}}</span>
                   <h2>
-                    What My Programming
+                    {{mySkills.subtitle1[getLanguageCode()]}}
                     <br>
-                    Skills Included?
+                    {{mySkills.subtitle2[getLanguageCode()]}}
                   </h2>
                   <p>
-                    I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies.
+                    {{mySkills.text[getLanguageCode()]}}
                   </p>
                   <div class="toggle-switch-btn">
                     <input id="skills-list" type="radio" name="skillstype" value="skills" v-model="isSkillsOrTools" checked>
-                    <label for="skills-list" class="link-hover">Skills</label>
+                    <label for="skills-list" class="link-hover">{{mySkills.skillsLabel[getLanguageCode()]}}</label>
                     <input id="tools-list" type="radio" name="skillstype" value="tools" v-model="isSkillsOrTools">
-                    <label for="tools-list" class="link-hover">Tools</label>
+                    <label for="tools-list" class="link-hover">{{mySkills.toolsLabel[getLanguageCode()]}}</label>
                     <span class="switcher-toggle"></span>
                   </div>
                 </div>
@@ -302,7 +309,7 @@
                 <!-- skills list -->
                 <ul v-staggerdelay="50" v-show="isSkillsOrTools === 'skills'">
                   <li tabindex="0"
-                    v-for="skill in skillsItems"
+                    v-for="skill in mySkills.skillsItems"
                     :key="skill.title"
                     v-tooltip="{text: skill.title, dir: 'top'}">
                     <div class="skill-icon">
@@ -314,7 +321,7 @@
                 <!-- tools list -->
                 <ul v-staggerdelay="50" v-show="isSkillsOrTools === 'tools'">
                   <li tabindex="0"
-                    v-for="tool in toolsItems"
+                    v-for="tool in mySkills.toolsItems"
                     :key="tool.title"
                     v-tooltip="{text: tool.title, dir: 'top'}">
                     <div class="skill-icon">
@@ -336,12 +343,12 @@
               <!-- text box -->
               <div class="experience-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">education</span> 
+                  <span class="subtitle">{{education.title[getLanguageCode()]}}</span> 
                   <h2>
-                    Education
+                    {{education.subtitle[getLanguageCode()]}}
                   </h2>
                   <p>
-                    I have been developing sites and apps for {{ experienceYears }} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.
+                    {{education.text[getLanguageCode()]}}
                   </p>
                 </div>
               </div>
@@ -357,9 +364,9 @@
                       <template v-if="Object.keys(item).length > 0">
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.schoolName.en }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.degreeTitle.en }}</h5>
-                          <p>{{ item.desc.en }}</p>
+                          <h4 class="ultimate-tooltip-title">{{ item.schoolName[getLanguageCode()] }}</h4>
+                          <h5 class="ultimate-tooltip-subtitle">{{ item.degreeTitle[getLanguageCode()] }}</h5>
+                          <p>{{ item.desc[getLanguageCode()] }}</p>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
                       </template>
@@ -389,9 +396,9 @@
                       <template v-if="Object.keys(item).length > 0">
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.companyName.en }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.en }}</h5>
-                          <p>{{ item.desc.en }}</p>
+                          <h4 class="ultimate-tooltip-title">{{ item.companyName[getLanguageCode()] }}</h4>
+                          <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle[getLanguageCode()] }}</h5>
+                          <p>{{ item.desc[getLanguageCode()] }}</p>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
                       </template>
@@ -403,14 +410,14 @@
               <!-- text box -->
               <div class="experience-text col-lg-6">
                 <div class="text-box">
-                  <span class="subtitle">experience</span>
+                  <span class="subtitle">{{experience.title[getLanguageCode()]}}</span>
                   <h2>
-                    {{ experienceYears }}+ Years of Experience
+                    {{experience.subtitle1[getLanguageCode()]}}
                     <br>
-                    With Many Awards!
+                    {{experience.subtitle2[getLanguageCode()]}}
                   </h2>
                   <p>
-                    I have been developing sites and apps for {{ experienceYears }} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.
+                    {{experience.text[getLanguageCode()]}}
                   </p>
                 </div>
               </div>
@@ -429,17 +436,17 @@
                 <li>
                   <!-- text box -->
                   <div class="text-box">
-                    <span class="subtitle">my works</span>
+                    <span class="subtitle">{{ myWorks.title[getLanguageCode()] }}</span>
                     <h2>
-                      See My Works Which
+                      {{ myWorks.subtitle1[getLanguageCode()] }}
                       <br>
-                      Will Amaze You!
+                      {{ myWorks.subtitle2[getLanguageCode()] }}
                     </h2>
                     <p>
-                      We develop the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.
+                      {{ myWorks.text[getLanguageCode()] }}
                     </p>
                     <ul class="works-filter">
-                      <li v-for="filter in ['All', 'HTML', 'Angular', 'Vue']" :key="filter">
+                      <li v-for="filter in ['All', 'Desktop', 'Mobile', 'Web', 'UI/UX']" :key="filter">
                         <button :class="{'active': worksFilter === filter.toLowerCase()}"
                           @click="worksFilter = filter.toLowerCase()">
                           {{ filter }}
@@ -452,22 +459,22 @@
                 <!-- start items list -->
                 <li class="portfolio-item"
                   v-for="work in portfolioItems"
-                  :key="work.title.en"
+                  :key="work.title[getLanguageCode()]"
                   v-show="worksFilter === 'all' || worksFilter === work.category.slug">
                   <a :href="work.url" target="_blank" rel="noopener">
                     <div class="item-img">
-                      <img :src="work.imgUrl" :alt="work.title.en">
+                      <img :src="work.imgUrl" :alt="work.title[getLanguageCode()]">
                     </div>
                     <div class="item-details">
-                      <h3 class="title">{{ work.title.en }}</h3>
-                      <div class="desc">{{ work.desc.en }}</div>
+                      <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
+                      <div class="desc">{{ work.desc[getLanguageCode()] }}</div>
                     </div>
                   </a>
                 </li>
                 <!-- end items list -->
 
                 <li>
-                  <button class="more" @click="getPortfolioItems">Load more works</button>
+                  <button class="more" @click="getPortfolioItems">{{ myWorks.loadMore[getLanguageCode()] }}</button>
                 </li>
               </ul>
             </div>
@@ -479,11 +486,11 @@
         <div id="testimonials" class="testimonials-section section" tabindex="-1">
           <div class="container">
             <div class="section-title">
-              <span class="subtitle">testimonials</span>
+              <span class="subtitle">{{testimonials.title[getLanguageCode()]}}</span>
               <h2>
-                Check What's My Clients
+                {{testimonials.subtitle1[getLanguageCode()]}}
                 <br>
-                Say About Me
+                {{testimonials.subtitle2[getLanguageCode()]}}
               </h2>
             </div>
           </div>
@@ -493,15 +500,15 @@
               <li class="has-ultimate-tooltip"
                 tabindex="0"
                 v-for="item in testimonialsItems"
-                :key="item.quoteAuthor.en">
+                :key="item.quoteAuthor[getLanguageCode()]">
                 <div class="testimonials-item">
                   <div class="testimonial-author-img">
-                    <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'" :alt="item.quoteAuthor.en">
+                    <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'" :alt="item.quoteAuthor[getLanguageCode()]">
                   </div>
                   <div class="ultimate-tooltip">
-                    <p>{{ item.quoteContent.en }}</p>
-                    <h4 class="ultimate-tooltip-title">{{ item.quoteAuthor.en }}</h4>
-                    <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle.en }}</h5>
+                    <p>{{ item.quoteContent[getLanguageCode()] }}</p>
+                    <h4 class="ultimate-tooltip-title">{{ item.quoteAuthor[getLanguageCode()] }}</h4>
+                    <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle[getLanguageCode()] }}</h5>
                   </div>
                   <div class="ultimate-tooltip-arrow"></div>
                 </div>
