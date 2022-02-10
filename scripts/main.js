@@ -296,8 +296,8 @@ const app = Vue.createApp({
           en: 'Will Amaze You!', fr: 'vous étonnera! '
         },
         text:{
-          en: `We develop the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.`,
-          fr: `Nous développons le meilleur site Web de qualité qui sert à long terme. Une interface bien documentée, propre, simple et élégante aide tous les clients non techniques.`
+          en: `I develop good quality application and website that serve for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.`,
+          fr: `Je développe une application et un site Web de qualité qui sert à long terme. Une interface bien documentée, propre, simple et élégante aide tous les clients non techniques.`
         },
         loadMore: {
           en: 'Load more works',
