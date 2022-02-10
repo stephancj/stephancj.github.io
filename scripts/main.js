@@ -185,8 +185,8 @@ const app = Vue.createApp({
         title: {en: 'Education', fr: 'Education',},
         subtitle: {en: 'Education', fr: 'Education'},
         text: {
-          en: `I have been developing sites and apps for ${this.experienceNumber} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
-          fr: `Je développe des sites et des applications depuis ${this.experienceNumber} ans et je connais avec certitude les principales tendances et orientations du design moderne, j'ai été un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+          en: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat neque in quam tincidunt elementum. In viverra pulvinar lectus eget vulputate. Vivamus nec dolor cursus, porta dui a, fringilla turpis. In cursus malesuada libero, at vestibulum nulla finibus ut. Etiam venenatis, nisi in ullamcorper sodales, eros diam porttitor urna, vitae malesuada nibh ante et libero.`,
+          fr: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat neque in quam tincidunt elementum. In viverra pulvinar lectus eget vulputate. Vivamus nec dolor cursus, porta dui a, fringilla turpis. In cursus malesuada libero, at vestibulum nulla finibus ut. Etiam venenatis, nisi in ullamcorper sodales, eros diam porttitor urna, vitae malesuada nibh ante et libero.`
         },
         items: [
           {
