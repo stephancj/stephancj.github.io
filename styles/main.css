@@ -3422,12 +3422,12 @@ html[dir="rtl"] .notifications-container .notify-leave-active {
     width: 100%;
   }
   .light_theme .hero-section .hero-img .layer:first-of-type:before {
-    background: -webkit-gradient(linear, left top, right top, from(#0077b6), to(#eb3505));
-    background: linear-gradient(to right, #0077b6 0%, #eb3505 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#0077b6), to(#b8e3ff));
+    background: linear-gradient(to right, #0077b6 0%, #b8e3ff 100%);
   }
   .dark_theme .hero-section .hero-img .layer:first-of-type:before {
-    background: -webkit-gradient(linear, left top, right top, from(#0077b6), to(#eb3505));
-    background: linear-gradient(to right, #0077b6 0%, #eb3505 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#0077b6), to(#b8e3ff));
+    background: linear-gradient(to right, #0077b6 0%, #b8e3ff 100%);
   }
 }
 
@@ -4114,11 +4114,11 @@ html[dir="rtl"] .about-section .section-content .about-img .layer:first-of-type:
 }
 
 .light_theme .about-section .section-content .about-img .layer:first-of-type:before {
-  background: linear-gradient(150deg, #0077b6 0%, #eb3505 100%);
+  background: linear-gradient(150deg, #0077b6 0%, #b8e3ff 100%);
 }
 
 .dark_theme .about-section .section-content .about-img .layer:first-of-type:before {
-  background: linear-gradient(150deg, #0077b6 0%, #eb3505 100%);
+  background: linear-gradient(150deg, #0077b6 0%, #b8e3ff 100%);
 }
 
 .about-section .section-content .about-img .layer:first-of-type img {
