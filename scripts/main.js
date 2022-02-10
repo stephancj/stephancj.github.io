@@ -419,7 +419,37 @@ const app = Vue.createApp({
           quoteAuthor: { en: 'John Doe', fr: 'John Doe' },
           jobTitle: { en: 'Photographer', fr: 'Photographer' }
         },
-      ]
+      ],
+
+      contact: {
+        title: {en:'Contact', fr:'Contact'},
+        subtitle1: {en:'Have You Any Project?', fr:'Vous avez un projet?'},
+        subtitle2: {en:'Please Drop a Message', fr:'Veuillez laisser un message'},
+        text: {
+          en: 'Get in touch and let me know how I can help. Fill out the form and I’ll be in touch as soon as possible.', 
+          fr:'Contactez-moi et dites-moi comment je peux vous aider. Remplissez le formulaire et je vous contacterai dès que possible.'
+        },
+        addressLabel: {en:'Address', fr:'Adresse'},
+        address: '', 
+        phoneLabel: {en:'Phone', fr:'Téléphone'},
+        phone1: '(+261) 34 20 905 72',
+        phone2: '(+261) 32 84 688 57',
+        emailLabel: {en:'Email', fr:'Email'},
+        email1: 'christianstephanjosue@gmail.com',
+        email2: 'schristian@bocasay.com',
+
+        form: {
+          customerNameLabel: {en: 'Name', fr:'Nom',},
+          customerNamePlaceholder: {en: 'e.g. Jean Rakoto', fr:'ex. Jean Rakoto',},
+          customerEmailLabel: {en: 'Email', fr:'Email',},
+          customerEmailPlaceholder: {en: 'e.g. jean.rakoto@gmail.com', fr:'ex. jean.rakoto@gmail.com',},
+          customerPhoneLabel: {en: 'Phone', fr:'Téléphone',},
+          customerPhonePlaceholder: {en: 'Phone Number', fr:'Numéro de télephone',},
+          messageLabel: {en: 'Message', fr:'Message',},
+          messagePlaceholder: {en: 'Write message...', fr:'Ecrire un message...',},
+          optionalLabel: {en: 'Optional', fr:'Optionelle',},
+        }
+      },
     }
   },
 
