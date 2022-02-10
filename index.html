@@ -75,24 +75,24 @@
                   <!-- about us -->
                   <div class="about-us">
                     <p>
-                      I love making things simple, intuitive and expertly crafted!
+                      {{aboutMe.quoteDescription[getLanguageCode()]}}
                     </p>
                     <h4 class="block-title">
-                      Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!
+                      {{aboutMe.quoteText[getLanguageCode()]}}
                     </h4>
                   </div>
 
                   <!-- contact info -->
                   <ul class="contact-info row">
                     <li class="col-lg-4">
-                      <h4 class="block-title">Email</h4>
+                      <h4 class="block-title">{{contact.emailLabel[getLanguageCode()]}}</h4>
                       <ul>
                         <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
                         <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Address</h4>
+                      <h4 class="block-title">{{contact.addressLabel[getLanguageCode()]}}</h4>
                       <ul>
                         <li>
                           101 Antananarivo, Ankadifotsy
@@ -102,7 +102,7 @@
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Phone</h4>
+                      <h4 class="block-title">{{contact.phoneLabel[getLanguageCode()]}}</h4>
                       <ul>
                         <li><a href="tel:+261342090572">(+261) 34 20 905 72</a></li>
                         <li><a href="tel:+261328468857">(+261) 32 84 688 57</a></li>

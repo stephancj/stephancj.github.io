@@ -80,6 +80,14 @@ const app = Vue.createApp({
         text: {en:"Hi! I’m Stéphan Josué Christian, and I’m a developer who has passion for building clean web applications with intuitive functionality. I enjoy the process of turning ideas into reality using creative solutions. I’m always curious about learning new skills, tools, and concepts. In addition to working on various solo full stack projects, I have worked with creative teams, which involves daily stand-ups and communications, source control, and project management."
               ,fr:"Salut! Je m'appelle Stéphan Josué Christian et je suis un développeur passionné par la création d'applications propres avec des fonctionnalités intuitives. J'aime le processus de transformer des idées en réalité en utilisant des solutions créatives. Je suis toujours curieux d'apprendre de nouvelles compétences, outils et concepts. En plus de travailler sur divers projets solo full stack, j'ai travaillé avec des équipes créatives, ce qui implique des stand-ups et des communications quotidiennes, le contrôle de source et la gestion de projet."
         },
+        quoteDescription: {
+          en: 'I love making things simple, intuitive and expertly crafted!', 
+          fr: 'J\'aime rendre les choses simples, intuitives et conçues par des expertise !'
+        },
+        quoteText: {
+          en: 'Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!', 
+          fr: 'Le produit est l\'essence vitale de ce que je fais, un produit vraiment génial est né d\'une planification et d\'un processus méticuleux. C\'est là que je me suis spécialisé !'
+        },
       },
 
       //SKILLS CONTENT
