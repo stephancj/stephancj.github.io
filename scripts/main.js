@@ -195,8 +195,8 @@ const app = Vue.createApp({
         title: {en: 'Education', fr: 'Education',},
         subtitle: {en: 'Education', fr: 'Education'},
         text: {
-          en: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat neque in quam tincidunt elementum. In viverra pulvinar lectus eget vulputate. Vivamus nec dolor cursus, porta dui a, fringilla turpis. In cursus malesuada libero, at vestibulum nulla finibus ut. Etiam venenatis, nisi in ullamcorper sodales, eros diam porttitor urna, vitae malesuada nibh ante et libero.`,
-          fr: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat neque in quam tincidunt elementum. In viverra pulvinar lectus eget vulputate. Vivamus nec dolor cursus, porta dui a, fringilla turpis. In cursus malesuada libero, at vestibulum nulla finibus ut. Etiam venenatis, nisi in ullamcorper sodales, eros diam porttitor urna, vitae malesuada nibh ante et libero.`
+          en: 'I have been studying in multiple universities in Madagascar, and also have gotten a scholarship in one of the best university in China. I have chosen the Information Technology domain. So, I will always need to learn new things to be up to date on latest news and shine among others. For that, I also plan to take multiple master degree in different majors',
+          fr: `J'ai étudié dans plusieurs universités à Madagascar et j'ai également obtenu une bourse d'excellence dans l'une des meilleures universités de Chine. Puisque j'ai choisi le domaine des technologies de l'information. Alors, j'aurai toujours besoin d'apprendre de nouvelles choses pour être au courant des dernières nouveautés et briller parmis les autres. Pour cela, je prévois également de prendre plusieurs masters dans différentes majeures.`
         },
         items: [
           {
