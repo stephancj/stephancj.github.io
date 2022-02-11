@@ -63,8 +63,8 @@ const app = Vue.createApp({
 
       staticTexts : {
         presentation: {
-          greeting: {en: 'Hi, I\'m Stéphan Christian', fr: 'Salut, je suis Stéphan Christian'},
-          currentJobTitle: {en: 'Application Developer & UI/UX designer', fr: 'Développeur D\'applications & Designeur UI/UX'}
+          greeting: {en: 'Hi, I\'m Stéphan', fr: 'Salut, je suis Stéphan'},
+          currentJobTitle: {en: 'Application Developer & Designer', fr: 'Designeur & Développeur D\'applications'}
         },
         getInTouch: {en: 'Get In Touch', fr: 'Entrer En Contact'},
         scroll: {en: 'Scroll', fr: 'Défiler'},
@@ -242,15 +242,15 @@ const app = Vue.createApp({
       experience: {
         title: {en: 'Experience', fr: 'Expérience'},
         subtitle1: {
-          en: `${this.experienceNumber} Years of Experience`,
-          fr: `${this.experienceNumber} Années d'Experience`,
+          en: `1 Year of enterprise experience`,
+          fr: `1 Année d'Experience en entreprise`,
         },
         subtitle2:{
-          en: 'With Many Awards!', fr: 'Avec de nombreux prix !'
+          en: 'With much more on personal projects!', fr: 'Avec beaucoup plus sur des projets personnels!'
         },
         text:{
-          en: `I have been developing sites and apps for ${this.experienceNumber} years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
-          fr: `Je développe des sites et des applications depuis ${this.experienceNumber} ans et je connais avec certitude les principales tendances et orientations du design moderne, j'ai été un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+          en: `I have been developing sites and apps for 1 year, and I know for sure the main trends and directions of modern design, I\'m have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
+          fr: `Je développe des sites et des applications depuis une année et je connais avec certitude les principales tendances et orientations du design moderne, je suis un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
         },
         items: [
           {
@@ -300,7 +300,7 @@ const app = Vue.createApp({
         title: {en: 'my works', fr: 'Mes Travaux'},
         subtitle1: {
           en: `See My Works Which`,
-          fr: `Ici se trouve mes travaux qui`,
+          fr: `Mes travaux`,
         },
         subtitle2:{
           en: 'Will Amaze You!', fr: 'vous étonnera! '
@@ -319,44 +319,44 @@ const app = Vue.createApp({
         {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-1.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'desktop', name: 'Desktop' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-2.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-3.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'mobile', name: 'Mobile' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-4.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'ui/ux', name: 'UI/UX' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-5.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'desktop', name: 'Desktop' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-6.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-7.png',
-          title: { en: 'Lorem Ipsum Dolor', ar: 'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', ar: 'أبريل 2021' },
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
           category: { slug: 'mobile', name: 'Mobile' }
         }
       ].reverse(),
@@ -375,12 +375,12 @@ const app = Vue.createApp({
           fr: 'témoignages'
         },
         subtitle1: {
-          en: 'Check What\'s people',
-          fr: 'Voyez Ce Que Les Gens'
+          en: 'Check what\'s people',
+          fr: 'Voyez ce que les gens'
         },
         subtitle2: {
-          en: 'Say About Me',
-          fr: 'Disent De Moi'
+          en: 'say about me',
+          fr: 'disent de moi'
         },
       },
       testimonialsItems: [
