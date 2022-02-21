@@ -5169,3 +5169,73 @@ html[dir="rtl"] .contact-section .section-content .contact-form .phone-number .f
 .contact-section .section-content .contact-form .submit-btn {
   width: 100%;
 }
+
+.services-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services-card {
+  background: white;
+  box-shadow: 0 1.6rem 2.4rem rgb(0 0 0 / 25%);
+  border-radius: 0.8rem;
+  width: 20.7rem;
+  min-height: 30rem;
+  max-width: 100%;
+  padding: 1.6rem 4.3rem 2.2rem 3.5rem;
+  position: relative;
+  margin-bottom: 2.7rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.services-card:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1rem;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0.8rem 0.8rem;}
+
+  .services-card.marketing div {
+    background: rgba(136,56,180,.2);
+}
+
+.services-card.development div {
+  background: rgba(136,56,180,.2);
+}
+
+.services-card.interface div {
+  background: rgba(136,56,180,.2);
+}
+
+.services-card div {
+  width: 5.5rem;
+  height: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-radius: 50%;
+}
+
+.services-card.development:after {
+  background: transparent;
+}
+
+.services-card:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
