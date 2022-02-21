@@ -427,7 +427,11 @@
         <!-- end of experience section -->
 
         <!-- start of portfolio section -->
-        <div id="portfolio" class="portfolio-section section" tabindex="-1">
+        <div 
+          v-if="allPortfolioItems.length > 0" 
+          id="portfolio" 
+          class="portfolio-section section" 
+          tabindex="-1">
           <div class="container">
             <div class="section-content">
 
@@ -483,7 +487,11 @@
         <!-- end of portfolio section -->
 
         <!-- start of testimonials section -->
-        <div id="testimonials" class="testimonials-section section" tabindex="-1">
+        <div 
+          v-if="testimonials.isVisible == true" 
+          id="testimonials" 
+          class="testimonials-section section" 
+          tabindex="-1">
           <div class="container">
             <div class="section-title">
               <span class="subtitle">{{testimonials.title[getLanguageCode()]}}</span>

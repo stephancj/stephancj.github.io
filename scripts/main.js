@@ -297,6 +297,7 @@ const app = Vue.createApp({
       worksFilter: 'all',
 
       myWorks:{
+        isVisible: true,
         title: {en: 'my works', fr: 'Mes Travaux'},
         subtitle1: {
           en: `See My Works Which`,
@@ -316,49 +317,49 @@ const app = Vue.createApp({
       },
 
       allPortfolioItems: [
-        {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-1.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'desktop', name: 'Desktop' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-2.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'web', name: 'Web' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-3.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'mobile', name: 'Mobile' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-4.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'ui/ux', name: 'UI/UX' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-5.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'desktop', name: 'Desktop' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-6.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'web', name: 'Web' }
-        }, {
-          url: '#',
-          imgUrl: 'assets/images/portfolio/portfolio-7.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'mobile', name: 'Mobile' }
-        }
+        // {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-1.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'desktop', name: 'Desktop' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-2.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'web', name: 'Web' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-3.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'mobile', name: 'Mobile' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-4.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'ui/ux', name: 'UI/UX' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-5.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'desktop', name: 'Desktop' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-6.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'web', name: 'Web' }
+        // }, {
+        //   url: '#',
+        //   imgUrl: 'assets/images/portfolio/portfolio-7.png',
+        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
+        //   category: { slug: 'mobile', name: 'Mobile' }
+        // }
       ].reverse(),
 
       // current page of portfolio items
@@ -370,6 +371,7 @@ const app = Vue.createApp({
 
       //TESTIMONIALS CONTENT
       testimonials: {
+        isVisible: true,
         title: {
           en: 'testimonials',
           fr: 'témoignages'
