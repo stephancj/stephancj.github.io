@@ -60,8 +60,15 @@
             <nav :class="{'menu-open': isNavMenuOpen}" ref="headerNav">
 
               <!-- nav menu links -->
-              <ul class="nav-links">
+              <ul v-if="myWorks.isVisible" class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
+                  <a :href="link.url" @click="closeNavMenu">
+                    {{ link.title[getLanguageCode()] }}
+                  </a>
+                </li>
+              </ul>
+              <ul v-else class="nav-links">
+                <li v-for="link in navLinksWithoutPortfolio" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
                     {{ link.title[getLanguageCode()] }}
                   </a>
@@ -428,7 +435,7 @@
 
         <!-- start of portfolio section -->
         <div 
-          v-if="allPortfolioItems.length > 0" 
+          v-show="myWorks.isVisible" 
           id="portfolio" 
           class="portfolio-section section" 
           tabindex="-1">
@@ -488,7 +495,7 @@
 
         <!-- start of testimonials section -->
         <div 
-          v-if="testimonials.isVisible == true" 
+          v-show="testimonials.isVisible" 
           id="testimonials" 
           class="testimonials-section section" 
           tabindex="-1">

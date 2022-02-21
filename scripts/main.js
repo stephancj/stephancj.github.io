@@ -49,12 +49,34 @@ const app = Vue.createApp({
         }, {
           url: '#about',
           title: { en: 'About', fr: 'A propos' }
+        },{
+          url: '#services',
+          title: { en: 'Services', fr: 'Services' }
         }, {
           url: '#skills',
           title: { en: 'Skills', fr: 'Compétences' }
         }, {
           url: '#portfolio',
           title: { en: 'Portfolio', fr: 'Portfolio' }
+        }, {
+          url: '#contact',
+          title: { en: 'Contact', fr: 'Contact' }
+        }
+      ],
+
+      navLinksWithoutPortfolio: [
+        {
+          url: '#hero',
+          title: { en: 'Home', fr: 'Accueil' }
+        }, {
+          url: '#about',
+          title: { en: 'About', fr: 'A propos' }
+        }, {
+          url: '#services',
+          title: { en: 'Services', fr: 'Services' }
+        },{
+          url: '#skills',
+          title: { en: 'Skills', fr: 'Compétences' }
         }, {
           url: '#contact',
           title: { en: 'Contact', fr: 'Contact' }
@@ -297,7 +319,7 @@ const app = Vue.createApp({
       worksFilter: 'all',
 
       myWorks:{
-        isVisible: true,
+        isVisible: false,
         title: {en: 'my works', fr: 'Mes Travaux'},
         subtitle1: {
           en: `See My Works Which`,
@@ -317,49 +339,49 @@ const app = Vue.createApp({
       },
 
       allPortfolioItems: [
-        // {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-1.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'desktop', name: 'Desktop' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-2.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'web', name: 'Web' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-3.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'mobile', name: 'Mobile' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-4.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'ui/ux', name: 'UI/UX' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-5.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'desktop', name: 'Desktop' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-6.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'web', name: 'Web' }
-        // }, {
-        //   url: '#',
-        //   imgUrl: 'assets/images/portfolio/portfolio-7.png',
-        //   title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-        //   desc: { en: 'April 2021', fr: 'Avril 2021' },
-        //   category: { slug: 'mobile', name: 'Mobile' }
-        // }
+        {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-1.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'desktop', name: 'Desktop' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-2.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'web', name: 'Web' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-3.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'mobile', name: 'Mobile' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-4.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'ui/ux', name: 'UI/UX' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-5.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'desktop', name: 'Desktop' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-6.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'web', name: 'Web' }
+        }, {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-7.png',
+          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
+          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          category: { slug: 'mobile', name: 'Mobile' }
+        }
       ].reverse(),
 
       // current page of portfolio items
@@ -371,7 +393,7 @@ const app = Vue.createApp({
 
       //TESTIMONIALS CONTENT
       testimonials: {
-        isVisible: true,
+        isVisible: false,
         title: {
           en: 'testimonials',
           fr: 'témoignages'
@@ -516,7 +538,7 @@ const app = Vue.createApp({
       const outer = this.$refs.circleCursorOuter;
       const inner = this.$refs.circleCursorInner;
 
-      app.addEventListener('mousemove', e => {
+      app?.addEventListener('mousemove', e => {
         // make the circles follow the cursor
         outer.setAttribute('style', `visibility: visible; top: ${e.clientY}px; left: ${e.clientX}px;`);
         inner.setAttribute('style', `visibility: visible; top: ${e.clientY}px; left: ${e.clientX}px;`);
@@ -689,7 +711,7 @@ const app = Vue.createApp({
 
     // initialize VanillaTilt library in portfolio section
     initializeTilt() {
-      VanillaTilt.init(this.$refs.portfolioItems.querySelectorAll('.portfolio-item'), {
+      VanillaTilt.init(this.$refs.portfolioItems?.querySelectorAll('.portfolio-item'), {
         max: 8,
         speed: 400,
         glare: true,
@@ -716,7 +738,7 @@ const app = Vue.createApp({
         // show the message "No more works" to the user
         this.setNotify({
           className: 'danger',
-          msg: this.$refs.portfolioItems.getAttribute('data-no-more-works-msg'),
+          msg: this.$refs.portfolioItems?.getAttribute('data-no-more-works-msg'),
           time: 3000
         });
       }
