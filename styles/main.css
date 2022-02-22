@@ -5215,6 +5215,11 @@ html[dir="rtl"] .contact-section .section-content .contact-form .phone-number .f
   left: 0;
   border-radius: 0 0 0.8rem 0.8rem;}
 
+.services-card:hover{
+  margin-top: -15px;
+  margin-bottom: +60px;
+}
+
 .light_theme .services-card.marketing div {
     background: rgba(31, 84, 128, 0.186);
 }
