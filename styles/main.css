@@ -5173,11 +5173,26 @@ html[dir="rtl"] .contact-section .section-content .contact-form .phone-number .f
 .services-card-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.services-card {
+.light_theme .services-card {
   background: white;
+  box-shadow: 0 1.6rem 2.4rem rgb(0 0 0 / 25%);
+  border-radius: 0.8rem;
+  width: 20.7rem;
+  min-height: 30rem;
+  max-width: 100%;
+  padding: 1.6rem 4.3rem 2.2rem 3.5rem;
+  position: relative;
+  margin-bottom: 2.7rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.dark_theme .services-card {
+  background: #313131;
   box-shadow: 0 1.6rem 2.4rem rgb(0 0 0 / 25%);
   border-radius: 0.8rem;
   width: 20.7rem;
@@ -5200,16 +5215,28 @@ html[dir="rtl"] .contact-section .section-content .contact-form .phone-number .f
   left: 0;
   border-radius: 0 0 0.8rem 0.8rem;}
 
-  .services-card.marketing div {
-    background: rgba(136,56,180,.2);
+.light_theme .services-card.marketing div {
+    background: rgba(31, 84, 128, 0.186);
 }
 
-.services-card.development div {
-  background: rgba(136,56,180,.2);
+.light_theme .services-card.development div {
+  background: rgba(56, 110, 180, 0.2);
 }
 
-.services-card.interface div {
-  background: rgba(136,56,180,.2);
+.light_theme .services-card.interface div {
+  background: rgba(94, 56, 15, 0.2);
+}
+
+.dark_theme .services-card.marketing div {
+  background: rgba(244, 249, 253, 0.186);
+}
+
+.dark_theme .services-card.development div {
+background: rgba(151, 196, 228, 0.138);
+}
+
+.dark_theme .services-card.interface div {
+background: rgba(244, 249, 253, 0.186);
 }
 
 .services-card div {
