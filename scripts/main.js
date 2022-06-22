@@ -112,6 +112,8 @@ const app = Vue.createApp({
           en: 'Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!', 
           fr: 'Le produit est l\'essence vitale de ce que je fais, un produit vraiment génial est né d\'une planification et d\'un processus méticuleux. C\'est là que je me suis spécialisé !'
         },
+        hireMe: {en: 'Hire me', fr: 'Embauchez-moi'},
+        downloadCv: {en: 'Download CV', fr: 'Telecharger CV'},
       },
 
       //SKILLS CONTENT
@@ -264,15 +266,15 @@ const app = Vue.createApp({
       experience: {
         title: {en: 'Experience', fr: 'Expérience'},
         subtitle1: {
-          en: `1 Year of enterprise experience`,
-          fr: `1 Année d'Experience en entreprise`,
+          en: `1+ Year of enterprise experience`,
+          fr: `1+ Année d'Experience en entreprise`,
         },
         subtitle2:{
           en: 'With much more on personal projects!', fr: 'Avec beaucoup plus sur des projets personnels!'
         },
         text:{
-          en: `I have been developing sites and apps for 1 year, and I know for sure the main trends and directions of modern design, I\'m have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
-          fr: `Je développe des sites et des applications depuis une année et je connais avec certitude les principales tendances et orientations du design moderne, je suis un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+          en: `I have been developing sites and applications in enterprise for more than 1 year, and I know for sure the main trends and directions of modern design, I\'m have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
+          fr: `Je développe des sites et des applications en entreprise depuis plus d'une année et je connais avec certitude les principales tendances et orientations du design moderne, je suis un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
         },
         items: [
           {
@@ -304,10 +306,10 @@ const app = Vue.createApp({
           {
             date: '2021',
             companyName: { fr: 'Bocasay Madagascar', en: 'Bocasay Madagascar' },
-            jobTitle: { fr: 'Développeur JavaScript', en: 'JavaScript developer' },
+            jobTitle: { fr: 'Développeur Flutter|JavaScript', en: 'Flutter|JavaScript developer' },
             desc: {
-              fr: 'Plateforme française de cours vidéo en ligne.',
-              en: 'French online video course platform.'
+              fr: 'Plateforme française de cours vidéo en ligne.\nApplication mobile de partage et suivi de fichiers',
+              en: 'French online video course platform.\n Mobile application for file sharing'
             }
           }, {}, {}
         ],
@@ -464,7 +466,7 @@ const app = Vue.createApp({
           fr:'Contactez-moi et dites-moi comment je peux vous aider. Remplissez le formulaire et je vous contacterai dès que possible.'
         },
         addressLabel: {en:'Address', fr:'Adresse'},
-        address: '', 
+        address: 'Madagascar, Antananarivo, 101', 
         phoneLabel: {en:'Phone', fr:'Téléphone'},
         phone1: '(+261) 34 20 905 72',
         phone2: '(+261) 32 84 688 57',

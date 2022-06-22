@@ -184,13 +184,8 @@
           <div class="social">
             <ul>
               <li>
-                <a href="https://www.facebook.com/SutefanC30/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'right'}">
+                <a href="https://www.facebook.com/StephanChristianJ/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'right'}">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'Twitter', dir: 'right'}">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
@@ -218,10 +213,10 @@
                       <img src="assets/images/icons/emblem.png" alt="Years of Experience">
                     </div>
                     <div class="text">
-                      <h3>{{ experienceYears }}</h3>
+                      <h3>{{ experienceYears }}+</h3>
                       <strong>{{ staticTexts.experienceYearLabel[getLanguageCode()] }}</strong>
                     </div>
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
@@ -233,7 +228,7 @@
                       <h3>{{completedProjects}}+</h3>
                       <strong>{{ staticTexts.completedProjectLabel[getLanguageCode()] }}</strong>
                     </div>
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="600">
@@ -245,7 +240,7 @@
                       <h3>{{happyClients}}+</h3>
                       <strong>{{ staticTexts.happyClientLabel[getLanguageCode()] }}s</strong>
                     </div>
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
                 </li>
               </ul>
@@ -277,8 +272,8 @@
                   </h2>
                   <p>{{ aboutMe.text[getLanguageCode()] }}</p>
                   <div class="btns-container">
-                    <a href="#contact" class="btn btn-info">Hire Me</a>
-                    <a download href="#" class="btn btn-outline-light">Download CV</a>
+                    <a href="#contact" class="btn btn-info">{{aboutMe.hireMe[getLanguageCode()]}}</a>
+                    <a download href="#" class="btn btn-outline-light">{{aboutMe.downloadCv[getLanguageCode()]}}</a>
                   </div>
                 </div>
               </div>
@@ -603,7 +598,7 @@
                       {{contact.address}}
                     </div>
                   </li>
-                  <li>
+                  <!-- <li>
                     <img src="assets/images/icons/phone.png" alt="Phone">
                     <div>
                       <strong>{{contact.phoneLabel[getLanguageCode()]}}:</strong>
@@ -612,7 +607,7 @@
                         <li><a href="tel:+261328468857">{{contact.phone2}}</a></li>
                       </ul>
                     </div>
-                  </li>
+                  </li> -->
                   <li>
                     <img src="assets/images/icons/email.png" alt="Email">
                     <div>
@@ -633,8 +628,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank" rel="noreferrer" v-tooltip="{text: 'Twitter', dir: 'top'}">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <a href="https://www.instagram.com/stephan.cj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Instagram', dir: 'top'}">
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li>

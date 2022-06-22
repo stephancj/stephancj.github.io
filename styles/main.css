@@ -1765,6 +1765,7 @@ html[dir="rtl"] .has-tooltip:hover .custom-tooltip-right, html[dir="rtl"]
   text-align: center;
   padding: 0.8rem 1rem;
   border-radius: 0.63rem;
+  z-index: 1;
 }
 
 .light_theme .has-ultimate-tooltip .ultimate-tooltip {
