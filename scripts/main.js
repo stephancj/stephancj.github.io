@@ -929,7 +929,7 @@ const app = Vue.createApp({
       fetch(url, { method: 'POST', body: formData })
         .then(res => res.text())
         .then(data => {
-          if (data === 'success') {
+          if (String(data).includes('successful')) {
             // show success message
             this.setNotify({ className: 'success', msg: form.getAttribute('data-success-msg'), time: 5000 });
 
@@ -939,15 +939,13 @@ const app = Vue.createApp({
             // remove inputs valid classes
             form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
 
-          } else if (data === 'error') {
+          } else if (String(data).includes('successful')) {
             // show error message
             this.setNotify({ className: 'danger', msg: form.getAttribute('data-err-msg'), time: 5000 });
           }
 
           // end loading spinner
           this.endLoading();
-
-          console.log(data);
         })
         .catch(err => console.log(err));
     },
