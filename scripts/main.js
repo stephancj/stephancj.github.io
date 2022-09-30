@@ -116,6 +116,17 @@ const app = Vue.createApp({
         downloadCv: {en: 'Download CV', fr: 'Telecharger CV'},
       },
 
+      services: {
+        title: {en: 'Services', fr: 'Services'},
+        subtitle: {en: 'What can I do ?', fr: 'Que puis-je faire ?' },
+        productDesign: {en: 'Product design', fr: 'Design de produit'},
+        productDesignText: {en: 'I work with certain design tools to create high-fidelity designs and prototypes. I design accessible and usable products which aid business growth.', fr: "Je travaille avec certains outils de conception pour créer des conceptions et des prototypes haute fidélité. Je conçois des produits accessibles et utilisables qui contribuent à la croissance des entreprises."},
+        webDev: {en: 'Website development', fr: 'Développement de site web'},
+        webDevText: {en: 'I use various web technologies to develop attractive websites which converts visitors to customers. I develop creative and responsive website layouts.', fr: "J'utilise diverses technologies Web pour développer des sites Web attrayants qui convertissent les visiteurs en clients. Je développe des mises en page de sites Web créatives et réactives."},
+        multiplatformApp: {en: 'Multiplatform application', fr: 'Application multiplateforme'},
+        xPlatformAppText: {en: 'The technologies I use allow me to develop from just one codebase,native applications for multiple platforms such as mobile(android and ios), desktop (MacOs, Window, and Linux), and web.', fr: "Les technologies que j'utilise me permettent de développer à partir d'une seule base de code, des applications natives pour plusieurs plates-formes telles que mobile (Android et iOS), bureau (MacOs, Windows et Linux) et Web."}
+      },
+
       //SKILLS CONTENT
 
       // toggle between skills and tools in skills section
