@@ -14,9 +14,6 @@
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.ico">
 
-    <!-- fonts -->
-    <link rel="stylesheet" href="../fonts.googleapis.com/css26d89.css?family=Poppins:wght@700&amp;family=Roboto&amp;family=Saira+Stencil+One&amp;text=Nafie&amp;display=swap">
-
     <!-- css libraries file -->
     <link rel="stylesheet" href="styles/libraries.min.css">
 
@@ -84,7 +81,7 @@
               <div class="desktop-menu-content" tabindex="-1">
                 <div class="container">
 
-                  <!-- about us -->
+                  <!-- about me -->
                   <div class="about-us">
                     <p>
                       {{aboutMe.quoteDescription[getLanguageCode()]}}
@@ -96,14 +93,14 @@
 
                   <!-- contact info -->
                   <ul class="contact-info row">
-                    <li class="col-lg-4">
+                    <li class="col-lg-6">
                       <h4 class="block-title">{{contact.emailLabel[getLanguageCode()]}}</h4>
                       <ul>
                         <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
                         <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
                       </ul>
                     </li>
-                    <li class="col-lg-4">
+                    <li class="col-lg-6">
                       <h4 class="block-title">{{contact.addressLabel[getLanguageCode()]}}</h4>
                       <ul>
                         <li>
@@ -111,13 +108,6 @@
                           <br>
                           Madagascar
                         </li>
-                      </ul>
-                    </li>
-                    <li class="col-lg-4">
-                      <h4 class="block-title">{{contact.phoneLabel[getLanguageCode()]}}</h4>
-                      <ul>
-                        <li><a href="tel:+261342090572">(+261) 34 20 905 72</a></li>
-                        <li><a href="tel:+261328468857">(+261) 32 84 688 57</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -271,7 +261,7 @@
                     <br>
                     {{ aboutMe.subtitle2[getLanguageCode()] }}
                   </h2>
-                  <p>{{ aboutMe.text[getLanguageCode()] }}</p>
+                  <p align="justify">{{ aboutMe.text[getLanguageCode()] }}</p>
                   <div class="btns-container">
                     <a href="#contact" class="btn btn-info">{{aboutMe.hireMe[getLanguageCode()]}}</a>
                     <a download href="assets/CV_Stephan.pdf" class="btn btn-outline-light">{{aboutMe.downloadCv[getLanguageCode()]}}</a>
@@ -302,18 +292,18 @@
                 <div class="services-card interface aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"> 
                   <div> <img src="assets/images/services/product-design.svg" alt=""></div> 
                 <h5>{{ services.productDesign[getLanguageCode()] }}</h5> 
-                <p>{{ services.productDesignText[getLanguageCode()] }} </p> 
+                <p align="justify">{{ services.productDesignText[getLanguageCode()] }} </p> 
                 </div> 
                 <div class="services-card development aos-init aos-animate" data-aos="fade-up" data-aos-delay="400"> 
                   <div> <img src="assets/images/services/brackets.svg" alt=""> 
                   </div> 
                   <h5>{{ services.webDev[getLanguageCode()] }}</h5> 
-                  <p> {{ services.webDevText[getLanguageCode()] }} </p> 
+                  <p align="justify"> {{ services.webDevText[getLanguageCode()] }} </p> 
                 </div> 
                 <div class="services-card marketing aos-init aos-animate" data-aos="fade-up" data-aos-delay="600"> 
                   <div> <img src="assets/images/services/platform-icon.png" width="46" height="46" alt=""> 
                   </div> <h5>{{ services.multiplatformApp[getLanguageCode()] }}</h5> 
-                  <p> {{ services.xPlatformAppText[getLanguageCode()] }} </p> 
+                  <p align="justify"> {{ services.xPlatformAppText[getLanguageCode()] }} </p> 
                 </div> 
               </div>
             </div>
@@ -335,7 +325,7 @@
                     <br>
                     {{mySkills.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p>
+                  <p align="justify">
                     {{mySkills.text[getLanguageCode()]}}
                   </p>
                   <div class="toggle-switch-btn">
@@ -384,22 +374,8 @@
         <div id="experience" class="experience-section section" tabindex="-1">
           <div class="container">
             <div class="section-content row">
-
-              <!-- text box -->
-              <div class="experience-text col-lg-6 aos-animate" data-aos="fade-right" data-aos-delay="200">
-                <div class="text-box">
-                  <span class="subtitle">{{education.title[getLanguageCode()]}}</span> 
-                  <h2>
-                    {{education.subtitle[getLanguageCode()]}}
-                  </h2>
-                  <p>
-                    {{education.text[getLanguageCode()]}}
-                  </p>
-                </div>
-              </div>
-
               <!-- timeline -->
-              <div class="experience-timeline col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+              <div class="experience-timeline col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="200">
                 <ul class="outer-ul">
                   <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
                     <li class="has-ultimate-tooltip"
@@ -418,6 +394,19 @@
                     </li>
                   </ul>
                 </ul>
+              </div>
+
+              <!-- text box -->
+              <div class="experience-text col-lg-6 aos-animate" data-aos="fade-left" data-aos-delay="200">
+                <div class="text-box">
+                  <span class="subtitle">{{education.title[getLanguageCode()]}}</span> 
+                  <h2>
+                    {{education.subtitle[getLanguageCode()]}}
+                  </h2>
+                  <p align="justify">
+                    {{education.text[getLanguageCode()]}}
+                  </p>
+                </div>
               </div>
 
             </div>
@@ -461,7 +450,7 @@
                     <br>
                     {{experience.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p>
+                  <p align="justify">
                     {{experience.text[getLanguageCode()]}}
                   </p>
                 </div>
@@ -585,7 +574,7 @@
                     <br>
                     {{contact.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p>
+                  <p align="justify">
                     {{contact.text[getLanguageCode()]}}
                   </p>
                 </div>
