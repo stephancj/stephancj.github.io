@@ -527,7 +527,7 @@ const app = Vue.createApp({
     }
 
     // hide the preloader screen after loading
-    window.addEventListener('load', () => this.isPreloading = false);
+    window.addEventListener('load', () => setTimeout(() => this.isPreloading = false, 5000));
 
     // scrolling options
     this.scrollingOptions();
