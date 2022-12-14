@@ -269,6 +269,15 @@ const app = Vue.createApp({
               fr: 'Depuis 2021, un cursus de 2 ans, parcours Base de données et Génie Logiciel',
               en: 'From early 2021, a master degree study in database and software enginering.'
             }
+          },
+          {
+            date: '2022',
+            schoolName: { fr: 'Université Côte d\Azur', en: 'Côte d\'Azur University' },
+            degreeTitle: { fr: 'MBDS', en: 'Master degree in computer science' },
+            desc: {
+              fr: 'Depuis Novembre 2022, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication',
+              en: 'Since November 2022, MBDS (Mobiquity, Database and Systems Integration), a Master 2 Professional - Specialty Sciences and Technologies of Information and Communication.'
+            }
           }, {}, {}
         ],
       },
