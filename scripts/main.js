@@ -11,7 +11,7 @@ const app = Vue.createApp({
       completedProjects: 5,
       happyClients: 5,
 
-      appTheme: 'light_theme',
+      appTheme: 'dark_theme',
       savedTheme: null,
 
       // flag to toggle the preloader
