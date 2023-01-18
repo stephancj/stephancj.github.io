@@ -1761,16 +1761,19 @@ html[dir="rtl"] .has-tooltip:hover .custom-tooltip-right, html[dir="rtl"]
   text-align: center;
   padding: 0.8rem 1rem;
   border-radius: 0.63rem;
-  z-index: 1;
+  z-index: 99999;
 }
 
 .light_theme .has-ultimate-tooltip .ultimate-tooltip {
+  z-index: 99999;
   background-color: #fff;
+  position: absolute;
   -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
 .dark_theme .has-ultimate-tooltip .ultimate-tooltip {
+  z-index: 99999;
   background-color: #313131;
   -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
@@ -1887,6 +1890,7 @@ html[dir="rtl"] .has-ultimate-tooltip .ultimate-tooltip-arrow {
   transition: all 0.3s ease;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 }
 
 .has-ultimate-tooltip:hover,

@@ -122,9 +122,9 @@ const app = Vue.createApp({
         productDesign: {en: 'Product design', fr: 'Design de produit'},
         productDesignText: {en: 'I work with certain design tools to create high-fidelity designs and prototypes. I design accessible and usable products which aid business growth.', fr: "Je travaille avec certains outils de conception pour créer des conceptions et des prototypes haute fidélité. Je conçois des produits accessibles et utilisables qui contribuent à la croissance des entreprises."},
         webDev: {en: 'Website development', fr: 'Développement de site web'},
-        webDevText: {en: 'I use various web technologies to develop attractive websites which converts visitors to customers. I develop creative and responsive website layouts.', fr: "J'utilise diverses technologies Web pour développer des sites Web attrayants qui convertissent les visiteurs en clients. Je développe des mises en page de sites Web créatives et réactives."},
+        webDevText: {en: 'I create visually appealing websites using various web technologies, helping businesses increase conversions. I specialize in designing responsive, user-friendly layouts.', fr: "J'utilise diverses technologies Web pour développer des sites Web attrayants qui convertissent les visiteurs en clients. Je développe des mises en page de sites Web créatives et réactives."},
         multiplatformApp: {en: 'Multiplatform application', fr: 'Application multiplateforme'},
-        xPlatformAppText: {en: 'The technologies I use allow me to develop from just one codebase,native applications for multiple platforms such as mobile(android and ios), desktop (MacOs, Window, and Linux), and web.', fr: "Les technologies que j'utilise me permettent de développer à partir d'une seule base de code, des applications natives pour plusieurs plates-formes telles que mobile (Android et iOS), bureau (MacOs, Windows et Linux) et Web."}
+        xPlatformAppText: {en: 'With the use of cutting-edge technologies, I am able to build native applications for multiple platforms, including mobile, desktop, and web, all from a single codebase.', fr: "Les technologies que j'utilise me permettent de développer à partir d'une seule base de code, des applications natives pour plusieurs plates-formes telles que mobile (Android et iOS), bureau (MacOs, Windows et Linux) et Web."}
       },
 
       //SKILLS CONTENT
@@ -230,8 +230,8 @@ const app = Vue.createApp({
         title: {en: 'Education', fr: 'Education',},
         subtitle: {en: 'Education', fr: 'Education'},
         text: {
-          en: 'I have been studying in multiple universities in Madagascar, and also have gotten a scholarship in one of the best university in China. I have chosen the Information Technology domain. So, I will always need to learn new things to be up to date on latest news and shine among others. For that, I also plan to take multiple master degree in different majors',
-          fr: `J'ai étudié dans plusieurs universités à Madagascar et j'ai également obtenu une bourse d'excellence dans l'une des meilleures universités de Chine. Puisque j'ai choisi le domaine des technologies de l'information. Alors, j'aurai toujours besoin d'apprendre de nouvelles choses pour être au courant des dernières nouveautés et briller parmis les autres. Pour cela, je prévois également de prendre plusieurs masters dans différentes majeures.`
+          en: `As a final year master's student at one of Europe's top universities, I have a diverse educational background, having studied in multiple universities in Madagascar and receiving a scholarship to study in China. My chosen field is Information Technology, which requires continuous learning to stay current and stand out in the industry. My plan is to pursue multiple master's degrees in different majors to further expand my knowledge and skills.`,
+          fr: `En tant qu'étudiant en dernière année de master dans l'une des meilleures universités d'Europe, j'ai un parcours éducatif diversifié, ayant étudié dans plusieurs universités à Madagascar et ayant reçu une bourse pour étudier en Chine. Mon domaine choisi est les technologies de l'information, qui nécessite une apprentissage continu pour rester à jour et se démarquer dans l'industrie. Mon plan est de poursuivre plusieurs master en différentes spécialités pour élargir encore plus mes connaissances et mes compétences.`
         },
         items: [
           {
@@ -286,15 +286,15 @@ const app = Vue.createApp({
       experience: {
         title: {en: 'Experience', fr: 'Expérience'},
         subtitle1: {
-          en: `1+ Year of enterprise experience`,
-          fr: `1+ Année d'Experience en entreprise`,
+          en: `2+ Year of enterprise experience`,
+          fr: `2+ Année d'Experience en entreprise`,
         },
         subtitle2:{
           en: 'With much more on personal projects!', fr: 'Avec beaucoup plus sur des projets personnels!'
         },
         text:{
-          en: `I have been developing sites and applications in enterprise for more than 1 year, and I know for sure the main trends and directions of modern design, I\'m have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.`,
-          fr: `Je développe des sites et des applications en entreprise depuis plus d'une année et je connais avec certitude les principales tendances et orientations du design moderne, je suis un visionnaire et un partenaire fiable en ingénierie logicielle pour des marques de classe mondiale. Vous obtiendrez un résultat décent comme vous l'attendez.`
+          en: `I have been coding for several years, dating back to late 2014, and although I have only two years of experience in enterprise, I have extensive experience in personal projects, as well as participation in many competitions and tournaments. I am well-versed in the latest trends and directions in modern design, and have established myself as a visionary and reliable software engineering partner for world-class brands.`,
+          fr: `J'ai commencé à coder depuis plusieurs années, remontant à fin 2014, et bien que j'ai deux années d'expérience en entreprise, j'ai une grande expérience dans les projets personnels, ainsi que la participation à de nombreux concours. Je suis bien informé sur les dernières tendances et directions de la conception moderne, et je me suis établi comme un partenaire en ingénierie logicielle visionnaire et fiable pour des marques de classe mondiale.`
         },
         items: [
           {
