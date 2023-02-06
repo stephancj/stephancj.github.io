@@ -326,12 +326,21 @@ const app = Vue.createApp({
           {
             date: '2021',
             companyName: { fr: 'Bocasay Madagascar', en: 'Bocasay Madagascar' },
-            jobTitle: { fr: 'Développeur Flutter|JavaScript', en: 'Flutter|JavaScript developer' },
+            jobTitle: { fr: 'Développeur Flutter | JavaScript', en: 'Flutter | JavaScript developer' },
             desc: {
-              fr: 'Plateforme française de cours vidéo en ligne.\nApplication mobile de partage et suivi de fichiers',
-              en: 'French online video course platform.\n Mobile application for file sharing'
+              fr: '- Plateforme française de cours vidéo en ligne (Skilleos).\n- Application mobile native multiplateforme de partage et suivi de fichiers et de données(MyCompanyFiles).',
+              en: '- French online video course platform (Skilleos).\n- Multiplatform native mobile application for file and data sharing (MyCompanyFiles).'
             }
-          }, {}, {}
+          }, 
+          {
+            date: '2023',
+            companyName: { fr: '?', en: '?' },
+            jobTitle: { fr: '', en: '' },
+            desc: {
+              fr: 'Voyons quels nouveaux challenges cette année me réserve 😊.',
+              en: "Let’s see what new challenges this year holds for me 😊.  "
+            }
+          },{}, {}
         ],
       },
       
