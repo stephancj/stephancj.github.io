@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "Expertise Internationale",
+            "package_name": "com.mycompanyfiles.expertise",
+            "sha256_cert_fingerprints": [
+                "3F:F9:4D:ED:85:4B:CD:09:17:01:98:D2:8F:1F:0D:37:9E:DB:85:A1:25:1D:62:48:A0:95:A3:13:5B:B6:B3:0D"
+            ]
+        }
+    }
+]
