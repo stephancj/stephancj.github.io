@@ -334,13 +334,22 @@ const app = Vue.createApp({
           }, 
           {
             date: '2023',
+            companyName: { fr: 'Digital Training Center MG', en: 'Digital Training Center MG' },
+            jobTitle: { fr: 'Cofondateur & Responsable de formation', en: 'co-founder & training manager' },
+            desc: {
+              fr: "Avec mes collègues, nous avons fondé DTC-MG, afin d'offrir une formation de qualité aux jeunes pour s'initier et approfondir leurs compétences dans le domaine du numérique. Je suis également formateur en développement mobile qui est mon domaine de prédilection.",
+              en: "With my colleagues, we founded DTC-MG, in order to offer quality training to young people to initiate and deepen their skills in the digital field. I am also a trainer in mobile development which is my main field.  "
+            }
+          },
+          {
+            date: '?',
             companyName: { fr: '?', en: '?' },
             jobTitle: { fr: '', en: '' },
             desc: {
-              fr: 'Voyons quels nouveaux challenges cette année me réserve 😊.',
-              en: "Let’s see what new challenges this year holds for me 😊.  "
+              fr: 'Voyons quels seront les prochains nouveaux défis à relever 😊.',
+              en: "Let's see what the next new challenges will be 😊.  "
             }
-          },{}, {}
+          },{},
         ],
       },
       
