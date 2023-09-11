@@ -741,6 +741,13 @@ a:hover {
   padding: 0.5rem 1.5rem;
 }
 
+.get-in-touch-btn {
+  border-color: #0077b6 !important;
+  color: #0077b6 !important;
+  border-width: 2px !important;
+  background-color: honeydew !important;
+}
+
 .btn.disabled, .btn:disabled {
   cursor: not-allowed;
 }

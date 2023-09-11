@@ -178,13 +178,7 @@ const app = Vue.createApp({
           }, {
             imgUrl: 'assets/images/skills/sass.png',
             title: 'SASS'
-          }, {
-            imgUrl: 'assets/images/skills/php.png',
-            title: 'PHP'
-          }, {
-            imgUrl: 'assets/images/skills/codeigniter.png',
-            title: 'CodeIgniter'
-          }
+          },
         ],
         toolsItems: [
           {
@@ -359,7 +353,7 @@ const app = Vue.createApp({
       worksFilter: 'all',
 
       myWorks:{
-        isVisible: false,
+        isVisible: true,
         title: {en: 'my works', fr: 'Mes Travaux'},
         subtitle1: {
           en: `See My Works Which`,
@@ -382,45 +376,71 @@ const app = Vue.createApp({
         {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-1.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'desktop', name: 'Desktop' }
+          title: { en: 'Student Records Management', fr:  "Gestion de notes d'étudiants" },
+          desc: { en: '2016', fr: '2016' },
+          category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-2.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          title: { en: 'Vehicle fleet management', fr:  'Gestion de parc automobile' },
+          desc: { en: '2017', fr: '2017' },
           category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-3.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'mobile', name: 'Mobile' }
+          title: { en: 'Entry/Exit system management', fr:  "Système de gestion d'entrée et sortie" },
+          desc: { en: '2018', fr: '2018' },
+          category: { slug: 'web', name: 'Web' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-4.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'ui/ux', name: 'UI/UX' }
+          title: { en: 'BMI Calculator', fr:  'Calculateur IMC' },
+          desc: { en: 'April 2019', fr: 'Avril 2019' },
+          category: { slug: 'mobile', name: 'Mobile' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-5.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          title: { en: 'Music player', fr:  'Music Player' },
+          desc: { en: '2021', fr: '2021' },
           category: { slug: 'desktop', name: 'Desktop' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-6.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
+          title: { en: 'Skilleos', fr:  'Skilleos' },
+          desc: { en: '2021', fr: '2021' },
           category: { slug: 'web', name: 'Web' }
+        },
+        {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-5.png',
+          title: { en: 'Meteo application', fr:  'Meteo' },
+          desc: { en: '2021', fr: '2021' },
+          category: { slug: 'mobile', name: 'Mobile' }
+        },{
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-6.png',
+          title: { en: 'Calculator', fr:  'Calculatrice' },
+          desc: { en: '2023', fr: '2023' },
+          category: { slug: 'mobile', name: 'Mobile' }
         }, {
           url: '#',
           imgUrl: 'assets/images/portfolio/portfolio-7.png',
-          title: { en: 'Lorem Ipsum Dolor', fr:  'Lorem Ipsum Dolor' },
-          desc: { en: 'April 2021', fr: 'Avril 2021' },
-          category: { slug: 'mobile', name: 'Mobile' }
+          title: { en: 'Touristic pathway management', fr:  'Gestion de parcours touristique' },
+          desc: { en: '2023', fr: '2023' },
+          category: { slug: 'web', name: 'web' }
+        },{
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-7.png',
+          title: { en: 'Mail Management', fr:  'Gestion de courriers' },
+          desc: { en: '2023', fr: '2023' },
+          category: { slug: 'web', name: 'web' }
+        },
+        {
+          url: '#',
+          imgUrl: 'assets/images/portfolio/portfolio-7.png',
+          title: { en: 'Student assigment manager', fr:  "Gestion de devoir d'étudiant" },
+          desc: { en: '2023', fr: '2023' },
+          category: { slug: 'web', name: 'web' }
         }
       ].reverse(),
 
