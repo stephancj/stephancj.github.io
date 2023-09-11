@@ -745,7 +745,7 @@ a:hover {
   border-color: #0077b6 !important;
   color: #0077b6 !important;
   border-width: 2px !important;
-  background-color: honeydew !important;
+  background-color: #e6e6e6 !important;
 }
 
 .btn.disabled, .btn:disabled {
