@@ -85,8 +85,8 @@ const app = Vue.createApp({
 
       staticTexts : {
         presentation: {
-          greeting: {en: 'Hi, I\'m Stéphan', fr: 'Salut, je suis Stéphan'},
-          currentJobTitle: {en: 'Developer & Designer', fr: 'Designeur & Développeur'}
+          greeting: {en: 'Hi, I\'m Stéphan _', fr: 'Salut, je suis Stéphan'},
+          currentJobTitle: {en: 'Transforming your Ideas into Digital Reality', fr: 'Transformant vos Idées en Réalité Numérique'}
         },
         getInTouch: {en: 'Get In Touch', fr: 'Entrer En Contact'},
         scroll: {en: 'Scroll', fr: 'Défiler'},
