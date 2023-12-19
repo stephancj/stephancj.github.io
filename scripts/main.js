@@ -269,7 +269,7 @@ const app = Vue.createApp({
             schoolName: { fr: 'Université Côte d\Azur', en: 'Côte d\'Azur University' },
             degreeTitle: { fr: 'MBDS', en: 'Master degree in computer science' },
             desc: {
-              fr: 'Depuis Novembre 2022 jusqu'en Septembre 2023, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication',
+              fr: "Depuis Novembre 2022 jusqu'en Septembre 2023, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication",
               en: 'Since November 2022 to September 2023, MBDS (Mobiquity, Database and Systems Integration), a Master 2 Professional - Specialty Sciences and Technologies of Information and Communication.'
             }
           }, {}, {}
