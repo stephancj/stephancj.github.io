@@ -224,8 +224,8 @@ const app = Vue.createApp({
         title: {en: 'Education', fr: 'Education',},
         subtitle: {en: 'Education', fr: 'Education'},
         text: {
-          en: `As a final year master's student at one of Europe's top universities, I have a diverse educational background, having studied in multiple universities in Madagascar and receiving a scholarship to study in China. My chosen field is Information Technology, which requires continuous learning to stay current and stand out in the industry. My plan is to pursue multiple master's degrees in different majors to further expand my knowledge and skills.`,
-          fr: `En tant qu'étudiant en dernière année de master dans l'une des meilleures universités d'Europe, j'ai un parcours éducatif diversifié, ayant étudié dans plusieurs universités à Madagascar et ayant reçu une bourse pour étudier en Chine. Mon domaine choisi est les technologies de l'information, qui nécessite une apprentissage continu pour rester à jour et se démarquer dans l'industrie. Mon plan est de poursuivre plusieurs master en différentes spécialités pour élargir encore plus mes connaissances et mes compétences.`
+          en: `Having recently completed the defense of my Master's thesis at one of Europe's top universities. I have a diverse background, having studied at several universities in Madagascar and having received a scholarship to study in China. My chosen field is information technology, which requires continuous learning to keep up to date and stand out in the industry. I intend to obtain several master's degrees in different fields to broaden my knowledge and skills.`,
+          fr: `En ayant récemment terminé la soutenance de ma thèse de maîtrise dans l'une des meilleures universités d'Europe. J'ai une formation diversifiée, ayant étudié dans plusieurs universités à Madagascar et ayant reçu une bourse pour étudier en Chine. Mon domaine de prédilection est la technologie de l'information, qui exige un apprentissage continu pour rester à jour et se démarquer dans l'industrie. J'ai l'intention d'obtenir plusieurs maîtrises dans différents domaines afin d'élargir mes connaissances et mes compétences.`
         },
         items: [
           {
@@ -258,10 +258,10 @@ const app = Vue.createApp({
           {
             date: '2021',
             schoolName: { fr: 'CNTEMAD', en: 'CNTEMAD' },
-            degreeTitle: { fr: 'Master en Informatique', en: 'Master degree in computer science' },
+            degreeTitle: { fr: 'Master 1 en Informatique', en: 'Master 1 degree in computer science' },
             desc: {
-              fr: 'Depuis 2021, un cursus de 2 ans, parcours Base de données et Génie Logiciel',
-              en: 'From early 2021, a master degree study in database and software enginering.'
+              fr: 'De 2021 en 2022, un Master 1 en informatique, parcours Base de données et Génie Logiciel',
+              en: 'From 2021 to 2022, a master 1 degree study in database and software enginering.'
             }
           },
           {
@@ -269,8 +269,8 @@ const app = Vue.createApp({
             schoolName: { fr: 'Université Côte d\Azur', en: 'Côte d\'Azur University' },
             degreeTitle: { fr: 'MBDS', en: 'Master degree in computer science' },
             desc: {
-              fr: 'Depuis Novembre 2022, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication',
-              en: 'Since November 2022, MBDS (Mobiquity, Database and Systems Integration), a Master 2 Professional - Specialty Sciences and Technologies of Information and Communication.'
+              fr: 'Depuis Novembre 2022 jusqu'en Septembre 2023, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication',
+              en: 'Since November 2022 to September 2023, MBDS (Mobiquity, Database and Systems Integration), a Master 2 Professional - Specialty Sciences and Technologies of Information and Communication.'
             }
           }, {}, {}
         ],
@@ -333,6 +333,15 @@ const app = Vue.createApp({
             desc: {
               fr: "Avec mes collègues, nous avons fondé DTC-MG, afin d'offrir une formation de qualité aux jeunes pour s'initier et approfondir leurs compétences dans le domaine du numérique. Je suis également formateur en développement mobile qui est mon domaine de prédilection.",
               en: "With my colleagues, we founded DTC-MG, in order to offer quality training to young people to initiate and deepen their skills in the digital field. I am also a trainer in mobile development which is my main field.  "
+            }
+          },
+          {
+            date: '2023',
+            companyName: { fr: 'Versusmind', en: 'Versusmind' },
+            jobTitle: { fr: 'Consultant Nouvelles Technologies', en: 'New Technologies Consultant' },
+            desc: {
+              fr: 'Étude, réalisation, développement, maintenance et conseil des clients de la société sur leurs projets technologiques.',
+              en: "Design, implementation, development, maintenance and consulting for the company's on their technological projects."
             }
           },
           {
