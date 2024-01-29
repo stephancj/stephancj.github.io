@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stéphan develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.">
-    <meta name="keywords" content="
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stéphan develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients."
+    />
+    <meta
+      name="keywords"
+      content="
       portfolio, Stéphan J. Christian, Stéphan Christian, Stéphan Josué, Josué, Stephan J Christian, Stephan Christian, Stephan, Madagascar,  Stéphan, Christian, 
       business, clean, creative, gallery, modern, desktop, web, mobile, developer, ui, ux, designer, vue, vuejs, flutter, android, ios, bocasay, bocasay madagascar, 
       dtc, digital training center, dtc mg, versusmind, skilleos, mycompanyfiles, developpeur, stephancj, stephan.cj, trainer, formateur, co-founder, fondateur, digital, 
-      digitale, site, development, développement, application">
+      digitale, site, development, développement, application"
+    />
 
     <!-- title of the browser tab -->
     <title>Stéphan J. Christian</title>
 
     <!-- favicon -->
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="assets/favicon.ico" />
 
     <!-- css libraries file -->
-    <link rel="stylesheet" href="styles/libraries.min.css">
+    <link rel="stylesheet" href="styles/libraries.min.css" />
 
     <!-- animate.css libraries file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- main style file -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="https://app.embed.im/snow.js" defer></script>
+
+    <!-- snow effect -->
+    <!-- <script src="https://app.embed.im/snow.js" defer></script> -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTBH6T7GKD"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VTBH6T7GKD"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-VTBH6T7GKD');
+      gtag("config", "G-VTBH6T7GKD");
     </script>
   </head>
   <body>
     <div id="app">
-      <div id="app-inner" ref="appRef"
+      <div
+        id="app-inner"
+        ref="appRef"
         :class="[savedTheme, {'enable-focus-style': isAnyFocus}]"
         @click="isAnyFocus = false"
-        @keyup.tab="isAnyFocus = true">
-
-        <div class="circle-cursor circle-cursor-outer" ref="circleCursorOuter"></div>
-        <div class="circle-cursor circle-cursor-inner" ref="circleCursorInner"></div>
+        @keyup.tab="isAnyFocus = true"
+      >
+        <div
+          class="circle-cursor circle-cursor-outer"
+          ref="circleCursorOuter"
+        ></div>
+        <div
+          class="circle-cursor circle-cursor-inner"
+          ref="circleCursorInner"
+        ></div>
 
         <!-- start preloader-->
         <transition name="preloader">
           <div class="preloader" v-if="isPreloading">
             <div class="circle">
-              <img class="double-bounce1" src="assets/favicon.ico" alt="logo">
+              <img class="double-bounce1" src="assets/favicon.ico" alt="logo" />
               <div class="double-bounce2"></div>
             </div>
           </div>
@@ -62,11 +85,13 @@
         <!-- end preloader-->
 
         <!-- start of header -->
-        <header :class="{
+        <header
+          :class="{
           'big-header': isHeaderBig,
           'small-header': !isHeaderBig,
           'header-hidden': isHeaderHidden
-        }">
+        }"
+        >
           <div class="container">
             <!-- logo -->
             <div class="logo" title="Stéphan">
@@ -75,7 +100,6 @@
 
             <!-- nav links -->
             <nav :class="{'menu-open': isNavMenuOpen}" ref="headerNav">
-
               <!-- nav menu links -->
               <ul v-if="myWorks.isVisible" class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
@@ -95,12 +119,9 @@
               <!-- menu content in big devices (hidden in mobile/tablet) -->
               <div class="desktop-menu-content" tabindex="-1">
                 <div class="container">
-
                   <!-- about me -->
                   <div class="about-us">
-                    <p>
-                      {{aboutMe.quoteDescription[getLanguageCode()]}}
-                    </p>
+                    <p>{{aboutMe.quoteDescription[getLanguageCode()]}}</p>
                     <h4 class="block-title">
                       {{aboutMe.quoteText[getLanguageCode()]}}
                     </h4>
@@ -109,18 +130,30 @@
                   <!-- contact info -->
                   <ul class="contact-info row">
                     <li class="col-lg-6">
-                      <h4 class="block-title">{{contact.emailLabel[getLanguageCode()]}}</h4>
+                      <h4 class="block-title">
+                        {{contact.emailLabel[getLanguageCode()]}}
+                      </h4>
                       <ul>
-                        <li><a href="mailto:christianstephanjosue@gmail.com">christianstephanjosue@gmail.com</a></li>
-                        <li><a href="mailto:schristian@bocasay.com">schristian@bocasay.com</a></li>
+                        <li>
+                          <a href="mailto:christianstephanjosue@gmail.com"
+                            >christianstephanjosue@gmail.com</a
+                          >
+                        </li>
+                        <li>
+                          <a href="mailto:schristian@bocasay.com"
+                            >schristian@bocasay.com</a
+                          >
+                        </li>
                       </ul>
                     </li>
                     <li class="col-lg-6">
-                      <h4 class="block-title">{{contact.addressLabel[getLanguageCode()]}}</h4>
+                      <h4 class="block-title">
+                        {{contact.addressLabel[getLanguageCode()]}}
+                      </h4>
                       <ul>
                         <li>
                           Antananarivo, 101,
-                          <br>
+                          <br />
                           Madagascar
                         </li>
                       </ul>
@@ -132,13 +165,13 @@
 
             <!-- options icons -->
             <ul class="options-icons">
-
               <!-- lang switcher button -->
-              <li class="lang-switcher" >
-                <button 
-                  @click="switchLanguage('french')" 
-                  aria-label="Switching Language" 
-                  title="Switch Language">
+              <li class="lang-switcher">
+                <button
+                  @click="switchLanguage('french')"
+                  aria-label="Switching Language"
+                  title="Switch Language"
+                >
                   <strong>
                     {{getLanguageCode().toUpperCase() === 'EN' ? 'FR' : 'EN'}}
                   </strong>
@@ -147,19 +180,21 @@
 
               <!-- theme switcher button -->
               <li class="theme-switcher">
-                <button 
-                  :class="savedTheme" 
-                  title="Change Mode" 
-                  @click="changeAppTheme"></button>
+                <button
+                  :class="savedTheme"
+                  title="Change Mode"
+                  @click="changeAppTheme"
+                ></button>
               </li>
 
               <!-- hamburger button -->
               <li class="hamburger-btn" :class="{'open': isNavMenuOpen}">
-                <button 
+                <button
                   @click="toggleNavMenu"
                   title="Toggle Side Menu"
                   aria-label="Toggle Side Menu"
-                  ref="navMenuToggleBtn">
+                  ref="navMenuToggleBtn"
+                >
                   <span></span>
                   <span></span>
                   <span></span>
@@ -174,28 +209,44 @@
         <div id="hero" class="hero-section" ref="heroSection">
           <div class="hero-img">
             <div class="layer" v-clone>
-              <img src="assets/images/hero-img-3.png" alt="A photo of me">
+              <img src="assets/images/hero-img-3.png" alt="A photo of me" />
             </div>
           </div>
 
-          <div class="hero-text aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="hero-text aos-init aos-animate"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <h2>
               {{ staticTexts.presentation.greeting[getLanguageCode()] }}
-              <br>
+              <br />
               {{ staticTexts.presentation.currentJobTitle[getLanguageCode()] }}
             </h2>
-            <a href="#contact" class="btn get-in-touch-btn">{{ staticTexts.getInTouch[getLanguageCode()] }}</a>
+            <a href="#contact" class="btn get-in-touch-btn"
+              >{{ staticTexts.getInTouch[getLanguageCode()] }}</a
+            >
           </div>
 
           <div class="social">
             <ul>
               <li>
-                <a href="https://www.facebook.com/StephanChristianJ/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'right'}">
+                <a
+                  href="https://www.facebook.com/StephanChristianJ/"
+                  target="_blank"
+                  rel="noreferrer"
+                  v-tooltip="{text: 'Facebook', dir: 'right'}"
+                >
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/stephancj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'LinkedIn', dir: 'right'}">
+                <a
+                  href="https://www.linkedin.com/in/stephancj/"
+                  target="_blank"
+                  rel="noreferrer"
+                  v-tooltip="{text: 'LinkedIn', dir: 'right'}"
+                >
                   <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
               </li>
@@ -203,7 +254,9 @@
           </div>
 
           <div class="scroll-down">
-            <a href="#about" title="Scroll Down">{{ staticTexts.scroll[getLanguageCode()] }}</a>
+            <a href="#about" title="Scroll Down"
+              >{{ staticTexts.scroll[getLanguageCode()] }}</a
+            >
           </div>
         </div>
         <!-- end of hero section -->
@@ -213,38 +266,71 @@
           <div class="section-content">
             <div class="container">
               <ul class="statistics-items row">
-                <li class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="10000">
+                <li
+                  class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-duration="10000"
+                >
                   <a href="#experience">
                     <div class="icon">
-                      <img src="assets/images/icons/emblem.png" alt="Years of Experience">
+                      <img
+                        src="assets/images/icons/emblem.png"
+                        alt="Years of Experience"
+                      />
                     </div>
                     <div class="text">
                       <h3>{{ experienceYears }}+</h3>
-                      <strong>{{ staticTexts.experienceYearLabel[getLanguageCode()] }}</strong>
+                      <strong
+                        >{{ staticTexts.experienceYearLabel[getLanguageCode()]
+                        }}</strong
+                      >
                     </div>
                     <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
                 </li>
-                <li class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400" data-aos-duration="10000">
+                <li
+                  class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-duration="10000"
+                >
                   <a href="#portfolio">
                     <div class="icon">
-                      <img src="assets/images/icons/check-mark.png" alt="Completed Projects">
+                      <img
+                        src="assets/images/icons/check-mark.png"
+                        alt="Completed Projects"
+                      />
                     </div>
                     <div class="text">
                       <h3>{{completedProjects}}+</h3>
-                      <strong>{{ staticTexts.completedProjectLabel[getLanguageCode()] }}</strong>
+                      <strong
+                        >{{ staticTexts.completedProjectLabel[getLanguageCode()]
+                        }}</strong
+                      >
                     </div>
                     <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
                 </li>
-                <li class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="600" data-aos-duration="10000">
+                <li
+                  class="col-sm-12 col-md-6 col-lg-4 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  data-aos-duration="10000"
+                >
                   <a href="#testimonials">
                     <div class="icon">
-                      <img src="assets/images/icons/happy.png" alt="Happy Clients">
+                      <img
+                        src="assets/images/icons/happy.png"
+                        alt="Happy Clients"
+                      />
                     </div>
                     <div class="text">
                       <h3>{{happyClients}}+</h3>
-                      <strong>{{ staticTexts.happyClientLabel[getLanguageCode()] }}s</strong>
+                      <strong
+                        >{{ staticTexts.happyClientLabel[getLanguageCode()]
+                        }}</strong
+                      >
                     </div>
                     <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
                   </a>
@@ -259,27 +345,46 @@
         <div id="about" class="about-section section" tabindex="-1">
           <div class="container">
             <div class="section-content row">
-
               <!-- about image -->
-              <div class="about-img col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="200">
+              <div
+                class="about-img col-lg-6 aos-init aos-animate"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <div class="layer" v-clone>
-                  <img src="assets/images/about-img-2.png" alt="Another picture of me">
+                  <img
+                    src="assets/images/about-img-2.png"
+                    alt="Another picture of me"
+                  />
                 </div>
               </div>
 
               <!-- text box -->
-              <div class="about-text col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+              <div
+                class="about-text col-lg-6 aos-init aos-animate"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 <div class="text-box">
-                  <span class="subtitle">{{aboutMe.title[getLanguageCode()]}}</span>
+                  <span class="subtitle"
+                    >{{aboutMe.title[getLanguageCode()]}}</span
+                  >
                   <h2>
                     {{ aboutMe.subtitle1[getLanguageCode()] }}
-                    <br>
+                    <br />
                     {{ aboutMe.subtitle2[getLanguageCode()] }}
                   </h2>
                   <p align="justify">{{ aboutMe.text[getLanguageCode()] }}</p>
                   <div class="btns-container">
-                    <a href="#contact" class="btn btn-info">{{aboutMe.hireMe[getLanguageCode()]}}</a>
-                    <a download href="assets/CV_Stephan.pdf" class="btn btn-outline-light">{{aboutMe.downloadCv[getLanguageCode()]}}</a>
+                    <a href="#contact" class="btn btn-info"
+                      >{{aboutMe.hireMe[getLanguageCode()]}}</a
+                    >
+                    <a
+                      download
+                      href="assets/CV_Stephan.pdf"
+                      class="btn btn-outline-light"
+                      >{{aboutMe.downloadCv[getLanguageCode()]}}</a
+                    >
                   </div>
                 </div>
               </div>
@@ -289,37 +394,67 @@
         <!-- end of about section -->
 
         <!-- start of services section -->
-        <div 
-          id="services" 
-          class="testimonials-section section" 
-          tabindex="-1">
+        <div id="services" class="testimonials-section section" tabindex="-1">
           <div class="container">
-            <div class="section-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="section-title aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <span class="subtitle">SERVICES</span>
-              <h2>
-                {{ services.subtitle[getLanguageCode()] }}
-              </h2>
+              <h2>{{ services.subtitle[getLanguageCode()] }}</h2>
             </div>
           </div>
           <div class="section-content">
             <div class="container">
-              <div class="services-card-wrapper"> 
-                <div class="services-card interface aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"> 
-                  <div> <img src="assets/images/services/product-design.svg" alt=""></div> 
-                <h5>{{ services.productDesign[getLanguageCode()] }}</h5> 
-                <p align="justify">{{ services.productDesignText[getLanguageCode()] }} </p> 
-                </div> 
-                <div class="services-card development aos-init aos-animate" data-aos="fade-up" data-aos-delay="400"> 
-                  <div> <img src="assets/images/services/brackets.svg" alt=""> 
-                  </div> 
-                  <h5>{{ services.webDev[getLanguageCode()] }}</h5> 
-                  <p align="justify"> {{ services.webDevText[getLanguageCode()] }} </p> 
-                </div> 
-                <div class="services-card marketing aos-init aos-animate" data-aos="fade-up" data-aos-delay="600"> 
-                  <div> <img src="assets/images/services/platform-icon.png" width="46" height="46" alt=""> 
-                  </div> <h5>{{ services.multiplatformApp[getLanguageCode()] }}</h5> 
-                  <p align="justify"> {{ services.xPlatformAppText[getLanguageCode()] }} </p> 
-                </div> 
+              <div class="services-card-wrapper">
+                <div
+                  class="services-card interface aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div>
+                    <img
+                      src="assets/images/services/product-design.svg"
+                      alt=""
+                    />
+                  </div>
+                  <h5>{{ services.productDesign[getLanguageCode()] }}</h5>
+                  <p align="justify">
+                    {{ services.productDesignText[getLanguageCode()] }}
+                  </p>
+                </div>
+                <div
+                  class="services-card development aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <div>
+                    <img src="assets/images/services/brackets.svg" alt="" />
+                  </div>
+                  <h5>{{ services.webDev[getLanguageCode()] }}</h5>
+                  <p align="justify">
+                    {{ services.webDevText[getLanguageCode()] }}
+                  </p>
+                </div>
+                <div
+                  class="services-card marketing aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <div>
+                    <img
+                      src="assets/images/services/platform-icon.png"
+                      width="46"
+                      height="46"
+                      alt=""
+                    />
+                  </div>
+                  <h5>{{ services.multiplatformApp[getLanguageCode()] }}</h5>
+                  <p align="justify">
+                    {{ services.xPlatformAppText[getLanguageCode()] }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -330,52 +465,79 @@
         <div id="skills" class="skills-section section" tabindex="-1">
           <div class="container">
             <div class="section-content row">
-
               <!-- text box -->
-              <div class="skills-text col-lg-6 aos-init aos-animate"  data-aos="fade-right" data-aos-delay="200">
+              <div
+                class="skills-text col-lg-6 aos-init aos-animate"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <div class="text-box">
-                  <span class="subtitle">{{mySkills.title[getLanguageCode()]}}</span>
+                  <span class="subtitle"
+                    >{{mySkills.title[getLanguageCode()]}}</span
+                  >
                   <h2>
                     {{mySkills.subtitle1[getLanguageCode()]}}
-                    <br>
+                    <br />
                     {{mySkills.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p align="justify">
-                    {{mySkills.text[getLanguageCode()]}}
-                  </p>
+                  <p align="justify">{{mySkills.text[getLanguageCode()]}}</p>
                   <div class="toggle-switch-btn">
-                    <input id="skills-list" type="radio" name="skillstype" value="skills" v-model="isSkillsOrTools" checked>
-                    <label for="skills-list" class="link-hover">{{mySkills.skillsLabel[getLanguageCode()]}}</label>
-                    <input id="tools-list" type="radio" name="skillstype" value="tools" v-model="isSkillsOrTools">
-                    <label for="tools-list" class="link-hover">{{mySkills.toolsLabel[getLanguageCode()]}}</label>
+                    <input
+                      id="skills-list"
+                      type="radio"
+                      name="skillstype"
+                      value="skills"
+                      v-model="isSkillsOrTools"
+                      checked
+                    />
+                    <label for="skills-list" class="link-hover"
+                      >{{mySkills.skillsLabel[getLanguageCode()]}}</label
+                    >
+                    <input
+                      id="tools-list"
+                      type="radio"
+                      name="skillstype"
+                      value="tools"
+                      v-model="isSkillsOrTools"
+                    />
+                    <label for="tools-list" class="link-hover"
+                      >{{mySkills.toolsLabel[getLanguageCode()]}}</label
+                    >
                     <span class="switcher-toggle"></span>
                   </div>
                 </div>
               </div>
 
               <!-- skills items -->
-              <div class="skills-items col-lg-6 aos-init aos-animate"  data-aos="fade-up" data-aos-delay="0">
-
+              <div
+                class="skills-items col-lg-6 aos-init aos-animate"
+                data-aos="fade-up"
+                data-aos-delay="0"
+              >
                 <!-- skills list -->
                 <ul v-staggerdelay="50" v-show="isSkillsOrTools === 'skills'">
-                  <li tabindex="0"
+                  <li
+                    tabindex="0"
                     v-for="skill in mySkills.skillsItems"
                     :key="skill.title"
-                    v-tooltip="{text: skill.title, dir: 'top'}">
+                    v-tooltip="{text: skill.title, dir: 'top'}"
+                  >
                     <div class="skill-icon">
-                      <img :src="skill.imgUrl" :alt="skill.title">
+                      <img :src="skill.imgUrl" :alt="skill.title" />
                     </div>
                   </li>
                 </ul>
 
                 <!-- tools list -->
                 <ul v-staggerdelay="50" v-show="isSkillsOrTools === 'tools'">
-                  <li tabindex="0"
+                  <li
+                    tabindex="0"
                     v-for="tool in mySkills.toolsItems"
                     :key="tool.title"
-                    v-tooltip="{text: tool.title, dir: 'top'}">
+                    v-tooltip="{text: tool.title, dir: 'top'}"
+                  >
                     <div class="skill-icon">
-                      <img :src="tool.imgUrl" :alt="tool.title">
+                      <img :src="tool.imgUrl" :alt="tool.title" />
                     </div>
                   </li>
                 </ul>
@@ -390,18 +552,32 @@
           <div class="container">
             <div class="section-content row">
               <!-- timeline -->
-              <div class="experience-timeline col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="200">
+              <div
+                class="experience-timeline col-lg-6 aos-init aos-animate"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <ul class="outer-ul">
-                  <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
-                    <li class="has-ultimate-tooltip"
+                  <ul
+                    class="inner-ul"
+                    v-for="(group, index) in educationChunks"
+                    :key="index"
+                  >
+                    <li
+                      class="has-ultimate-tooltip"
                       tabindex="0"
                       v-for="item in group"
-                      v-for="item in group">
+                      v-for="item in group"
+                    >
                       <template v-if="Object.keys(item).length > 0">
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.schoolName[getLanguageCode()] }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.degreeTitle[getLanguageCode()] }}</h5>
+                          <h4 class="ultimate-tooltip-title">
+                            {{ item.schoolName[getLanguageCode()] }}
+                          </h4>
+                          <h5 class="ultimate-tooltip-subtitle">
+                            {{ item.degreeTitle[getLanguageCode()] }}
+                          </h5>
                           <p>{{ item.desc[getLanguageCode()] }}</p>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
@@ -412,18 +588,19 @@
               </div>
 
               <!-- text box -->
-              <div class="experience-text col-lg-6 aos-animate" data-aos="fade-left" data-aos-delay="200">
+              <div
+                class="experience-text col-lg-6 aos-animate"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 <div class="text-box">
-                  <span class="subtitle">{{education.title[getLanguageCode()]}}</span> 
-                  <h2>
-                    {{education.subtitle[getLanguageCode()]}}
-                  </h2>
-                  <p align="justify">
-                    {{education.text[getLanguageCode()]}}
-                  </p>
+                  <span class="subtitle"
+                    >{{education.title[getLanguageCode()]}}</span
+                  >
+                  <h2>{{education.subtitle[getLanguageCode()]}}</h2>
+                  <p align="justify">{{education.text[getLanguageCode()]}}</p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -433,21 +610,36 @@
         <div id="experience" class="experience-section section" tabindex="-1">
           <div class="container">
             <div class="section-content row">
-
               <!-- timeline -->
-              <div class="experience-timeline col-lg-6 aos-animate" data-aos="fade-right" data-aos-delay="200">
+              <div
+                class="experience-timeline col-lg-6 aos-animate"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <ul class="outer-ul">
-                  <ul class="inner-ul" v-for="(group, index) in experienceChunks" :key="index">
-                    <li class="has-ultimate-tooltip"
+                  <ul
+                    class="inner-ul"
+                    v-for="(group, index) in experienceChunks"
+                    :key="index"
+                  >
+                    <li
+                      class="has-ultimate-tooltip"
                       tabindex="0"
                       v-for="item in group"
-                      v-for="item in group">
+                      v-for="item in group"
+                    >
                       <template v-if="Object.keys(item).length > 0">
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
-                          <h4 class="ultimate-tooltip-title">{{ item.companyName[getLanguageCode()] }}</h4>
-                          <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle[getLanguageCode()] }}</h5>
-                          <p style="white-space: pre-line">{{ item.desc[getLanguageCode()] }}</p>
+                          <h4 class="ultimate-tooltip-title">
+                            {{ item.companyName[getLanguageCode()] }}
+                          </h4>
+                          <h5 class="ultimate-tooltip-subtitle">
+                            {{ item.jobTitle[getLanguageCode()] }}
+                          </h5>
+                          <p style="white-space: pre-line">
+                            {{ item.desc[getLanguageCode()] }}
+                          </p>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
                       </template>
@@ -457,17 +649,21 @@
               </div>
 
               <!-- text box -->
-              <div class="experience-text col-lg-6 aos-animate" data-aos="fade-left" data-aos-delay="200">
+              <div
+                class="experience-text col-lg-6 aos-animate"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 <div class="text-box">
-                  <span class="subtitle">{{experience.title[getLanguageCode()]}}</span>
+                  <span class="subtitle"
+                    >{{experience.title[getLanguageCode()]}}</span
+                  >
                   <h2>
                     {{experience.subtitle1[getLanguageCode()]}}
-                    <br>
+                    <br />
                     {{experience.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p align="justify">
-                    {{experience.text[getLanguageCode()]}}
-                  </p>
+                  <p align="justify">{{experience.text[getLanguageCode()]}}</p>
                 </div>
               </div>
             </div>
@@ -476,32 +672,41 @@
         <!-- end of experience section -->
 
         <!-- start of portfolio section -->
-        <div 
-          v-show="myWorks.isVisible" 
-          id="portfolio" 
-          class="portfolio-section section" 
-          tabindex="-1">
+        <div
+          v-show="myWorks.isVisible"
+          id="portfolio"
+          class="portfolio-section section"
+          tabindex="-1"
+        >
           <div class="container">
             <div class="section-content">
-
               <!-- portfolio items -->
-              <ul class="portfolio-items" ref="portfolioItems" data-no-more-works-msg="No more works to load">
+              <ul
+                class="portfolio-items"
+                ref="portfolioItems"
+                data-no-more-works-msg="No more works to load"
+              >
                 <li>
                   <!-- text box -->
                   <div class="text-box">
-                    <span class="subtitle">{{ myWorks.title[getLanguageCode()] }}</span>
+                    <span class="subtitle"
+                      >{{ myWorks.title[getLanguageCode()] }}</span
+                    >
                     <h2>
                       {{ myWorks.subtitle1[getLanguageCode()] }}
-                      <br>
+                      <br />
                       {{ myWorks.subtitle2[getLanguageCode()] }}
                     </h2>
-                    <p>
-                      {{ myWorks.text[getLanguageCode()] }}
-                    </p>
+                    <p>{{ myWorks.text[getLanguageCode()] }}</p>
                     <ul class="works-filter">
-                      <li v-for="filter in ['All', 'Desktop', 'Mobile', 'Web', 'UI/UX']" :key="filter">
-                        <button :class="{'active': worksFilter === filter.toLowerCase()}"
-                          @click="worksFilter = filter.toLowerCase()">
+                      <li
+                        v-for="filter in ['All', 'Desktop', 'Mobile', 'Web', 'UI/UX']"
+                        :key="filter"
+                      >
+                        <button
+                          :class="{'active': worksFilter === filter.toLowerCase()}"
+                          @click="worksFilter = filter.toLowerCase()"
+                        >
                           {{ filter }}
                         </button>
                       </li>
@@ -510,13 +715,18 @@
                 </li>
 
                 <!-- start items list -->
-                <li class="portfolio-item"
+                <li
+                  class="portfolio-item"
                   v-for="work in portfolioItems"
                   :key="work.title[getLanguageCode()]"
-                  v-show="worksFilter === 'all' || worksFilter === work.category.slug">
+                  v-show="worksFilter === 'all' || worksFilter === work.category.slug"
+                >
                   <a :href="work.url" target="_blank" rel="noopener">
                     <div class="item-img">
-                      <img :src="work.imgUrl" :alt="work.title[getLanguageCode()]">
+                      <img
+                        :src="work.imgUrl"
+                        :alt="work.title[getLanguageCode()]"
+                      />
                     </div>
                     <div class="item-details">
                       <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
@@ -527,7 +737,9 @@
                 <!-- end items list -->
 
                 <li>
-                  <button class="more" @click="getPortfolioItems">{{ myWorks.loadMore[getLanguageCode()] }}</button>
+                  <button class="more" @click="getPortfolioItems">
+                    {{ myWorks.loadMore[getLanguageCode()] }}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -536,17 +748,20 @@
         <!-- end of portfolio section -->
 
         <!-- start of testimonials section -->
-        <div 
-          v-show="testimonials.isVisible" 
-          id="testimonials" 
-          class="testimonials-section section" 
-          tabindex="-1">
+        <div
+          v-show="testimonials.isVisible"
+          id="testimonials"
+          class="testimonials-section section"
+          tabindex="-1"
+        >
           <div class="container">
             <div class="section-title">
-              <span class="subtitle">{{testimonials.title[getLanguageCode()]}}</span>
+              <span class="subtitle"
+                >{{testimonials.title[getLanguageCode()]}}</span
+              >
               <h2>
                 {{testimonials.subtitle1[getLanguageCode()]}}
-                <br>
+                <br />
                 {{testimonials.subtitle2[getLanguageCode()]}}
               </h2>
             </div>
@@ -554,18 +769,27 @@
 
           <div class="section-content">
             <ul class="testimonials-items" v-staggerdelay="500">
-              <li class="has-ultimate-tooltip"
+              <li
+                class="has-ultimate-tooltip"
                 tabindex="0"
                 v-for="item in testimonialsItems"
-                :key="item.quoteAuthor[getLanguageCode()]">
+                :key="item.quoteAuthor[getLanguageCode()]"
+              >
                 <div class="testimonials-item">
                   <div class="testimonial-author-img">
-                    <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'" :alt="item.quoteAuthor[getLanguageCode()]">
+                    <img
+                      :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'"
+                      :alt="item.quoteAuthor[getLanguageCode()]"
+                    />
                   </div>
                   <div class="ultimate-tooltip">
                     <p>{{ item.quoteContent[getLanguageCode()] }}</p>
-                    <h4 class="ultimate-tooltip-title">{{ item.quoteAuthor[getLanguageCode()] }}</h4>
-                    <h5 class="ultimate-tooltip-subtitle">{{ item.jobTitle[getLanguageCode()] }}</h5>
+                    <h4 class="ultimate-tooltip-title">
+                      {{ item.quoteAuthor[getLanguageCode()] }}
+                    </h4>
+                    <h5 class="ultimate-tooltip-subtitle">
+                      {{ item.jobTitle[getLanguageCode()] }}
+                    </h5>
                   </div>
                   <div class="ultimate-tooltip-arrow"></div>
                 </div>
@@ -579,46 +803,61 @@
         <div id="contact" class="contact-section section" tabindex="-1">
           <div class="container">
             <div class="section-content row">
-
               <!-- text box -->
-              <div class="contact-text col-lg-6 aos-animate" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="contact-text col-lg-6 aos-animate"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div class="text-box">
-                  <span class="subtitle">{{contact.title[getLanguageCode()]}}</span>
+                  <span class="subtitle"
+                    >{{contact.title[getLanguageCode()]}}</span
+                  >
                   <h2>
                     {{contact.subtitle1[getLanguageCode()]}}
-                    <br>
+                    <br />
                     {{contact.subtitle2[getLanguageCode()]}}
                   </h2>
-                  <p align="justify">
-                    {{contact.text[getLanguageCode()]}}
-                  </p>
+                  <p align="justify">{{contact.text[getLanguageCode()]}}</p>
                 </div>
 
                 <!-- contact info -->
                 <ul class="contact-info">
                   <li>
-                    <img src="assets/images/icons/address.png" alt="Address">
+                    <img src="assets/images/icons/address.png" alt="Address" />
                     <div>
-                      <strong>{{contact.addressLabel[getLanguageCode()]}}:</strong>
+                      <strong
+                        >{{contact.addressLabel[getLanguageCode()]}}:</strong
+                      >
                       {{contact.address}}
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/phone.png" alt="Phone">
+                    <img src="assets/images/icons/phone.png" alt="Phone" />
                     <div>
-                      <strong>{{contact.phoneLabel[getLanguageCode()]}}:</strong>
+                      <strong
+                        >{{contact.phoneLabel[getLanguageCode()]}}:</strong
+                      >
                       <ul>
-                        <li><a href="tel:+261342090572">{{contact.phone1}}</a></li>
+                        <li>
+                          <a href="tel:+261342090572">{{contact.phone1}}</a>
+                        </li>
                         <!-- <li><a href="tel:+261328468857">{{contact.phone2}}</a></li> -->
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/email.png" alt="Email">
+                    <img src="assets/images/icons/email.png" alt="Email" />
                     <div>
-                      <strong>{{contact.emailLabel[getLanguageCode()]}}:</strong>
+                      <strong
+                        >{{contact.emailLabel[getLanguageCode()]}}:</strong
+                      >
                       <ul>
-                        <li><a href="mailto:christianstephanjosue@gmail.com">{{contact.email1}}</a></li>
+                        <li>
+                          <a href="mailto:christianstephanjosue@gmail.com"
+                            >{{contact.email1}}</a
+                          >
+                        </li>
                         <!-- <li><a href="mailto:schristian@bocasay.com">{{contact.email2}}</a></li> -->
                       </ul>
                     </div>
@@ -628,17 +867,32 @@
                 <!-- social links -->
                 <ul class="social">
                   <li>
-                    <a href="https://www.facebook.com/SutefanC30/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Facebook', dir: 'top'}">
+                    <a
+                      href="https://www.facebook.com/SutefanC30/"
+                      target="_blank"
+                      rel="noreferrer"
+                      v-tooltip="{text: 'Facebook', dir: 'top'}"
+                    >
                       <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/stephan.cj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'Instagram', dir: 'top'}">
+                    <a
+                      href="https://www.instagram.com/stephan.cj/"
+                      target="_blank"
+                      rel="noreferrer"
+                      v-tooltip="{text: 'Instagram', dir: 'top'}"
+                    >
                       <i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/stephancj/" target="_blank" rel="noreferrer" v-tooltip="{text: 'LinkedIn', dir: 'top'}">
+                    <a
+                      href="https://www.linkedin.com/in/stephancj/"
+                      target="_blank"
+                      rel="noreferrer"
+                      v-tooltip="{text: 'LinkedIn', dir: 'top'}"
+                    >
                       <i class="fa fa-linkedin" aria-hidden="true"></i>
                     </a>
                   </li>
@@ -646,77 +900,143 @@
               </div>
 
               <!-- contact form -->
-              <div class="col-lg-6 aos-animate" data-aos="fade-up" data-aos-delay="200">
-                <form ref="contactForm"
+              <div
+                class="col-lg-6 aos-animate"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <form
+                  ref="contactForm"
                   class="contact-form form-styled"
                   action="https://usebasin.com/f/046a372f70f0"
                   data-success-msg="Message sent successfully!"
-                  data-err-msg="Oops! something went wrong, please try again.">
+                  data-err-msg="Oops! something went wrong, please try again."
+                >
                   <div class="group">
-                    <label>{{contact.form.customerNameLabel[getLanguageCode()]}}</label>
+                    <label
+                      >{{contact.form.customerNameLabel[getLanguageCode()]}}</label
+                    >
                     <div class="control has-prefix-icon">
-                      <input type="text"
+                      <input
+                        type="text"
                         name="name"
-                        :placeholder='contact.form.customerNamePlaceholder[getLanguageCode()]'
+                        :placeholder="contact.form.customerNamePlaceholder[getLanguageCode()]"
                         minlength="3"
-                        required>
-                      <i class="fa fa-user-circle prefix-icon" aria-hidden="true"></i>
+                        required
+                      />
+                      <i
+                        class="fa fa-user-circle prefix-icon"
+                        aria-hidden="true"
+                      ></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Name is required' : 'Nom requis'">
-                        <input class="minLength" type="hidden" :value="getLanguageCode() === 'en' ? 'Name must be at least 3 characters' : 'Le nom doit au moins contenir 3 caractères'">
+                        <input
+                          class="required"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Name is required' : 'Nom requis'"
+                        />
+                        <input
+                          class="minLength"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Name must be at least 3 characters' : 'Le nom doit au moins contenir 3 caractères'"
+                        />
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>{{contact.form.customerEmailLabel[getLanguageCode()]}}</label>
+                    <label
+                      >{{contact.form.customerEmailLabel[getLanguageCode()]}}</label
+                    >
                     <div class="control has-prefix-icon">
-                      <input class="ltr-dir"
+                      <input
+                        class="ltr-dir"
                         type="email"
                         inputmode="email"
                         name="email"
-                        :placeholder='contact.form.customerEmailPlaceholder[getLanguageCode()]'
-                        required>
-                      <i class="fa fa-envelope prefix-icon" aria-hidden="true"></i>
+                        :placeholder="contact.form.customerEmailPlaceholder[getLanguageCode()]"
+                        required
+                      />
+                      <i
+                        class="fa fa-envelope prefix-icon"
+                        aria-hidden="true"
+                      ></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Email is required' : 'Email requis'">
-                        <input class="invalid" type="hidden" :value="getLanguageCode() === 'en' ? 'Please enter a valid email address' : 'Veuillez saisir un adresse email valide'">
+                        <input
+                          class="required"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Email is required' : 'Email requis'"
+                        />
+                        <input
+                          class="invalid"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Please enter a valid email address' : 'Veuillez saisir un adresse email valide'"
+                        />
                       </div>
                     </div>
                   </div>
                   <div class="group phone-number">
-                    <label>{{contact.form.customerPhoneLabel[getLanguageCode()]}} <span class="optional">({{contact.form.optionalLabel[getLanguageCode()]}})</span></label>
+                    <label
+                      >{{contact.form.customerPhoneLabel[getLanguageCode()]}}
+                      <span class="optional"
+                        >({{contact.form.optionalLabel[getLanguageCode()]}})</span
+                      ></label
+                    >
                     <div class="control has-prefix-icon">
-                      <input type="tel"
+                      <input
+                        type="tel"
                         inputmode="tel"
                         name="phone"
-                        :placeholder='contact.form.customerPhonePlaceholder[getLanguageCode()]'>
+                        :placeholder="contact.form.customerPhonePlaceholder[getLanguageCode()]"
+                      />
                       <i class="fa fa-phone prefix-icon" aria-hidden="true"></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="invalid" type="hidden" :value="getLanguageCode() === 'en' ? 'Please enter a valid phone number' : 'Veuillez saisir un numéro de téléphone valide'">
+                        <input
+                          class="invalid"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Please enter a valid phone number' : 'Veuillez saisir un numéro de téléphone valide'"
+                        />
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>{{contact.form.messageLabel[getLanguageCode()]}}</label>
+                    <label
+                      >{{contact.form.messageLabel[getLanguageCode()]}}</label
+                    >
                     <div class="control has-prefix-icon">
-                      <textarea name="message" :placeholder='contact.form.messagePlaceholder[getLanguageCode()]' required></textarea>
-                      <i class="fa fa-comments prefix-icon" aria-hidden="true"></i>
+                      <textarea
+                        name="message"
+                        :placeholder="contact.form.messagePlaceholder[getLanguageCode()]"
+                        required
+                      ></textarea>
+                      <i
+                        class="fa fa-comments prefix-icon"
+                        aria-hidden="true"
+                      ></i>
 
                       <!-- validation errors messages -->
                       <div class="errors-msgs">
-                        <input class="required" type="hidden" :value="getLanguageCode() === 'en' ? 'Message is required' : 'Message requis'">
+                        <input
+                          class="required"
+                          type="hidden"
+                          :value="getLanguageCode() === 'en' ? 'Message is required' : 'Message requis'"
+                        />
                       </div>
                     </div>
                   </div>
                   <div class="group">
                     <div class="control">
-                      <button class="submit-btn btn btn-dark" type="button" @click="contactFormValidation">{{getLanguageCode() === 'en' ? 'Send' : 'Envoyer'}}</button>
+                      <button
+                        class="submit-btn btn btn-dark"
+                        type="button"
+                        @click="contactFormValidation"
+                      >
+                        {{getLanguageCode() === 'en' ? 'Send' : 'Envoyer'}}
+                      </button>
                     </div>
                   </div>
                 </form>
@@ -738,7 +1058,9 @@
               </div>
               <div class="col-lg-6">
                 &copy; {{ copyrightDate }} Proudly Powered by
-                <a href="stephancj.github.io" target="_blank" rel="noopener">Stéphan J. Christian</a>
+                <a href="stephancj.github.io" target="_blank" rel="noopener"
+                  >Stéphan J. Christian</a
+                >
               </div>
             </div>
           </div>
@@ -746,27 +1068,36 @@
         <!-- end of footer -->
 
         <!-- scroll to top button -->
-        <button ref="scrollTopBtn"
+        <button
+          ref="scrollTopBtn"
           :class="['scroll-to-top', isScrollTopBtnDisplayed && 'show-scrollTop']"
           title="Back To Top"
           tabindex="0"
-          @click="scrollToTop">
+          @click="scrollToTop"
+        >
           <i class="fa fa-angle-up" aria-hidden="true"></i>
         </button>
 
         <!-- toast notifications -->
         <ul class="notifications-container">
           <transition-group name="notify">
-            <li v-for="notify of notifications"
+            <li
+              v-for="notify of notifications"
               :key="notify.id"
               :id="notify.id"
               :class="['notification', 'show', notify.className, notify.time && 'timer']"
             >
               {{ notify.msg }}
-              <i class="fa fa-times link-hover" aria-hidden="true" @click="dismissNotify(notify.id)"></i>
-              <span v-if="notify.time"
+              <i
+                class="fa fa-times link-hover"
+                aria-hidden="true"
+                @click="dismissNotify(notify.id)"
+              ></i>
+              <span
+                v-if="notify.time"
                 class="disappearing-time"
-                :style="{ 'animation-duration': notify.time + 'ms' }"></span>
+                :style="{ 'animation-duration': notify.time + 'ms' }"
+              ></span>
             </li>
           </transition-group>
         </ul>
@@ -783,10 +1114,9 @@
 
     <!-- main script file -->
     <script src="scripts/main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script>
       AOS.init();
     </script>
   </body>
-
 </html>
