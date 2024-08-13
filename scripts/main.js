@@ -8,8 +8,8 @@ const app = Vue.createApp({
       language: "english",
       careerStartDate: 2021,
       copyrightStartDate: 2022,
-      completedProjects: 5,
-      happyClients: 5,
+      completedProjects: 15,
+      happyClients: 10,
 
       appTheme: "dark_theme",
       savedTheme: null,
