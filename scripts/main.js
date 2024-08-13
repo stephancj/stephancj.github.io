@@ -367,16 +367,16 @@ const app = Vue.createApp({
       experience: {
         title: { en: "Experience", fr: "Expérience" },
         subtitle1: {
-          en: `2+ Year of enterprise experience`,
-          fr: `2+ Année d'Experience en entreprise`,
+          en: `3+ Year of enterprise experience`,
+          fr: `3+ Année d'Experience en entreprise`,
         },
         subtitle2: {
           en: "With much more on personal projects!",
           fr: "Avec beaucoup plus sur des projets personnels!",
         },
         text: {
-          en: `I have been coding for several years, dating back to late 2014, and although I have only two years of experience in enterprise, I have extensive experience in personal projects, as well as participation in many competitions and tournaments. I am well-versed in the latest trends and directions in modern design, and have established myself as a visionary and reliable software engineering partner for world-class brands.`,
-          fr: `J'ai commencé à coder depuis plusieurs années, remontant à fin 2014, et bien que j'ai deux années d'expérience en entreprise, j'ai une grande expérience dans les projets personnels, ainsi que la participation à de nombreux concours. Je suis bien informé sur les dernières tendances et directions de la conception moderne, et je me suis établi comme un partenaire en ingénierie logicielle visionnaire et fiable pour des marques de classe mondiale.`,
+          en: `I have been coding for several years, dating back to late 2014, and although I have only three years of experience in enterprise, I have extensive experience in personal projects, as well as participation in many competitions and tournaments. I am well-versed in the latest trends and directions in modern design, and have established myself as a visionary and reliable software engineering partner for world-class brands.`,
+          fr: `J'ai commencé à coder depuis plusieurs années, remontant à fin 2014, et bien que j'ai trois années d'expérience en entreprise, j'ai une grande expérience dans les projets personnels, ainsi que la participation à de nombreux concours. Je suis bien informé sur les dernières tendances et directions de la conception moderne, et je me suis établi comme un partenaire en ingénierie logicielle visionnaire et fiable pour des marques de classe mondiale.`,
         },
         items: [
           {
