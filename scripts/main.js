@@ -1204,7 +1204,7 @@ const app = Vue.createApp({
             });
 
             // send aknowledgment receipt
-            this.sendAknowledgmentReceipt(formData);
+            this.sendAknowledgmentReceipt(new FormData(form));
 
             // reset all form inputs
             form.reset();
