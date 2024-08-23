@@ -1001,6 +1001,7 @@ const app = Vue.createApp({
     },
 
     sendAknowledgmentReceipt(formData) {
+      console.log(formData);
       const url = "https://f6c2io.buildship.run/receipt-aknowlegment";
       fetch(url, { method: "POST", body: formData }).catch((err) => console.log(err));
     },
@@ -1202,6 +1203,9 @@ const app = Vue.createApp({
               time: 5000,
             });
 
+            // send aknowledgment receipt
+            this.sendAknowledgmentReceipt(formData);
+
             // reset all form inputs
             form.reset();
 
@@ -1220,9 +1224,6 @@ const app = Vue.createApp({
 
           // end loading spinner
           this.endLoading();
-
-          // send aknowledgment receipt
-          this.sendAknowledgmentReceipt(formData);
         })
         .catch((err) => console.log(err));
     },
