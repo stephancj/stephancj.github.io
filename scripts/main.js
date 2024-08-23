@@ -367,8 +367,8 @@ const app = Vue.createApp({
       experience: {
         title: { en: "Experience", fr: "Expérience" },
         subtitle1: {
-          en: `2+ Year of enterprise experience`,
-          fr: `2+ Année d'Experience en entreprise`,
+          en: `3+ Year of enterprise experience`,
+          fr: `3+ Année d'Experience en entreprise`,
         },
         subtitle2: {
           en: "With much more on personal projects!",
@@ -678,7 +678,7 @@ const app = Vue.createApp({
         phone2: "(+261) 32 84 688 57",
         emailLabel: { en: "Email", fr: "Email" },
         email1: "christianstephanjosue@gmail.com",
-        email2: "schristian@bocasay.com",
+        email2: "",
 
         form: {
           customerNameLabel: { en: "Name", fr: "Nom" },
@@ -1000,6 +1000,11 @@ const app = Vue.createApp({
       }
     },
 
+    sendAknowledgmentReceipt(formData) {
+      const url = "https://f6c2io.buildship.run/receipt-aknowlegment";
+      fetch(url, { method: "POST", body: formData }).catch((err) => console.log(err));
+    },
+
     // contact form validation
     contactFormValidation() {
       // contact form
@@ -1215,6 +1220,9 @@ const app = Vue.createApp({
 
           // end loading spinner
           this.endLoading();
+
+          // send aknowledgment receipt
+          this.sendAknowledgmentReceipt(formData);
         })
         .catch((err) => console.log(err));
     },
