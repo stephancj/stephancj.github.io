@@ -1002,7 +1002,7 @@ const app = Vue.createApp({
 
     sendAknowledgmentReceipt(formData) {
       console.log(formData);
-      const url = "https://f6c2io.buildship.run/receipt-aknowlegment";
+      const url = "https://f6c2io.buildship.run/receipt-aknowledgment";
       fetch(url, { method: "POST", body: formData }).catch((err) => console.log(err));
     },
 
