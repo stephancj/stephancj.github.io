@@ -217,12 +217,16 @@ const app = Vue.createApp({
             title: "Firebase",
           },
           {
+            imgUrl: "assets/images/skills/supabase.png",
+            title: "Supabase",
+          },
+          {
             imgUrl: "assets/images/skills/flutter.png",
             title: "Flutter",
           },
           {
             imgUrl: "assets/images/skills/react.png",
-            title: "React",
+            title: "React / React Native",  
           },
           {
             imgUrl: "assets/images/skills/sass.png",
@@ -233,6 +237,26 @@ const app = Vue.createApp({
           {
             imgUrl: "assets/images/skills/gitlab.png",
             title: "Gitlab",
+          },
+          {
+            imgUrl: "assets/images/skills/jira.webp",
+            title: "Jira",
+          },
+          {
+            imgUrl: "assets/images/skills/azure.png",
+            title: "Azure DevOps",
+          },
+          {
+            imgUrl: "assets/images/skills/confluence.webp",
+            title: "Confluence",
+          },
+          {
+            imgUrl: "assets/images/skills/android.png",
+            title: "Android Studio",
+          },
+          {
+            imgUrl: "assets/images/skills/xcode.png",
+            title: "XCode",
           },
           {
             imgUrl: "assets/images/skills/webpack.png",
@@ -263,12 +287,16 @@ const app = Vue.createApp({
             title: "Yarn",
           },
           {
-            imgUrl: "assets/images/skills/slack.png",
-            title: "Slack",
+            imgUrl: "assets/images/skills/postman.webp",
+            title: "Postman",
           },
           {
-            imgUrl: "assets/images/skills/photoshop.png",
-            title: "Photoshop",
+            imgUrl: "assets/images/skills/app.png",
+            title: "AppStore Connect",
+          },
+          {
+            imgUrl: "assets/images/skills/play.png",
+            title: "Google Play Console",
           },
           {
             imgUrl: "assets/images/skills/adobe-xd.png",
