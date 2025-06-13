@@ -201,8 +201,8 @@ const app = Vue.createApp({
             title: "Dart",
           },
           {
-            imgUrl: "assets/images/skills/bootstrap.png",
-            title: "Bootstrap",
+            imgUrl: "assets/images/skills/next.png",
+            title: "NextJs",
           },
           {
             imgUrl: "assets/images/skills/angular.png",
@@ -221,8 +221,8 @@ const app = Vue.createApp({
             title: "Flutter",
           },
           {
-            imgUrl: "assets/images/skills/ionic.png",
-            title: "Ionic",
+            imgUrl: "assets/images/skills/react.png",
+            title: "React",
           },
           {
             imgUrl: "assets/images/skills/sass.png",
@@ -367,8 +367,8 @@ const app = Vue.createApp({
       experience: {
         title: { en: "Experience", fr: "Expérience" },
         subtitle1: {
-          en: `3+ Year of enterprise experience`,
-          fr: `3+ Année d'Experience en entreprise`,
+          en: `4+ Year of enterprise experience`,
+          fr: `4+ Année d'Experience en entreprise`,
         },
         subtitle2: {
           en: "With much more on personal projects!",
@@ -458,6 +458,18 @@ const app = Vue.createApp({
             },
           },
           {
+            date: "2025",
+            companyName: { fr: "Mora Market", en: "Mora Market" },
+            jobTitle: {
+              fr: "Technical team lead developer",
+              en: "Technical team lead developer",
+            },
+            desc: {
+              fr: "Gestion de l'équipe technique, de projet, développement et maintenance des plateformes de Mora Market.",
+              en: "Managing the technical team, project management, development and maintenance of Mora Market platforms.",
+            },
+          },
+          {
             date: "?",
             companyName: { fr: "?", en: "?" },
             jobTitle: { fr: "", en: "" },
@@ -475,7 +487,7 @@ const app = Vue.createApp({
       worksFilter: "all",
 
       myWorks: {
-        isVisible: true,
+        isVisible: false,
         title: { en: "my works", fr: "Mes Travaux" },
         subtitle1: {
           en: `See My Works Which`,
@@ -1275,7 +1287,7 @@ const app = Vue.createApp({
       return (
         new Date(
           new Date() - new Date(String(this.careerStartDate))
-        ).getFullYear() - 1970
+        ).getFullYear() - 1970 
       );
     },
 
