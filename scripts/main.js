@@ -6,10 +6,10 @@ const app = Vue.createApp({
   data() {
     return {
       language: "english",
-      careerStartDate: 2021,
+      careerStartDate: 2016,
       copyrightStartDate: 2022,
-      completedProjects: 15,
-      happyClients: 10,
+      completedProjects: 25,
+      happyClients: 20,
 
       appTheme: "dark_theme",
       savedTheme: null,
@@ -94,70 +94,73 @@ const app = Vue.createApp({
 
       staticTexts: {
         presentation: {
-          greeting: { en: "Hi, I'm Stéphan _", fr: "Salut, je suis Stéphan" },
+          greeting: {
+            en: "Tech Lead & Solutions Architect",
+            fr: "Tech Lead & Solutions Architect",
+          },
           currentJobTitle: {
-            en: "Transforming your Ideas into Digital Reality",
-            fr: "Transformant vos Idées en Réalité Numérique",
+            en: "Web & Mobile Expert | Structuring & Delivering Your Vision",
+            fr: "Expert Web & Mobile | Structurer & Livrer Votre Vision",
           },
         },
-        getInTouch: { en: "Get In Touch", fr: "Entrer En Contact" },
-        scroll: { en: "Scroll", fr: "Défiler" },
+        getInTouch: { en: "Project or Audit?", fr: "Projet ou Audit ?" },
+        scroll: { en: "My Expertise", fr: "Mon Expertise" },
         experienceYearLabel: {
-          en: "Year Of Experience",
-          fr: "Année d'expérience",
+          en: "Years Of Experience",
+          fr: "Années d'expérience",
         },
         completedProjectLabel: {
-          en: "Completed Projects",
-          fr: "Projets Terminés",
+          en: "Projects Delivered",
+          fr: "Projets Livrés",
         },
-        happyClientLabel: { en: "Happy Clients", fr: "Clients Satisfaits" },
-        hireMe: { en: "Hire Me", fr: "Engagez moi" },
+        happyClientLabel: { en: "Collaborations", fr: "Collaborations" },
+        hireMe: { en: "Contact Me", fr: "Me Contacter" },
         toCV: { en: "Download CV", fr: "Télécharger CV" },
       },
 
       aboutMe: {
-        title: { en: "about Me", fr: "à propos" },
+        title: { en: "About Me", fr: "À propos" },
         subtitle1: {
-          en: "Need a Creative Product?",
-          fr: "Besoin d'un produit créatif ?",
+          en: "Web & Mobile Expertise,",
+          fr: "Expertise Web & Mobile,",
         },
-        subtitle2: { en: "I can Help You!", fr: "Je peux vous aider!" },
+        subtitle2: { en: "From Concept to Launch.", fr: "Du Concept au Lancement." },
         text: {
-          en: "Hi! I’m Stéphan Josué Christian, and I’m a developer who has passion for building clean web applications with intuitive functionality. I enjoy the process of turning ideas into reality using creative solutions. I’m always curious about learning new skills, tools, and concepts. In addition to working on various solo full stack projects, I have worked with creative teams, which involves daily stand-ups and communications, source control, and project management.",
-          fr: "Salut! Je m'appelle Stéphan Josué Christian et je suis un développeur passionné par la création d'applications propres avec des fonctionnalités intuitives. J'aime le processus de transformer des idées en réalité en utilisant des solutions créatives. Je suis toujours curieux d'apprendre de nouvelles compétences, outils et concepts. En plus de travailler sur divers projets solo full stack, j'ai travaillé avec des équipes créatives, ce qui implique des stand-ups et des communications quotidiennes, le contrôle de source et la gestion de projet.",
+          en: "Tech Lead and Solutions Architect dedicated to helping businesses build better software. Whether you need a one-off audit to unblock a situation, or long-term support to structure your technical department, I adapt to your needs. I easily integrate into existing teams to bring methodology and mentorship, or I can operate autonomously to deliver end-to-end solutions.",
+          fr: "Tech Lead et Architecte Solutions dédié à aider les entreprises à bâtir de meilleurs logiciels. Que vous ayez besoin d'un audit ponctuel pour débloquer une situation, ou d'un accompagnement long terme pour structurer votre pôle technique, je m'adapte à vos besoins. Je m'intègre facilement aux équipes existantes pour apporter méthodologie et mentorat, ou j'opère en autonomie pour livrer des solutions clés en main.",
         },
         quoteDescription: {
-          en: "I love making things simple, intuitive and expertly crafted!",
-          fr: "J'aime rendre les choses simples, intuitives et conçues par des expertise !",
+          en: "Adaptability & Quality.",
+          fr: "Adaptabilité & Qualité.",
         },
         quoteText: {
-          en: "Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!",
-          fr: "Le produit est l'essence vitale de ce que je fais, un produit vraiment génial est né d'une planification et d'un processus méticuleux. C'est là que je me suis spécialisé !",
+          en: "My goal: To provide the technical foundation and leadership your project needs to succeed, regardless of its stage of maturity.",
+          fr: "Mon objectif : Apporter le socle technique et le leadership dont votre projet a besoin pour réussir, quel que soit son stade de maturité.",
         },
-        hireMe: { en: "Hire me", fr: "Embauchez-moi" },
-        downloadCv: { en: "Download CV", fr: "Telecharger CV" },
+        hireMe: { en: "Let's work together", fr: "Travaillons ensemble" },
+        downloadCv: { en: "Download Resume", fr: "Télécharger CV" },
       },
 
       services: {
-        title: { en: "Services", fr: "Services" },
-        subtitle: { en: "What can I do ?", fr: "Que puis-je faire ?" },
-        productDesign: { en: "Product design", fr: "Design de produit" },
+        title: { en: "Expertise", fr: "Expertise" },
+        subtitle: { en: "How I Can Help", fr: "Comment j'interviens" },
+        productDesign: { en: "Consulting & Audits", fr: "Consulting & Audits" },
         productDesignText: {
-          en: "I work with certain design tools to create high-fidelity designs and prototypes. I design accessible and usable products which aid business growth.",
-          fr: "Je travaille avec certains outils de conception pour créer des conceptions et des prototypes haute fidélité. Je conçois des produits accessibles et utilisables qui contribuent à la croissance des entreprises.",
+          en: "For existing systems: I perform architectural reviews, code audits, and provide strategic recommendations to unblock situations or improve performance.",
+          fr: "Pour les systèmes existants : Je réalise des revues d'architecture, des audits de code et fournis des recommandations stratégiques pour débloquer des situations ou améliorer les performances.",
         },
-        webDev: { en: "Website development", fr: "Développement de site web" },
+        webDev: { en: "New Projects (Conception & Dev)", fr: "Nouveaux Projets (Conception & Dev)" },
         webDevText: {
-          en: "I create visually appealing websites using various web technologies, helping businesses increase conversions. I specialize in designing responsive, user-friendly layouts.",
-          fr: "J'utilise diverses technologies Web pour développer des sites Web attrayants qui convertissent les visiteurs en clients. Je développe des mises en page de sites Web créatives et réactives.",
+          en: "Starting from scratch? I handle the technical design, architecture choice, and full-stack development (Web & Mobile) to turn your idea into a scalable product.",
+          fr: "Vous partez de zéro ? Je gère la conception technique, le choix de l'architecture et le développement Full-stack (Web & Mobile) pour transformer votre idée en produit évolutif.",
         },
         multiplatformApp: {
-          en: "Multiplatform application",
-          fr: "Application multiplateforme",
+          en: "Team Integration",
+          fr: "Intégration d'Équipe"
         },
         xPlatformAppText: {
-          en: "With the use of cutting-edge technologies, I am able to build native applications for multiple platforms, including mobile, desktop, and web, all from a single codebase.",
-          fr: "Les technologies que j'utilise me permettent de développer à partir d'une seule base de code, des applications natives pour plusieurs plates-formes telles que mobile (Android et iOS), bureau (MacOs, Windows et Linux) et Web.",
+          en: "Need reinforcement? I integrate into your existing tech team to bring seniority, Agile methodology, and mentoring, helping you ship faster and better.",
+          fr: "Besoin de renfort ? Je m'intègre à votre équipe tech existante pour apporter séniorité, méthodologie Agile et mentorat, vous aidant à livrer mieux et plus vite.",
         },
       },
 
@@ -168,49 +171,49 @@ const app = Vue.createApp({
 
       mySkills: {
         title: { en: "my skills", fr: "mes compétences" },
-        subtitle1: { en: "What My Programming", fr: "Que comprenne mes " },
+        subtitle1: { en: "My Technical", fr: "Mon Arsenal" },
         subtitle2: {
-          en: "Skills Included?",
-          fr: "Compétences en programmation?",
+          en: "Arsenal",
+          fr: "Technique",
         },
         text: {
-          en: "I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies.",
-          fr: "Je développe de simple, intuitive et réactive interface utilisateur qui aide les utilisateurs à faire les choses avec moins d'effort et de temps avec ces technologies.",
+          en: "Leveraging a modern, robust ecosystem to solve complex business problems. I select and master the right tools to deliver efficiency and scalability.",
+          fr: "Tirer parti d'un écosystème moderne et robuste pour résoudre des problèmes métier complexes. Je sélectionne et maîtrise les bons outils pour offrir efficacité et évolutivité.",
         },
-        skillsLabel: { en: "Skills", fr: "Compétences" },
-        toolsLabel: { en: "Tools", fr: "Outils" },
+        skillsLabel: { en: "Main Stack", fr: "Stack Principale" },
+        toolsLabel: { en: "Ecosystème", fr: "Ecosystème" },
         skillsItems: [
           {
-            imgUrl: "assets/images/skills/html5.png",
-            title: "HTML5",
-          },
-          {
-            imgUrl: "assets/images/skills/css3.png",
-            title: "CSS3",
-          },
-          {
-            imgUrl: "assets/images/skills/javascript.png",
-            title: "JavaScript",
-          },
-          {
-            imgUrl: "assets/images/skills/typescript.png",
-            title: "TypeScript",
+            imgUrl: "assets/images/skills/flutter.png",
+            title: "Flutter",
           },
           {
             imgUrl: "assets/images/skills/dart.png",
             title: "Dart",
           },
           {
+            imgUrl: "assets/images/skills/react.png",
+            title: "React / React Native",
+          },
+          {
             imgUrl: "assets/images/skills/next.png",
-            title: "NextJs",
+            title: "Next.js",
+          },
+          {
+            imgUrl: "assets/images/skills/typescript.png",
+            title: "TypeScript",
+          },
+          {
+             imgUrl: "assets/images/skills/javascript.png",
+             title: "JavaScript",
+           },
+          {
+            imgUrl: "assets/images/skills/vue.png",
+            title: "Vue.js",
           },
           {
             imgUrl: "assets/images/skills/angular.png",
             title: "Angular",
-          },
-          {
-            imgUrl: "assets/images/skills/vue.png",
-            title: "Vue",
           },
           {
             imgUrl: "assets/images/skills/firebase.png",
@@ -221,12 +224,12 @@ const app = Vue.createApp({
             title: "Supabase",
           },
           {
-            imgUrl: "assets/images/skills/flutter.png",
-            title: "Flutter",
+            imgUrl: "assets/images/skills/html5.png",
+            title: "HTML5",
           },
           {
-            imgUrl: "assets/images/skills/react.png",
-            title: "React / React Native",  
+            imgUrl: "assets/images/skills/css3.png",
+            title: "CSS3",
           },
           {
             imgUrl: "assets/images/skills/sass.png",
@@ -235,20 +238,32 @@ const app = Vue.createApp({
         ],
         toolsItems: [
           {
+            imgUrl: "assets/images/skills/azure.png",
+            title: "Azure DevOps",
+          },
+          {
             imgUrl: "assets/images/skills/gitlab.png",
             title: "Gitlab",
+          },
+          {
+            imgUrl: "assets/images/skills/git.png",
+            title: "Git",
           },
           {
             imgUrl: "assets/images/skills/jira.webp",
             title: "Jira",
           },
           {
-            imgUrl: "assets/images/skills/azure.png",
-            title: "Azure DevOps",
-          },
-          {
             imgUrl: "assets/images/skills/confluence.webp",
             title: "Confluence",
+          },
+          {
+            imgUrl: "assets/images/skills/play.png",
+            title: "Google Play Console",
+          },
+          {
+            imgUrl: "assets/images/skills/app.png",
+            title: "AppStore Connect",
           },
           {
             imgUrl: "assets/images/skills/android.png",
@@ -259,134 +274,107 @@ const app = Vue.createApp({
             title: "XCode",
           },
           {
-            imgUrl: "assets/images/skills/webpack.png",
-            title: "Webpack",
-          },
-          {
-            imgUrl: "assets/images/skills/git.png",
-            title: "Git (Github)",
-          },
-          {
-            imgUrl: "assets/images/skills/npm.png",
-            title: "Npm",
-          },
-          {
-            imgUrl: "assets/images/skills/command.png",
-            title: "Command Line",
-          },
-          {
             imgUrl: "assets/images/skills/vs-code.png",
             title: "VS Code",
-          },
-          {
-            imgUrl: "assets/images/skills/lighthouse.png",
-            title: "Google Lighthouse",
-          },
-          {
-            imgUrl: "assets/images/skills/yarn.png",
-            title: "Yarn",
           },
           {
             imgUrl: "assets/images/skills/postman.webp",
             title: "Postman",
           },
           {
-            imgUrl: "assets/images/skills/app.png",
-            title: "AppStore Connect",
-          },
-          {
-            imgUrl: "assets/images/skills/play.png",
-            title: "Google Play Console",
-          },
-          {
-            imgUrl: "assets/images/skills/adobe-xd.png",
-            title: "Adobe XD",
-          },
+             imgUrl: "assets/images/skills/npm.png",
+             title: "Npm/Yarn",
+           },
         ],
       },
+
+      language: "french",
+      careerStartDate: 2016,
+      copyrightStartDate: 2022,
+      completedProjects: 25,
+      happyClients: 20,
 
       // EDUCATION CONTENT
       education: {
         title: { en: "Education", fr: "Education" },
-        subtitle: { en: "Education", fr: "Education" },
+        subtitle: { en: "International Background", fr: "Parcours International" },
         text: {
-          en: `Having recently completed the defense of my Master's thesis at one of Europe's top universities. I have a diverse background, having studied at several universities in Madagascar and having received a scholarship to study in China. My chosen field is information technology, which requires continuous learning to keep up to date and stand out in the industry. I intend to obtain several master's degrees in different fields to broaden my knowledge and skills.`,
-          fr: `En ayant récemment terminé la soutenance de ma thèse de maîtrise dans l'une des meilleures universités d'Europe. J'ai une formation diversifiée, ayant étudié dans plusieurs universités à Madagascar et ayant reçu une bourse pour étudier en Chine. Mon domaine de prédilection est la technologie de l'information, qui exige un apprentissage continu pour rester à jour et se démarquer dans l'industrie. J'ai l'intention d'obtenir plusieurs maîtrises dans différents domaines afin d'élargir mes connaissances et mes compétences.`,
+          en: `My academic journey spans across three continents (Europe, Asia, Africa), reflecting a global perspective and adaptability. I have pursued Master's level programs in French, Chinese, and Malagasy universities.`,
+          fr: `Mon parcours académique s'étend sur trois continents (Europe, Asie, Afrique), reflétant une perspective mondiale et une grande adaptabilité. J'ai suivi des cursus de niveau Master dans des universités françaises, chinoises et malgaches.`,
         },
         items: [
           {
-            date: "2014",
+            date: "2023",
             schoolName: {
-              fr: "Infocentre de La Salle Soavimbahoaka.",
-              en: "Infocentre de La Salle Soavimbahoaka",
+              fr: "Université Côte d'Azur (France)",
+              en: "Côte d'Azur University (France)",
             },
             degreeTitle: {
-              fr: "Licence en Informatique",
-              en: "Bachelor degree in Software Engineering",
+              fr: "Master 2 MBDS",
+              en: "Master 2 MBDS",
             },
             desc: {
-              fr: "De 2014 à 2017, un cursus de 3 ans en informatique, parcours Développement Logiciel",
-              en: "From 2014 to 2017, a 3 years path in computer science, with software development major.",
-            },
-          },
-          {
-            date: "2018",
-            schoolName: {
-              fr: "Beijing University of Technology",
-              en: "Beijing University of Technology",
-            },
-            degreeTitle: {
-              fr: "Langue & littératue Chinoise",
-              en: "Chinese Language",
-            },
-            desc: {
-              fr: "De 2018 en 2019, une formation en langue chinoise, certification HSK 5",
-              en: "From 2018 to 2019, a one year of Chinese Language Study , HSK 5 level.",
-            },
-          },
-          {
-            date: "2019",
-            schoolName: {
-              fr: "Beijing University of Technology",
-              en: "Beijing University of Technology",
-            },
-            degreeTitle: {
-              fr: "Master en Informatique",
-              en: "Master degree in computer science",
-            },
-            desc: {
-              fr: "De 2018 en 2022, un cursus de 3 ans en informatique, parcours vision par ordinateur",
-              en: "From 2018 to 2022, a 3 year computer science study, with computer vision major.",
-            },
-          },
-          {
-            date: "2021",
-            schoolName: { fr: "CNTEMAD", en: "CNTEMAD" },
-            degreeTitle: {
-              fr: "Master 1 en Informatique",
-              en: "Master 1 degree in computer science",
-            },
-            desc: {
-              fr: "De 2021 en 2022, un Master 1 en informatique, parcours Base de données et Génie Logiciel",
-              en: "From 2021 to 2022, a master 1 degree study in database and software enginering.",
+              fr: "Master 2 MIAGE Mobiquité, Base de Données et intégration de Systèmes (MBDS).",
+              en: "Master 2 MIAGE Mobiquity, Database and Systems Integration (MBDS).",
             },
           },
           {
             date: "2022",
             schoolName: {
-              fr: "Université Côte dAzur",
-              en: "Côte d'Azur University",
+              fr: "Beijing University of Technology",
+              en: "Beijing University of Technology",
             },
             degreeTitle: {
-              fr: "MBDS",
-              en: "Master degree in computer science",
+              fr: "Master - Imagerie Médicale & Vision par Ordinateur",
+              en: "Master - Medical Imaging & Computer Vision",
             },
             desc: {
-              fr: "Depuis Novembre 2022 jusqu'en Septembre 2023, MBDS (Mobiquité, Base de Données et intégrations de Systèmes),un Master 2 Professionnel – Spécialité Sciences et Technologies de l’Information et de la Communication",
-              en: "Since November 2022 to September 2023, MBDS (Mobiquity, Database and Systems Integration), a Master 2 Professional - Specialty Sciences and Technologies of Information and Communication.",
+              fr: "Master en Computer Science and Technology.",
+              en: "Master in Computer Science and Technology.",
             },
           },
-          {},
+          {
+            date: "2022",
+            schoolName: { fr: "CNTEMAD", en: "CNTEMAD" },
+            degreeTitle: {
+              fr: "Master 1 Génie Logiciel & Base de données",
+              en: "Master 1 Software Engineering & Databases",
+            },
+            desc: {
+              fr: "Master 1 en Informatique.",
+              en: "Master 1 in Computer Science.",
+            },
+          },
+           {
+            date: "2020",
+            schoolName: {
+              fr: "Beijing University of Technology",
+              en: "Beijing University of Technology",
+            },
+            degreeTitle: {
+              fr: "Certificat Langue & Littérature Chinoise",
+              en: "Chinese Language & Literature Certificate",
+            },
+            desc: {
+              fr: "Certificat de langue.",
+              en: "Language certificate.",
+            },
+          },
+          {
+            date: "2017",
+            schoolName: {
+              fr: "Infocentre de La Salle Soavimbahoaka",
+              en: "Infocentre de La Salle Soavimbahoaka",
+            },
+            degreeTitle: {
+              fr: "Licence Développement d'application",
+              en: "Bachelor in Application Development",
+            },
+            desc: {
+              fr: "Licence en Informatique.",
+              en: "Bachelor in Computer Science.",
+            },
+          },
           {},
         ],
       },
@@ -395,115 +383,98 @@ const app = Vue.createApp({
       experience: {
         title: { en: "Experience", fr: "Expérience" },
         subtitle1: {
-          en: `4+ Year of enterprise experience`,
-          fr: `4+ Année d'Experience en entreprise`,
+          en: `Impactful Leadership`,
+          fr: `Leadership Impactant`,
         },
         subtitle2: {
-          en: "With much more on personal projects!",
-          fr: "Avec beaucoup plus sur des projets personnels!",
+          en: "& Technical Expertise",
+          fr: "& Expertise Technique",
         },
         text: {
-          en: `I have been coding for several years, dating back to late 2014, and although I have only three years of experience in enterprise, I have extensive experience in personal projects, as well as participation in many competitions and tournaments. I am well-versed in the latest trends and directions in modern design, and have established myself as a visionary and reliable software engineering partner for world-class brands.`,
-          fr: `J'ai commencé à coder depuis plusieurs années, remontant à fin 2014, et bien que j'ai trois années d'expérience en entreprise, j'ai une grande expérience dans les projets personnels, ainsi que la participation à de nombreux concours. Je suis bien informé sur les dernières tendances et directions de la conception moderne, et je me suis établi comme un partenaire en ingénierie logicielle visionnaire et fiable pour des marques de classe mondiale.`,
+          en: `Transitioning from hands-on development to strategic leadership, I have consistently driven technical excellence. My track record includes managing technical teams, architecting complex cloud solutions, and delivering high-value projects in international environments.`,
+          fr: `Passant du développement pratique au leadership stratégique, j'ai constamment favorisé l'excellence technique. Mon parcours inclut la gestion d'équipes techniques, l'architecture de solutions cloud complexes et la livraison de projets à haute valeur ajoutée dans des environnements internationaux.`,
         },
         items: [
           {
-            date: "2016",
+            date: "Nov 2025 - Present",
             companyName: {
-              fr: "Sainte Famille, Mahamasina, Antananarivo",
-              en: "Sainte Famille, Mahamasina, Antananarivo",
-            },
-            jobTitle: { fr: "Développeur PHP", en: "PHP Developer" },
-            desc: {
-              fr: "Application de génération automatique des relevés académiques des étudiants.",
-              en: "Application for automatic generation of student academic records.",
-            },
-          },
-          {
-            date: "2017",
-            companyName: {
-              fr: "BMOI Antaninarenina, Antananarivo",
-              en: "BMOI Antaninarenina, Antananarivo",
+              fr: "Indépendant",
+              en: "Freelance",
             },
             jobTitle: {
-              fr: "Développeur Fullstack",
-              en: "Fullstack developer",
+              fr: "Tech Lead & Solutions Architect",
+              en: "Tech Lead & Solutions Architect",
             },
             desc: {
-              fr: "Logiciel d&quot;automatisation de tâches au niveau du département parc automobile.",
-              en: "Software for task automation at the fleet department.",
+              fr: "Architecture et lead technique pour des projets innovants.",
+              en: "Architecture and technical lead for innovative projects.",
             },
           },
           {
-            date: "2018",
+            date: "Jun 2023 - Present",
             companyName: {
-              fr: "ONG HABAKA Tsimbazaza, Antananarivo",
-              en: "ONG HABAKA Tsimbazaza, Antananarivo",
-            },
-            jobTitle: { fr: "Développeur PHP", en: "PHP developer" },
-            desc: {
-              fr: "Système de vérification des entrées et sorties des membres au Fablab.",
-              en: "Entry and exit verification system for Fablab members.",
-            },
-          },
-          {
-            date: "2021",
-            companyName: { fr: "Bocasay Madagascar", en: "Bocasay Madagascar" },
-            jobTitle: {
-              fr: "Développeur Flutter | JavaScript",
-              en: "Flutter | JavaScript developer",
-            },
-            desc: {
-              fr: "- Plateforme française de cours vidéo en ligne (Skilleos).\n- Application mobile native multiplateforme de partage et suivi de fichiers et de données(MyCompanyFiles).",
-              en: "- French online video course platform (Skilleos).\n- Multiplatform native mobile application for file and data sharing (MyCompanyFiles).",
-            },
-          },
-          {
-            date: "2023",
-            companyName: {
-              fr: "Digital Training Center MG",
-              en: "Digital Training Center MG",
+              fr: "Digital Training Center | DTC-MG",
+              en: "Digital Training Center | DTC-MG",
             },
             jobTitle: {
-              fr: "Cofondateur & Responsable de formation",
-              en: "co-founder & training manager",
+              fr: "Co-fondateur & Responsable",
+              en: "Co-founder & Manager",
             },
             desc: {
-              fr: "Avec mes collègues, nous avons fondé DTC-MG, afin d'offrir une formation de qualité aux jeunes pour s'initier et approfondir leurs compétences dans le domaine du numérique. Je suis également formateur en développement mobile qui est mon domaine de prédilection.",
-              en: "With my colleagues, we founded DTC-MG, in order to offer quality training to young people to initiate and deepen their skills in the digital field. I am also a trainer in mobile development which is my main field.  ",
+              fr: "Conception de programmes, enseignement développement mobile, encadrement pédagogique.",
+              en: "Program design, mobile development teaching, pedagogical supervision.",
             },
           },
           {
-            date: "2023",
-            companyName: { fr: "Versusmind", en: "Versusmind" },
+            date: "Feb 2025 - Oct 2025",
+            companyName: { fr: "Mora Market", en: "Mora Market" },
+            jobTitle: {
+              fr: "Technical Team Lead Developer",
+              en: "Technical Team Lead Developer",
+            },
+            desc: {
+              fr: "Encadrement équipe, Org. Sprints Agile (Scrum), Code Review, CI/CD, Coaching.",
+              en: "Team Management, Agile Sprint Org (Scrum), Code Review, CI/CD, Coaching.",
+            },
+          },
+          {
+            date: "Dec 2023 - Jan 2025",
+            companyName: {
+              fr: "Versusmind",
+              en: "Versusmind",
+              en: "Versusmind",
+            },
             jobTitle: {
               fr: "Consultant Nouvelles Technologies",
               en: "New Technologies Consultant",
             },
             desc: {
-              fr: "Étude, réalisation, développement, maintenance et conseil des clients de la société sur leurs projets technologiques.",
-              en: "Design, implementation, development, maintenance and consulting for the company's on their technological projects.",
+              fr: "Développement Flutter/React/Next.js, Architecture Azure DevOps, App Bâtiment & Médicale.",
+              en: "Flutter/React/Next.js Development, Azure DevOps Architecture, Construction & Medical Apps.",
             },
           },
-          {
-            date: "2025",
-            companyName: { fr: "Mora Market", en: "Mora Market" },
+           {
+            date: "Jun 2021 - Dec 2023",
+            companyName: { fr: "Bocasay Madagascar", en: "Bocasay Madagascar" },
             jobTitle: {
-              fr: "Technical team lead developer",
-              en: "Technical team lead developer",
+              fr: "Développeur Mobile & Front-end",
+              en: "Mobile & Front-end Developer",
             },
             desc: {
-              fr: "Gestion de l'équipe technique, de projet, développement et maintenance des plateformes de Mora Market.",
-              en: "Managing the technical team, project management, development and maintenance of Mora Market platforms.",
+              fr: "Flutter, Angular, Vue.js. Projets: MyCompanyFiles (RH/Compta) & Skilleos (E-learning).",
+              en: "Flutter, Angular, Vue.js. Projects: MyCompanyFiles (HR/Accounting) & Skilleos (E-learning).",
             },
           },
           {
-            date: "?",
-            companyName: { fr: "?", en: "?" },
-            jobTitle: { fr: "", en: "" },
+            date: "Jan 2018 - Jun 2018",
+            companyName: {
+              fr: "ONG HABAKA",
+              en: "ONG HABAKA",
+            },
+            jobTitle: { fr: "Développeur Full Stack", en: "Full Stack Developer" },
             desc: {
-              fr: "Voyons quels seront les prochains nouveaux défis à relever 😊.",
-              en: "Let's see what the next new challenges will be 😊.  ",
+              fr: "App de suivi Fablab (CodeIgniter, MySQL).",
+              en: "Fablab tracking app (CodeIgniter, MySQL).",
             },
           },
           {},
@@ -516,18 +487,18 @@ const app = Vue.createApp({
 
       myWorks: {
         isVisible: false,
-        title: { en: "my works", fr: "Mes Travaux" },
+        title: { en: "portfolio", fr: "Portfolio" },
         subtitle1: {
-          en: `See My Works Which`,
-          fr: `Mes travaux`,
+          en: `Selected`,
+          fr: `Sélection de`,
         },
         subtitle2: {
-          en: "Will Amaze You!",
-          fr: "vous étonnera! ",
+          en: "Work",
+          fr: "Travaux",
         },
         text: {
-          en: `I develop good quality application and website that serve for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.`,
-          fr: `Je développe une application et un site Web de qualité qui sert à long terme. Une interface bien documentée, propre, simple et élégante aide tous les clients non techniques.`,
+          en: `A selection of projects where I delivered scalable solutions, optimized performance, and ensured technical quality. From mobile apps to complex web platforms.`,
+          fr: `Une sélection de projets où j'ai livré des solutions évolutives, optimisé les performances et garanti la qualité technique. Des applications mobiles aux plateformes web complexes.`,
         },
         loadMore: {
           en: "Load more works",
@@ -1319,17 +1290,19 @@ const app = Vue.createApp({
       );
     },
 
-    // split education items into chunks of 3 items
+    // split education items into chunks of 2 items
     educationChunks() {
-      return [...Array(Math.ceil(this.education.items.length / 3))].map(() =>
-        this.education.items.splice(0, 3)
+      const items = this.education.items;
+      return [...Array(Math.ceil(items.length / 2))].map((_, i) =>
+        items.slice(i * 2, i * 2 + 2)
       );
     },
 
-    // split experience items into chunks of 3 items
+    // split experience items into chunks of 2 items
     experienceChunks() {
-      return [...Array(Math.ceil(this.experience.items.length / 3))].map(() =>
-        this.experience.items.splice(0, 3)
+      const items = this.experience.items;
+      return [...Array(Math.ceil(items.length / 2))].map((_, i) =>
+        items.slice(i * 2, i * 2 + 2)
       );
     },
 
