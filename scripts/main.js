@@ -99,8 +99,8 @@ const app = Vue.createApp({
             fr: "Tech Lead & Solutions Architect",
           },
           currentJobTitle: {
-            en: "Web & Mobile Expert | Structuring & Delivering Your Vision",
-            fr: "Expert Web & Mobile | Structurer & Livrer Votre Vision",
+            en: "Digital Architect & Technical Leader | Building Scalable Solutions",
+            fr: "Architecte Numérique & Leader Technique | Bâtir des Solutions Scalables",
           },
         },
         getInTouch: { en: "Project or Audit?", fr: "Projet ou Audit ?" },
@@ -126,16 +126,16 @@ const app = Vue.createApp({
         },
         subtitle2: { en: "From Concept to Launch.", fr: "Du Concept au Lancement." },
         text: {
-          en: "Tech Lead and Solutions Architect dedicated to helping businesses build better software. Whether you need a one-off audit to unblock a situation, or long-term support to structure your technical department, I adapt to your needs. I easily integrate into existing teams to bring methodology and mentorship, or I can operate autonomously to deliver end-to-end solutions.",
-          fr: "Tech Lead et Architecte Solutions dédié à aider les entreprises à bâtir de meilleurs logiciels. Que vous ayez besoin d'un audit ponctuel pour débloquer une situation, ou d'un accompagnement long terme pour structurer votre pôle technique, je m'adapte à vos besoins. Je m'intègre facilement aux équipes existantes pour apporter méthodologie et mentorat, ou j'opère en autonomie pour livrer des solutions clés en main.",
+          en: "As a Tech Lead and Solutions Architect, I help companies realize their digital ambitions. With dual expertise in system architecture and application development, I intervene to structure your projects, secure your technological choices, and guide your teams toward operational excellence, ensuring robust and sustainable delivery.",
+          fr: "En tant que Tech Lead et Architecte Solutions, j'aide les entreprises à concrétiser leurs ambitions numériques. Fort d'une double expertise en architecture système et en développement applicatif, j'interviens pour structurer vos projets, sécuriser vos choix technologiques et accompagner vos équipes vers l'excellence opérationnelle, garantissant une livraison robuste et pérenne.",
         },
         quoteDescription: {
-          en: "Adaptability & Quality.",
-          fr: "Adaptabilité & Qualité.",
+          en: "Quality & Strategy.",
+          fr: "Qualité & Stratégie.",
         },
         quoteText: {
-          en: "My goal: To provide the technical foundation and leadership your project needs to succeed, regardless of its stage of maturity.",
-          fr: "Mon objectif : Apporter le socle technique et le leadership dont votre projet a besoin pour réussir, quel que soit son stade de maturité.",
+          en: "My goal: To provide the strategic vision and technical backbone your project needs to thrive, ensuring scalability from day one.",
+          fr: "Mon objectif : Apporter la vision stratégique et le socle technique indispensables à la réussite de votre projet, en assurant sa scalabilité dès le premier jour.",
         },
         hireMe: { en: "Let's work together", fr: "Travaillons ensemble" },
         downloadCv: { en: "Download Resume", fr: "Télécharger CV" },
@@ -146,21 +146,21 @@ const app = Vue.createApp({
         subtitle: { en: "How I Can Help", fr: "Comment j'interviens" },
         productDesign: { en: "Consulting & Audits", fr: "Consulting & Audits" },
         productDesignText: {
-          en: "For existing systems: I perform architectural reviews, code audits, and provide strategic recommendations to unblock situations or improve performance.",
-          fr: "Pour les systèmes existants : Je réalise des revues d'architecture, des audits de code et fournis des recommandations stratégiques pour débloquer des situations ou améliorer les performances.",
+          en: "For existing systems: I perform deep architectural reviews and code audits. I provide strategic roadmaps to resolve technical debt, optimize performance, and prepare your stack for scaling.",
+          fr: "Pour les systèmes existants : Je réalise des revues d'architecture approfondies et des audits de code. Je fournis des feuilles de route stratégiques pour résorber la dette technique, optimiser les performances et préparer votre stack au passage à l'échelle.",
         },
-        webDev: { en: "New Projects (Conception & Dev)", fr: "Nouveaux Projets (Conception & Dev)" },
+        webDev: { en: "Architecture & Product Engineering", fr: "Architecture & Ingénierie Produit" },
         webDevText: {
-          en: "Starting from scratch? I handle the technical design, architecture choice, and full-stack development (Web & Mobile) to turn your idea into a scalable product.",
-          fr: "Vous partez de zéro ? Je gère la conception technique, le choix de l'architecture et le développement Full-stack (Web & Mobile) pour transformer votre idée en produit évolutif.",
+          en: "From idea to deployment: Resilient architecture design, strategic tech stack selection, and full-stack implementation to build products built for growth.",
+          fr: "De l'idée au déploiement : Conception d'architectures résilientes, choix technologiques stratégiques et réalisation Full-stack pour des produits taillés pour la croissance.",
         },
         multiplatformApp: {
-          en: "Team Integration",
-          fr: "Intégration d'Équipe"
+          en: "Technical Leadership & Mentoring",
+          fr: "Leadership Technique & Mentorat"
         },
         xPlatformAppText: {
-          en: "Need reinforcement? I integrate into your existing tech team to bring seniority, Agile methodology, and mentoring, helping you ship faster and better.",
-          fr: "Besoin de renfort ? Je m'intègre à votre équipe tech existante pour apporter séniorité, méthodologie Agile et mentorat, vous aidant à livrer mieux et plus vite.",
+          en: "I integrate into your teams to bring expertise and methodology. I foster best practices (Clean Arch, CI/CD) and developer autonomy through benevolent yet demanding mentorship.",
+          fr: "J'intègre vos équipes pour apporter expertise et méthodologie. Je favorise les bonnes pratiques (Clean Arch, CI/CD) et l'autonomie des développeurs à travers un mentorat bienveillant mais exigeant.",
         },
       },
 
@@ -180,7 +180,7 @@ const app = Vue.createApp({
           en: "Leveraging a modern, robust ecosystem to solve complex business problems. I select and master the right tools to deliver efficiency and scalability.",
           fr: "Tirer parti d'un écosystème moderne et robuste pour résoudre des problèmes métier complexes. Je sélectionne et maîtrise les bons outils pour offrir efficacité et évolutivité.",
         },
-        skillsLabel: { en: "Main Stack", fr: "Stack Principale" },
+        skillsLabel: { en: "Core Tech", fr: "Socle Techno" },
         toolsLabel: { en: "Ecosystème", fr: "Ecosystème" },
         skillsItems: [
           {
@@ -442,15 +442,14 @@ const app = Vue.createApp({
             companyName: {
               fr: "Versusmind",
               en: "Versusmind",
-              en: "Versusmind",
             },
             jobTitle: {
               fr: "Consultant Nouvelles Technologies",
               en: "New Technologies Consultant",
             },
             desc: {
-              fr: "Développement Flutter/React/Next.js, Architecture Azure DevOps, App Bâtiment & Médicale.",
-              en: "Flutter/React/Next.js Development, Azure DevOps Architecture, Construction & Medical Apps.",
+              fr: "Développement d'applications critiques (Santé, BTP).",
+              en: "Critical App Development (Health, Construction).",
             },
           },
            {
@@ -461,8 +460,8 @@ const app = Vue.createApp({
               en: "Mobile & Front-end Developer",
             },
             desc: {
-              fr: "Flutter, Angular, Vue.js. Projets: MyCompanyFiles (RH/Compta) & Skilleos (E-learning).",
-              en: "Flutter, Angular, Vue.js. Projects: MyCompanyFiles (HR/Accounting) & Skilleos (E-learning).",
+              fr: "Réalisation d'applications complexes (GED, E-learning). Optimisation des performances et garants de la qualité du code.",
+              en: "Development of complex applications (Electronic Document Management, E-learning). Performance optimization, and code quality guardian.",
             },
           },
           {
