@@ -126,8 +126,8 @@ const app = Vue.createApp({
         },
         subtitle2: { en: "From Concept to Launch.", fr: "Du Concept au Lancement." },
         text: {
-          en: "As a Tech Lead and Solutions Architect, I help companies realize their digital ambitions. With dual expertise in system architecture and application development, I intervene to structure your projects, secure your technological choices, and guide your teams toward operational excellence, ensuring robust and sustainable delivery.",
-          fr: "En tant que Tech Lead et Architecte Solutions, j'aide les entreprises à concrétiser leurs ambitions numériques. Fort d'une double expertise en architecture système et en développement applicatif, j'interviens pour structurer vos projets, sécuriser vos choix technologiques et accompagner vos équipes vers l'excellence opérationnelle, garantissant une livraison robuste et pérenne.",
+          en: "Lead Dev, having worked within ESNs and international teams, with dual expertise in software architecture and team management. A specialist in modern technologies, mastering both mobile and web development. His skills extend to DevOps and CI/CD practices, enabling the implementation of robust automated deployment systems. Passionate about technology, he stands out for his competitive spirit and willingness to share, his adaptability, and his strong curiosity. He is also experienced in agile project management, technological decision-making, and training.",
+          fr: "Lead Dev, ayant travaillé au sein d'ESN et d'équipes à dimension internationale doté d'une double expertise en architecture logicielle et en encadrement d'équipe. Il est un spécialiste des technologies modernes, maîtrisant à la fois le développement mobile et web . Sa compétence s'étend aux pratiques DevOps et CI/CD, lui permettant de mettre en place des systèmes de déploiement automatisé robustes. Passionné par la technologie, il se distingue par son esprit de compétition et de partage, sa capacité d'adaptation, et sa forte curiosité. Il est également expérimenté dans la gestion de projet agile, la prise de décision technologique, et la formation.",
         },
         quoteDescription: {
           en: "Quality & Strategy.",
@@ -193,7 +193,7 @@ const app = Vue.createApp({
           },
           {
             imgUrl: "assets/images/skills/react.png",
-            title: "React / React Native",
+            title: "React",
           },
           {
             imgUrl: "assets/images/skills/next.png",
@@ -204,9 +204,9 @@ const app = Vue.createApp({
             title: "TypeScript",
           },
           {
-             imgUrl: "assets/images/skills/javascript.png",
-             title: "JavaScript",
-           },
+            imgUrl: "assets/images/skills/javascript.png",
+            title: "JavaScript",
+          },
           {
             imgUrl: "assets/images/skills/vue.png",
             title: "Vue.js",
@@ -216,25 +216,25 @@ const app = Vue.createApp({
             title: "Angular",
           },
           {
-            imgUrl: "assets/images/skills/firebase.png",
-            title: "Firebase",
-          },
-          {
-            imgUrl: "assets/images/skills/supabase.png",
-            title: "Supabase",
+            imgUrl: "assets/images/skills/css3.png",
+            title: "CSS3 / Sass",
           },
           {
             imgUrl: "assets/images/skills/html5.png",
             title: "HTML5",
           },
           {
-            imgUrl: "assets/images/skills/css3.png",
-            title: "CSS3",
+            imgUrl: "assets/images/skills/android.png",
+            title: "Android",
           },
           {
-            imgUrl: "assets/images/skills/sass.png",
-            title: "SASS",
+            imgUrl: "assets/images/skills/firebase.png",
+            title: "Firebase",
           },
+          {
+             imgUrl: "assets/images/skills/npm.png",
+             title: "NodeJS",
+           },
         ],
         toolsItems: [
           {
@@ -243,15 +243,15 @@ const app = Vue.createApp({
           },
           {
             imgUrl: "assets/images/skills/gitlab.png",
-            title: "Gitlab",
+            title: "GitLab CI",
           },
           {
             imgUrl: "assets/images/skills/git.png",
-            title: "Git",
+            title: "Git / GitHub Actions",
           },
           {
             imgUrl: "assets/images/skills/jira.webp",
-            title: "Jira",
+            title: "Jira / Trello",
           },
           {
             imgUrl: "assets/images/skills/confluence.webp",
@@ -281,10 +281,6 @@ const app = Vue.createApp({
             imgUrl: "assets/images/skills/postman.webp",
             title: "Postman",
           },
-          {
-             imgUrl: "assets/images/skills/npm.png",
-             title: "Npm/Yarn",
-           },
         ],
       },
 
@@ -304,7 +300,7 @@ const app = Vue.createApp({
         },
         items: [
           {
-            date: "2023",
+            date: "2022-2023",
             schoolName: {
               fr: "Université Côte d'Azur (France)",
               en: "Côte d'Azur University (France)",
@@ -314,28 +310,16 @@ const app = Vue.createApp({
               en: "Master 2 MBDS",
             },
             desc: {
-              fr: "Master 2 MIAGE Mobiquité, Base de Données et intégration de Systèmes (MBDS).",
+              fr: "Master 2 MIAGE Mobiquité, Base de Données et Intégration de Systèmes (MBDS).",
               en: "Master 2 MIAGE Mobiquity, Database and Systems Integration (MBDS).",
             },
           },
           {
             date: "2022",
             schoolName: {
-              fr: "Beijing University of Technology",
-              en: "Beijing University of Technology",
+              fr: "CNTEMAD",
+              en: "CNTEMAD",
             },
-            degreeTitle: {
-              fr: "Master - Imagerie Médicale & Vision par Ordinateur",
-              en: "Master - Medical Imaging & Computer Vision",
-            },
-            desc: {
-              fr: "Master en Computer Science and Technology.",
-              en: "Master in Computer Science and Technology.",
-            },
-          },
-          {
-            date: "2022",
-            schoolName: { fr: "CNTEMAD", en: "CNTEMAD" },
             degreeTitle: {
               fr: "Master 1 Génie Logiciel & Base de données",
               en: "Master 1 Software Engineering & Databases",
@@ -345,15 +329,30 @@ const app = Vue.createApp({
               en: "Master 1 in Computer Science.",
             },
           },
-           {
-            date: "2020",
+          {
+            date: "2019-2021",
             schoolName: {
               fr: "Beijing University of Technology",
               en: "Beijing University of Technology",
             },
             degreeTitle: {
-              fr: "Certificat Langue & Littérature Chinoise",
-              en: "Chinese Language & Literature Certificate",
+              fr: "Master, Computer Science & Technology",
+              en: "Master, Computer Science & Technology",
+            },
+            desc: {
+              fr: "Informatique et Technologie.",
+              en: "Computer Science & Technology.",
+            },
+          },
+          {
+            date: "2018-2019",
+            schoolName: {
+              fr: "Beijing University of Technology",
+              en: "Beijing University of Technology",
+            },
+            degreeTitle: {
+              fr: "Langues et littératures chinoises",
+              en: "Chinese Language & Literature",
             },
             desc: {
               fr: "Certificat de langue.",
@@ -361,14 +360,14 @@ const app = Vue.createApp({
             },
           },
           {
-            date: "2017",
+            date: "2014-2017",
             schoolName: {
-              fr: "Infocentre de La Salle Soavimbahoaka",
-              en: "Infocentre de La Salle Soavimbahoaka",
+              fr: "Infocentre de La Salle (Soavimbahoaka)",
+              en: "Infocentre de La Salle (Soavimbahoaka)",
             },
             degreeTitle: {
-              fr: "Licence Développement d'application",
-              en: "Bachelor in Application Development",
+              fr: "Licence en informatique, développement d’applications",
+              en: "Bachelor in Computer Science, Application Development",
             },
             desc: {
               fr: "Licence en Informatique.",
@@ -402,39 +401,27 @@ const app = Vue.createApp({
               en: "Freelance",
             },
             jobTitle: {
-              fr: "Tech Lead & Solutions Architect",
-              en: "Tech Lead & Solutions Architect",
+              fr: "Lead Developer Web & Mobile",
+              en: "Lead Developer Web & Mobile",
             },
             desc: {
-              fr: "Architecture et lead technique pour des projets innovants.",
-              en: "Architecture and technical lead for innovative projects.",
-            },
-          },
-          {
-            date: "Jun 2023 - Present",
-            companyName: {
-              fr: "Digital Training Center | DTC-MG",
-              en: "Digital Training Center | DTC-MG",
-            },
-            jobTitle: {
-              fr: "Co-fondateur & Responsable",
-              en: "Co-founder & Manager",
-            },
-            desc: {
-              fr: "Conception de programmes, enseignement développement mobile, encadrement pédagogique.",
-              en: "Program design, mobile development teaching, pedagogical supervision.",
+              en: "Study, development, and maintenance of modern applications, from web interfaces to mobile apps and back-end management. Agile project management ensuring delivery within deadlines and budgets.",
+              fr: "Étude, développement et maintenance d'applications modernes, de la création des interfaces web aux applications mobiles, en passant par la gestion du Back-end. Prise en charge du pilotage des projets selon les méthodes Agiles.",
             },
           },
           {
             date: "Feb 2025 - Oct 2025",
-            companyName: { fr: "Mora Market", en: "Mora Market" },
+            companyName: {
+              fr: "Mora Market",
+              en: "Mora Market",
+            },
             jobTitle: {
-              fr: "Technical Team Lead Developer",
-              en: "Technical Team Lead Developer",
+              fr: "Team Lead Developer",
+              en: "Team Lead Developer",
             },
             desc: {
-              fr: "Encadrement équipe, Org. Sprints Agile (Scrum), Code Review, CI/CD, Coaching.",
-              en: "Team Management, Agile Sprint Org (Scrum), Code Review, CI/CD, Coaching.",
+              en: "Study, dev, maintenance & training on platforms (E-commerce, ERP, CRM). CI/CD setup, workflow optimization. Team leadership (5 people) & mobile architecture initiation.\nTools: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
+              fr: "Étude, dév, maintenance et formation sur plateformes (E-commerce, ERP, CRM). Mise en place CI/CD, optimisation workflows. Encadrement équipe (5 pers) et initiation architecture mobile.\nOutils: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
             },
           },
           {
@@ -448,20 +435,50 @@ const app = Vue.createApp({
               en: "New Technologies Consultant",
             },
             desc: {
-              fr: "Développement d'applications critiques (Santé, BTP).",
-              en: "Critical App Development (Health, Construction).",
+              en: "Consulting & dev. Mobile/Web app maintenance (Construction). Creation of complete patient management system (Health): tracking, consultation, billing.\nTools: Flutter, Azure DevOps, React, Next.js, TypeScript.",
+              fr: "Conseil & dév. Maintenance applications mobile/web (BTP). Création système complet gestion patients (Santé): suivi, consultation, facturation.\nOutils: Flutter, Azure DevOps, React, Next.js, TypeScript.",
             },
           },
-           {
-            date: "Jun 2021 - Dec 2023",
-            companyName: { fr: "Bocasay Madagascar", en: "Bocasay Madagascar" },
+          {
+            date: "Oct 2023 - Present",
+            companyName: {
+              fr: "Rotary Club Antananarivo",
+              en: "Rotary Club Antananarivo",
+            },
             jobTitle: {
-              fr: "Développeur Mobile & Front-end",
-              en: "Mobile & Front-end Developer",
+              fr: "Chef de Projet & Développeur SI (Bénévolat)",
+              en: "Project Manager & IS Developer (Volunteer)",
             },
             desc: {
-              fr: "Réalisation d'applications complexes (GED, E-learning). Optimisation des performances et garants de la qualité du code.",
-              en: "Development of complex applications (Electronic Document Management, E-learning). Performance optimization, and code quality guardian.",
+              en: "Management & dev. Mobile app for patient management (free surgeries). User training.\nTools: Flutter, Firebase, MariaDB.",
+              fr: "Gestion & dév. App mobile pour gestion patients (chirurgies gratuites). Formation utilisateurs.\nOutils: Flutter, Firebase, MariaDB.",
+            },
+          },
+          {
+            date: "Jun 2023 - Present",
+            companyName: {
+              fr: "Digital Training Center (DTC-MG)",
+              en: "Digital Training Center (DTC-MG)",
+            },
+            jobTitle: {
+              fr: "Co-Fondateur & Formateur Flutter",
+              en: "Co-Founder & Flutter Trainer",
+            },
+            desc: {
+              en: "Design and implementation of Flutter training programs. Teaching, mentoring, and assessing student progress.",
+              fr: "Conception et mise en œuvre programmes formation Flutter. Enseignement, encadrement et évaluation des progrès étudiants.",
+            },
+          },
+          {
+            date: "Jun 2021 - Dec 2023",
+            companyName: { fr: "Bocasay", en: "Bocasay" },
+            jobTitle: {
+              fr: "Développeur d'Applications",
+              en: "Application Developer",
+            },
+            desc: {
+              en: "Maintenance & Release of custom mobile apps (EDM, HR) and E-learning. CI/CD management & store deployment.\nTools: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
+              fr: "Maintenance & Mise en prod apps mobiles sur mesure (GED, RH) et E-learning. Gestion CI/CD et déploiement stores.\nOutils: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
             },
           },
           {
@@ -470,10 +487,34 @@ const app = Vue.createApp({
               fr: "ONG HABAKA",
               en: "ONG HABAKA",
             },
-            jobTitle: { fr: "Développeur Full Stack", en: "Full Stack Developer" },
+            jobTitle: { fr: "Développeur Full Stack (Stage)", en: "Full Stack Developer (Internship)" },
             desc: {
-              fr: "App de suivi Fablab (CodeIgniter, MySQL).",
-              en: "Fablab tracking app (CodeIgniter, MySQL).",
+              en: "Design & dev of Fablab tracking app (member entry/exit).",
+              fr: "Conception & dév app suivi Fablab (entrées/sorties membres).",
+            },
+          },
+          {
+            date: "Aug 2017 - Oct 2017",
+            companyName: {
+              fr: "BMOI",
+              en: "BMOI",
+            },
+            jobTitle: { fr: "Développeur Logiciels (Stage)", en: "Software Developer (Internship)" },
+            desc: {
+              en: "Automation of manual tasks for fleet management department.",
+              fr: "Automatisation tâches manuelles service parc automobile.",
+            },
+          },
+           {
+            date: "Aug 2016 - Oct 2016",
+            companyName: {
+              fr: "Sainte Famille Mahamasina",
+              en: "Sainte Famille Mahamasina",
+            },
+            jobTitle: { fr: "Développeur Web (Stage)", en: "Web Developer (Internship)" },
+            desc: {
+              en: "App for management and generation of academic records.",
+              fr: "App de gestion et génération relevés académiques.",
             },
           },
           {},
@@ -685,7 +726,7 @@ const app = Vue.createApp({
         address: "Madagascar, Antananarivo, 101",
         phoneLabel: { en: "Phone", fr: "Téléphone" },
         phone1: "(+261) 34 20 905 72",
-        phone2: "(+261) 32 84 688 57",
+        phone2: "",
         emailLabel: { en: "Email", fr: "Email" },
         email1: "christianstephanjosue@gmail.com",
         email2: "",
