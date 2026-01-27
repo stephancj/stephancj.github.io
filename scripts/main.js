@@ -95,12 +95,12 @@ const app = Vue.createApp({
       staticTexts: {
         presentation: {
           greeting: {
-            en: "Tech Lead & Solutions Architect",
-            fr: "Tech Lead & Solutions Architect",
+            en: "Software Engineer",
+            fr: "Développeur Logiciel",
           },
           currentJobTitle: {
-            en: "Digital Architect & Technical Leader | Building Scalable Solutions",
-            fr: "Architecte Numérique & Leader Technique | Bâtir des Solutions Scalables",
+            en: "Turning Ideas into Reality | Building Scalable Solutions",
+            fr: "Donner vie à vos idées | Bâtir des Solutions Scalables",
           },
         },
         getInTouch: { en: "Project or Audit?", fr: "Projet ou Audit ?" },
