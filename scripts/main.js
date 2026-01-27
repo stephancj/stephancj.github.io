@@ -1332,7 +1332,9 @@ const app = Vue.createApp({
 
     // split education items into chunks of 2 items
     educationChunks() {
-      const items = this.education.items;
+      const items = this.education.items
+        .filter((item) => Object.keys(item).length > 0)
+        .reverse();
       return [...Array(Math.ceil(items.length / 2))].map((_, i) =>
         items.slice(i * 2, i * 2 + 2)
       );
@@ -1340,7 +1342,9 @@ const app = Vue.createApp({
 
     // split experience items into chunks of 2 items
     experienceChunks() {
-      const items = this.experience.items;
+      const items = this.experience.items
+        .filter((item) => Object.keys(item).length > 0)
+        .reverse();
       return [...Array(Math.ceil(items.length / 2))].map((_, i) =>
         items.slice(i * 2, i * 2 + 2)
       );
