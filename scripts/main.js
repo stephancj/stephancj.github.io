@@ -40,6 +40,9 @@ const app = Vue.createApp({
       isNavMenuOpen: false,
 
       experienceNumber: 0,
+      showAllPortfolioItems: false,
+      selectedPortfolioItem: null,
+      portfolioLastFocusedElement: null,
 
       // list of nav links to loop through it
       navLinks: [
@@ -95,73 +98,283 @@ const app = Vue.createApp({
       staticTexts: {
         presentation: {
           greeting: {
-            en: "Software Engineer",
-            fr: "Développeur Logiciel",
+            en: "Startups · digitalizing SMEs · team reinforcement",
+            fr: "Startups · PME en digitalisation · renfort d'equipe",
           },
-          currentJobTitle: {
-            en: "Turning Ideas into Reality | Building Scalable Solutions",
-            fr: "Donner vie à vos idées | Bâtir des Solutions Scalables",
+          titleTop: {
+            en: "I design and structure",
+            fr: "Je conçois et structure",
+          },
+          titleBottom: {
+            en: "web and mobile applications.",
+            fr: "des applications web & mobiles.",
+          },
+          lead: {
+            en: "For a new product, a business application or a team that needs support, I step in on architecture, web/mobile development, back-end, practical AI integration and CI/CD to move the project forward on solid foundations.",
+            fr: "Pour un nouveau produit, une application metier ou une equipe a accompagner, j'interviens sur l'architecture, le developpement web/mobile, le back-end, l'integration IA utile et le CI/CD afin de faire avancer le projet sur des bases solides.",
           },
         },
-        getInTouch: { en: "Project or Audit?", fr: "Projet ou Audit ?" },
-        scroll: { en: "My Expertise", fr: "Mon Expertise" },
+        getInTouch: { en: "Discuss project", fr: "Parler projet" },
+        viewWork: { en: "View projects", fr: "Voir projets" },
+        scroll: { en: "How I help", fr: "Comment j'interviens" },
         experienceYearLabel: {
-          en: "Years Of Experience",
-          fr: "Années d'expérience",
+          en: "Years of experience",
+          fr: "Ans d'experience",
         },
         completedProjectLabel: {
-          en: "Projects Delivered",
-          fr: "Projets Livrés",
+          en: "Projects and engagements",
+          fr: "Projets et missions",
         },
-        happyClientLabel: { en: "Collaborations", fr: "Collaborations" },
-        hireMe: { en: "Contact Me", fr: "Me Contacter" },
+        happyClientLabel: { en: "Client collaborations", fr: "Collaborations client" },
+        hireMe: { en: "Contact me", fr: "Me contacter" },
         toCV: { en: "Download CV", fr: "Télécharger CV" },
+        availability: {
+          en: "Available for scoping, web/mobile implementation, practical AI integration and team reinforcement.",
+          fr: "Disponible pour cadrage, developpement web/mobile, integration IA utile et renfort d'equipe.",
+        },
+        portfolio: {
+          viewDetails: {
+            en: "View project",
+            fr: "Voir le projet",
+          },
+          closeDetails: {
+            en: "Close project details",
+            fr: "Fermer le detail du projet",
+          },
+          clientHighlights: {
+            en: "Concrete value delivered",
+            fr: "Ce que le projet apporte concretement",
+          },
+        },
       },
 
-      aboutMe: {
-        title: { en: "About Me", fr: "À propos" },
-        subtitle1: {
-          en: "Web & Mobile Expertise,",
-          fr: "Expertise Web & Mobile,",
+      heroProof: {
+        kicker: {
+          en: "Most requested contexts",
+          fr: "Contextes les plus demandes",
         },
-        subtitle2: { en: "From Concept to Launch.", fr: "Du Concept au Lancement." },
+      },
+
+      heroProofBadges: [
+        {
+          en: "9+ years in production",
+          fr: "9+ ans en production",
+        },
+        {
+          en: "E-commerce, health, logistics",
+          fr: "E-commerce, sante, logistique",
+        },
+      ],
+
+      heroHighlights: [
+        {
+          value: { en: "Launching startups", fr: "Startups en lancement" },
+          label: {
+            en: "scoping, MVP and solid product foundations",
+            fr: "cadrage, MVP et bases produit solides",
+          },
+        },
+        {
+          value: { en: "SMEs digitizing operations", fr: "PME en digitalisation" },
+          label: {
+            en: "internal tools, portals and business applications",
+            fr: "outils internes, portails et applications metier",
+          },
+        },
+        {
+          value: { en: "Products already in production", fr: "Produits deja en production" },
+          label: {
+            en: "targeted reinforcement, reliability and practical AI integration",
+            fr: "renfort cible, fiabilisation et integration IA utile",
+          },
+        },
+      ],
+
+      aboutMe: {
+        title: { en: "Positioning", fr: "Positionnement" },
+        subtitle1: {
+          en: "A technical partner to",
+          fr: "Un partenaire technique pour",
+        },
+        subtitle2: {
+          en: "scope, build and evolve.",
+          fr: "cadrer, construire et faire évoluer.",
+        },
         text: {
-          en: "Lead Dev, having worked within ESNs and international teams, with dual expertise in software architecture and team management. A specialist in modern technologies, mastering both mobile and web development. His skills extend to DevOps and CI/CD practices, enabling the implementation of robust automated deployment systems. Passionate about technology, he stands out for his competitive spirit and willingness to share, his adaptability, and his strong curiosity. He is also experienced in agile project management, technological decision-making, and training.",
-          fr: "Lead Dev, ayant travaillé au sein d'ESN et d'équipes à dimension internationale doté d'une double expertise en architecture logicielle et en encadrement d'équipe. Il est un spécialiste des technologies modernes, maîtrisant à la fois le développement mobile et web . Sa compétence s'étend aux pratiques DevOps et CI/CD, lui permettant de mettre en place des systèmes de déploiement automatisé robustes. Passionné par la technologie, il se distingue par son esprit de compétition et de partage, sa capacité d'adaptation, et sa forte curiosité. Il est également expérimenté dans la gestion de projet agile, la prise de décision technologique, et la formation.",
+          en: "I combine software architecture, web and mobile development, Agile delivery and team coordination. In practice, I can turn an unclear need into a concrete plan, set the right technical foundations and move the product forward with your team or independently.",
+          fr: "Je combine architecture logicielle, developpement web et mobile, gestion Agile et coordination d'equipe. Concretement, je peux transformer un besoin encore flou en plan d'action, poser les bonnes bases techniques puis faire avancer le produit avec votre equipe ou en autonomie.",
         },
         quoteDescription: {
-          en: "Quality & Strategy.",
-          fr: "Qualité & Stratégie.",
+          en: "Structure, clarity, execution.",
+          fr: "Structure, clarté, exécution.",
         },
         quoteText: {
-          en: "My goal: To provide the strategic vision and technical backbone your project needs to thrive, ensuring scalability from day one.",
-          fr: "Mon objectif : Apporter la vision stratégique et le socle technique indispensables à la réussite de votre projet, en assurant sa scalabilité dès le premier jour.",
+          en: "My role does not stop at implementation. I help clarify the need, reduce technical risk and keep the project moving with solid decisions.",
+          fr: "Mon role ne se limite pas au developpement. J'interviens pour clarifier le besoin, reduire le risque technique et faire avancer le projet avec des decisions solides.",
         },
-        hireMe: { en: "Let's work together", fr: "Travaillons ensemble" },
+        highlights: [
+          {
+            title: { en: "Audit & roadmap", fr: "Audit & feuille de route" },
+            text: {
+              en: "Architecture review, fragility analysis and a prioritized action plan.",
+              fr: "Revue d'architecture, analyse des points de fragilite et plan d'action priorise.",
+            },
+          },
+          {
+            title: { en: "Web, mobile & back-end", fr: "Web, mobile & back-end" },
+            text: {
+              en: "Web, mobile and back-end implementation with product, data and release constraints in mind.",
+              fr: "Conception et mise en oeuvre web, mobile et back-end avec une vraie attention au produit, a la donnee et a la mise en production.",
+            },
+          },
+          {
+            title: { en: "Team reinforcement", fr: "Renfort d'equipe" },
+            text: {
+              en: "Operational contribution inside an existing team, with autonomy, code review and knowledge sharing.",
+              fr: "Contribution operationnelle dans une equipe existante, avec autonomie, code review et transmission des bonnes pratiques.",
+            },
+          },
+          {
+            title: { en: "AI & automation", fr: "IA & automatisation" },
+            text: {
+              en: "Useful AI features, assistants, summaries or workflow automations integrated where they genuinely save time.",
+              fr: "Fonctionnalites IA utiles, assistants, resumes ou automatisations integrees la ou elles font vraiment gagner du temps.",
+            },
+          },
+        ],
+        hireMe: { en: "Let's scope your need", fr: "Cadrons votre besoin" },
         downloadCv: { en: "Download Resume", fr: "Télécharger CV" },
       },
 
       services: {
-        title: { en: "Expertise", fr: "Expertise" },
-        subtitle: { en: "How I Can Help", fr: "Comment j'interviens" },
-        productDesign: { en: "Consulting & Audits", fr: "Consulting & Audits" },
-        productDesignText: {
-          en: "For existing systems: I perform deep architectural reviews and code audits. I provide strategic roadmaps to resolve technical debt, optimize performance, and prepare your stack for scaling.",
-          fr: "Pour les systèmes existants : Je réalise des revues d'architecture approfondies et des audits de code. Je fournis des feuilles de route stratégiques pour résorber la dette technique, optimiser les performances et préparer votre stack au passage à l'échelle.",
+        title: { en: "Where I step in", fr: "Contextes d'intervention" },
+        subtitle: { en: "Four contexts where I create value", fr: "Quatre contextes ou j'interviens" },
+        text: {
+          en: "I step in where business needs, product decisions, technical execution and useful automation must meet clearly and move forward without noise.",
+          fr: "J'interviens la ou besoin metier, produit, execution technique et automatisation utile doivent se rejoindre clairement et avancer sans friction inutile.",
         },
-        webDev: { en: "Architecture & Product Engineering", fr: "Architecture & Ingénierie Produit" },
-        webDevText: {
-          en: "From idea to deployment: Resilient architecture design, strategic tech stack selection, and full-stack implementation to build products built for growth.",
-          fr: "De l'idée au déploiement : Conception d'architectures résilientes, choix technologiques stratégiques et réalisation Full-stack pour des produits taillés pour la croissance.",
-        },
-        multiplatformApp: {
-          en: "Technical Leadership & Mentoring",
-          fr: "Leadership Technique & Mentorat"
-        },
-        xPlatformAppText: {
-          en: "I integrate into your teams to bring expertise and methodology. I foster best practices (Clean Arch, CI/CD) and developer autonomy through benevolent yet demanding mentorship.",
-          fr: "J'intègre vos équipes pour apporter expertise et méthodologie. Je favorise les bonnes pratiques (Clean Arch, CI/CD) et l'autonomie des développeurs à travers un mentorat bienveillant mais exigeant.",
-        },
+        cards: [
+          {
+            className: "interface",
+            imgUrl: "assets/images/services/product-design.svg",
+            kicker: {
+              en: "For startups",
+              fr: "Pour les startups",
+            },
+            title: {
+              en: "Launch a product on reliable foundations",
+              fr: "Lancer un produit sur des bases fiables",
+            },
+            text: {
+              en: "For founders or product teams who need to turn an idea into a usable first version without improvising the technical base.",
+              fr: "Pour les fondateurs et equipes produit qui doivent transformer une idee en premiere version utile, sans improviser la base technique.",
+            },
+            points: [
+              {
+                en: "Product framing and prioritization",
+                fr: "Cadrage produit et priorisation",
+              },
+              {
+                en: "Tech stack, architecture and data choices",
+                fr: "Choix de stack, architecture et donnees",
+              },
+              {
+                en: "Web or mobile implementation guided by real usage",
+                fr: "Conception web ou mobile guidee par les usages",
+              },
+            ],
+          },
+          {
+            className: "development",
+            imgUrl: "assets/images/services/brackets.svg",
+            kicker: {
+              en: "For SMEs",
+              fr: "Pour les PME",
+            },
+            title: {
+              en: "Digitalize a process without making the organization heavier",
+              fr: "Digitaliser un processus sans alourdir l'organisation",
+            },
+            text: {
+              en: "For companies that want to turn an operational need into an internal tool, a portal or a business application.",
+              fr: "Pour les entreprises qui veulent transformer un besoin operationnel en outil interne, portail ou application metier.",
+            },
+            points: [
+              {
+                en: "Process mapping and functional framing",
+                fr: "Cartographie du processus et cadrage fonctionnel",
+              },
+              {
+                en: "Interfaces designed around real field usage",
+                fr: "Interfaces pensees autour des usages terrain",
+              },
+              {
+                en: "Maintainable solution and progressive scale-up",
+                fr: "Solution maintenable et evolutive",
+              },
+            ],
+          },
+          {
+            className: "ai",
+            imgUrl: "assets/images/services/platform-icon.png",
+            kicker: {
+              en: "For products in use",
+              fr: "Pour les produits en usage",
+            },
+            title: {
+              en: "Add useful AI without making the product fuzzy",
+              fr: "Ajouter de l'IA utile sans rendre le produit flou",
+            },
+            text: {
+              en: "For teams that want to add assistance, search, summaries, extraction or smart automations to an existing product or internal workflow.",
+              fr: "Pour les equipes qui veulent ajouter assistance, recherche, resumes, extraction ou automatisations intelligentes dans un produit existant ou un workflow interne.",
+            },
+            points: [
+              {
+                en: "Identify the use case where AI creates real value for users or teams",
+                fr: "Identifier le cas d'usage ou l'IA cree une vraie valeur pour les utilisateurs ou l'equipe",
+              },
+              {
+                en: "Integrate AI into the current product without breaking the user experience",
+                fr: "Integrer l'IA dans le produit actuel sans casser l'experience utilisateur",
+              },
+              {
+                en: "Keep reliability, cost and operating rules under control from day one",
+                fr: "Garder fiabilite, cout et regles d'usage sous controle des le depart",
+              },
+            ],
+          },
+          {
+            className: "marketing",
+            imgUrl: "assets/images/services/platform-icon.png",
+            kicker: {
+              en: "For existing teams",
+              fr: "Pour les equipes en place",
+            },
+            title: {
+              en: "Reinforce a team without breaking its pace",
+              fr: "Renforcer une equipe sans casser son rythme",
+            },
+            text: {
+              en: "For teams that need someone able to produce, structure and support good engineering practices at the same time.",
+              fr: "Pour les equipes qui ont besoin d'un profil capable de produire, structurer et accompagner les bonnes pratiques en meme temps.",
+            },
+            points: [
+              {
+                en: "Technical coordination and operational support",
+                fr: "Coordination technique et appui operationnel",
+              },
+              {
+                en: "Code review, mentoring and developer autonomy",
+                fr: "Code review, mentoring et autonomie de l'equipe",
+              },
+              {
+                en: "CI/CD, technical backlog and release stabilization",
+                fr: "CI/CD, backlog technique et stabilisation des mises en production",
+              },
+            ],
+          },
+        ],
       },
 
       //SKILLS CONTENT
@@ -170,18 +383,32 @@ const app = Vue.createApp({
       isSkillsOrTools: "skills",
 
       mySkills: {
-        title: { en: "my skills", fr: "mes compétences" },
-        subtitle1: { en: "My Technical", fr: "Mon Arsenal" },
+        title: { en: "technical foundation", fr: "socle technique" },
+        subtitle1: { en: "A stack built", fr: "Une stack pensée" },
         subtitle2: {
-          en: "Arsenal",
-          fr: "Technique",
+          en: "for production",
+          fr: "pour la production",
         },
         text: {
-          en: "Leveraging a modern, robust ecosystem to solve complex business problems. I select and master the right tools to deliver efficiency and scalability.",
-          fr: "Tirer parti d'un écosystème moderne et robuste pour résoudre des problèmes métier complexes. Je sélectionne et maîtrise les bons outils pour offrir efficacité et évolutivité.",
+          en: "I rely on a modern stack already proven in production to build, maintain and evolve web and mobile applications.",
+          fr: "Je m'appuie sur un socle technique deja eprouve en production pour concevoir, maintenir et faire evoluer des applications web et mobiles.",
         },
-        skillsLabel: { en: "Core Tech", fr: "Socle Techno" },
-        toolsLabel: { en: "Ecosystème", fr: "Ecosystème" },
+        businessItems: [
+          {
+            en: "React, Next.js, Vue, Angular and Flutter for web and mobile interfaces that need to be adopted.",
+            fr: "React, Next.js, Vue, Angular et Flutter pour des interfaces web et mobiles qui doivent etre vraiment adoptees.",
+          },
+          {
+            en: "TypeScript, Node.js and data layers designed for maintainability.",
+            fr: "TypeScript, Node.js et des couches data pensees pour la maintenabilite.",
+          },
+          {
+            en: "Azure DevOps, GitLab CI, GitHub Actions and release pipelines for web and store deployments.",
+            fr: "Azure DevOps, GitLab CI, GitHub Actions et des pipelines de livraison pour le web comme pour les stores.",
+          },
+        ],
+        skillsLabel: { en: "Technologies", fr: "Technologies" },
+        toolsLabel: { en: "CI/CD & Tools", fr: "CI/CD & outils" },
         skillsItems: [
           {
             imgUrl: "assets/images/skills/flutter.png",
@@ -382,16 +609,16 @@ const app = Vue.createApp({
       experience: {
         title: { en: "Experience", fr: "Expérience" },
         subtitle1: {
-          en: `Impactful Leadership`,
-          fr: `Leadership Impactant`,
+          en: `Projects delivered under real constraints`,
+          fr: `Des projets menés dans le réel`,
         },
         subtitle2: {
-          en: "& Technical Expertise",
-          fr: "& Expertise Technique",
+          en: "& with technical accountability",
+          fr: "& avec responsabilité technique",
         },
         text: {
-          en: `Transitioning from hands-on development to strategic leadership, I have consistently driven technical excellence. My track record includes managing technical teams, architecting complex cloud solutions, and delivering high-value projects in international environments.`,
-          fr: `Passant du développement pratique au leadership stratégique, j'ai constamment favorisé l'excellence technique. Mon parcours inclut la gestion d'équipes techniques, l'architecture de solutions cloud complexes et la livraison de projets à haute valeur ajoutée dans des environnements internationaux.`,
+          en: `Across product companies, service firms, volunteer work and freelance engagements, I learned to protect what matters most to clients: useful software, a clear plan, reliable implementation and enough structure to keep momentum.`,
+          fr: `Entre produit, ESN, associatif et freelance, j'ai surtout appris a proteger ce qui compte le plus pour un client: un logiciel utile, un plan clair, une execution fiable et assez de structure pour garder l'elan.`,
         },
         items: [
           {
@@ -405,8 +632,8 @@ const app = Vue.createApp({
               en: "Lead Developer Web & Mobile",
             },
             desc: {
-              en: "Study, development, and maintenance of modern applications, from web interfaces to mobile apps and back-end management. Agile project management ensuring delivery within deadlines and budgets.",
-              fr: "Étude, développement et maintenance d'applications modernes, de la création des interfaces web aux applications mobiles, en passant par la gestion du Back-end. Prise en charge du pilotage des projets selon les méthodes Agiles.",
+              en: "Design, development and maintenance of modern web and mobile applications, with Agile steering, technical framing and release follow-through.",
+              fr: "Conception, developpement et maintenance d'applications web et mobiles, avec pilotage Agile, cadrage technique et suivi de mise en production.",
             },
           },
           {
@@ -420,8 +647,8 @@ const app = Vue.createApp({
               en: "Team Lead Developer",
             },
             desc: {
-              en: "Study, dev, maintenance & training on platforms (E-commerce, ERP, CRM). CI/CD setup, workflow optimization. Team leadership (5 people) & mobile architecture initiation.\nTools: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
-              fr: "Étude, dév, maintenance et formation sur plateformes (E-commerce, ERP, CRM). Mise en place CI/CD, optimisation workflows. Encadrement équipe (5 pers) et initiation architecture mobile.\nOutils: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
+              en: "Led the development department across marketplace, ERP, CRM and seller platform products. Set up CI/CD, optimized workflows, managed backlog and contributed to the mobile application architecture.\nTools: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
+              fr: "Encadrement du pole developpement sur une marketplace, un ERP, un CRM et une plateforme vendeur. Mise en place CI/CD, optimisation des workflows, gestion du backlog et contribution a l'architecture de l'application mobile.\nOutils: ReactJS, NextJS, Flutter, Docker, GitlabCI.",
             },
           },
           {
@@ -435,8 +662,8 @@ const app = Vue.createApp({
               en: "New Technologies Consultant",
             },
             desc: {
-              en: "Consulting & dev. Mobile/Web app maintenance (Construction). Creation of complete patient management system (Health): tracking, consultation, billing.\nTools: Flutter, Azure DevOps, React, Next.js, TypeScript.",
-              fr: "Conseil & dév. Maintenance applications mobile/web (BTP). Création système complet gestion patients (Santé): suivi, consultation, facturation.\nOutils: Flutter, Azure DevOps, React, Next.js, TypeScript.",
+              en: "Consulting, maintenance and development of web and mobile applications for construction and healthcare, including a complete patient management, appointment and billing system.\nTools: Flutter, Azure DevOps, React, Next.js, TypeScript.",
+              fr: "Conseil, maintenance evolutive et developpement d'applications web et mobiles pour le BTP et la sante, dont une solution complete de gestion patient, rendez-vous, dossier medical et facturation.\nOutils: Flutter, Azure DevOps, React, Next.js, TypeScript.",
             },
           },
           {
@@ -450,8 +677,8 @@ const app = Vue.createApp({
               en: "Project Manager & IS Developer (Volunteer)",
             },
             desc: {
-              en: "Management & dev. Mobile app for patient management (free surgeries). User training.\nTools: Flutter, Firebase, MariaDB.",
-              fr: "Gestion & dév. App mobile pour gestion patients (chirurgies gratuites). Formation utilisateurs.\nOutils: Flutter, Firebase, MariaDB.",
+              en: "Project coordination, development and user training around an offline-first field application used during surgical campaigns.\nTools: Flutter, Firebase, MariaDB.",
+              fr: "Pilotage, developpement et formation utilisateur autour d'une application terrain offline-first utilisee pendant des campagnes chirurgicales.\nOutils: Flutter, Firebase, MariaDB.",
             },
           },
           {
@@ -477,8 +704,8 @@ const app = Vue.createApp({
               en: "Application Developer",
             },
             desc: {
-              en: "Maintenance & Release of custom mobile apps (EDM, HR) and E-learning. CI/CD management & store deployment.\nTools: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
-              fr: "Maintenance & Mise en prod apps mobiles sur mesure (GED, RH) et E-learning. Gestion CI/CD et déploiement stores.\nOutils: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
+              en: "Maintenance and store releases for custom mobile applications (EDM, HR, expenses, payroll variables) as well as an e-learning platform.\nTools: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
+              fr: "Maintenance evolutive et mises en production d'applications mobiles sur mesure (GED, RH, notes de frais, variables de paie) ainsi que d'une plateforme e-learning.\nOutils: Flutter, Vue.js, React, Node.js, Docker, Gitlab CI.",
             },
           },
           {
@@ -522,130 +749,537 @@ const app = Vue.createApp({
       },
 
       //PORTFOLIO CONTENT
-      // filter type for items in portfolio section
-      worksFilter: "all",
-
       myWorks: {
-        isVisible: false,
-        title: { en: "portfolio", fr: "Portfolio" },
+        isVisible: true,
+        title: { en: "completed projects", fr: "projets realises" },
         subtitle1: {
-          en: `Selected`,
-          fr: `Sélection de`,
+          en: `Projects delivered`,
+          fr: `Des projets realises`,
         },
         subtitle2: {
-          en: "Work",
-          fr: "Travaux",
+          en: "for real business needs",
+          fr: "pour des besoins concrets",
         },
         text: {
-          en: `A selection of projects where I delivered scalable solutions, optimized performance, and ensured technical quality. From mobile apps to complex web platforms.`,
-          fr: `Une sélection de projets où j'ai livré des solutions évolutives, optimisé les performances et garanti la qualité technique. Des applications mobiles aux plateformes web complexes.`,
-        },
-        loadMore: {
-          en: "Load more works",
-          fr: "Charger plus de travaux",
+          en: `An expanded selection of platforms, mobile applications and internal tools delivered for startups, SMEs, associations, healthcare teams and operations-heavy organizations.`,
+          fr: `Une selection elargie de plateformes, applications mobiles et outils metier livres pour des startups, des PME, des associations, des structures de sante et des equipes operationnelles.`,
         },
       },
 
       allPortfolioItems: [
         {
-          url: "#",
+          url: "#contact",
           imgUrl: "assets/images/portfolio/portfolio-1.png",
           title: {
-            en: "Student Records Management",
-            fr: "Gestion de notes d'étudiants",
+            en: "Marketplace, ERP, CRM and seller space",
+            fr: "Marketplace, ERP, CRM et espace vendeur",
           },
-          desc: { en: "2016", fr: "2016" },
-          category: { slug: "web", name: "Web" },
+          meta: {
+            en: "Mora Market · e-commerce operations and internal tools",
+            fr: "Mora Market · e-commerce, operations et outils internes",
+          },
+          desc: {
+            en: "A complete digital backbone bringing together online sales, seller management and internal operations to support marketplace growth on stronger foundations.",
+            fr: "Un socle digital complet qui relie vente en ligne, gestion vendeur et operations internes pour faire grandir une marketplace sur des bases plus solides.",
+          },
+          points: [
+            {
+              en: "Unifies catalog, orders, sellers and internal follow-up inside one coherent system",
+              fr: "Unifie catalogue, commandes, vendeurs et suivi interne dans un meme systeme",
+            },
+            {
+              en: "Gives teams clearer visibility on commercial activity, bottlenecks and priorities",
+              fr: "Donne aux equipes plus de visibilite sur l'activite commerciale, les blocages et les priorites",
+            },
+            {
+              en: "Creates a scalable operational base for an e-commerce startup moving into structured growth",
+              fr: "Pose une base scalable pour une startup e-commerce qui passe a une organisation plus structuree",
+            },
+          ],
+          cta: {
+            en: "Discuss a marketplace and ERP platform",
+            fr: "Parler d'une marketplace et d'un ERP e-commerce",
+          },
         },
         {
-          url: "#",
+          url: "#contact",
           imgUrl: "assets/images/portfolio/portfolio-2.png",
           title: {
-            en: "Vehicle fleet management",
-            fr: "Gestion de parc automobile",
+            en: "Internal ERP and parcel tracking for Unicargo Express",
+            fr: "ERP interne et suivi colis pour Unicargo Express",
           },
-          desc: { en: "2017", fr: "2017" },
-          category: { slug: "web", name: "Web" },
+          meta: {
+            en: "Unicargo Express · internal operations and parcel tracking",
+            fr: "Unicargo Express · operations internes et suivi logistique",
+          },
+          desc: {
+            en: "A logistics platform with operator and admin back-office plus parcel tracking to organize internal work and improve shipment visibility.",
+            fr: "Une plateforme logistique avec back-office operator et admin, plus suivi colis, pour mieux organiser le travail interne et la visibilite des expeditions.",
+          },
+          points: [
+            {
+              en: "Centralizes internal processing, parcel statuses and team coordination in one workflow",
+              fr: "Centralise traitement interne, statuts colis et coordination des equipes dans un meme flux",
+            },
+            {
+              en: "Improves traceability and service quality at each stage of the delivery journey",
+              fr: "Ameliore la tracabilite et la qualite d'information a chaque etape du parcours colis",
+            },
+            {
+              en: "Reduces the friction caused by manual tracking and scattered operational tools",
+              fr: "Reduit les pertes de temps liees aux suivis manuels et aux outils operationnels disperses",
+            },
+          ],
+          cta: {
+            en: "Discuss a logistics platform",
+            fr: "Parler d'une plateforme logistique",
+          },
         },
         {
-          url: "#",
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-6.png",
+          title: {
+            en: "Web platform and back-office for Rotaract Amontana",
+            fr: "Plateforme web et back-office pour Rotaract Amontana",
+          },
+          meta: {
+            en: "Rotaract Club Antananarivo Amontana · institutional platform and secure admin space",
+            fr: "Rotaract Club Antananarivo Amontana · plateforme institutionnelle et administration securisee",
+          },
+          desc: {
+            en: "A full-stack institutional platform combining public website, recruitment, galleries, annual reports and secure administration tools for the club.",
+            fr: "Une plateforme institutionnelle full-stack qui combine site public, recrutement, galeries, bilans annuels et outils d'administration securises pour le club.",
+          },
+          points: [
+            {
+              en: "Strengthens credibility with members, partners, sponsors and future applicants",
+              fr: "Renforce la credibilite du club aupres des membres, partenaires, sponsors et futurs candidats",
+            },
+            {
+              en: "Simplifies management of content, partners, applications, archives and communication",
+              fr: "Simplifie la gestion des contenus, des partenaires, des candidatures, des archives et de la communication",
+            },
+            {
+              en: "Turns a simple showcase site into a day-to-day tool that also serves internal organization",
+              fr: "Transforme un simple site vitrine en outil utile au quotidien pour l'organisation interne",
+            },
+          ],
+          cta: {
+            en: "Discuss a web platform",
+            fr: "Parler d'une plateforme web",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-5.png",
+          title: {
+            en: "Real-time geolocation platform Trackeo",
+            fr: "Plateforme de geolocalisation temps reel Trackeo",
+          },
+          meta: {
+            en: "Trackeo · real-time geolocation and field operations",
+            fr: "Trackeo · geolocalisation temps reel et operations terrain",
+          },
+          desc: {
+            en: "A real-time geolocation solution to monitor vehicles, trip history, geofences and alerts from an architecture built for operational use.",
+            fr: "Une solution de geolocalisation temps reel pour suivre vehicules, historiques, geofences et alertes depuis une architecture pensee pour un usage operationnel.",
+          },
+          points: [
+            {
+              en: "Gives operations teams an immediate view of fleet activity and movements",
+              fr: "Donne aux equipes operations une lecture immediate de l'activite terrain et des mouvements de flotte",
+            },
+            {
+              en: "Helps detect delays, route deviations and zone exits much faster",
+              fr: "Permet de detecter plus vite les retards, les ecarts de trajet et les sorties de zone",
+            },
+            {
+              en: "Creates a solid base for a connected tracking offer in logistics, security or field services",
+              fr: "Prepare une offre de suivi connecte exploitable pour la logistique, la securite ou les services terrain",
+            },
+          ],
+          cta: {
+            en: "Discuss a geolocation platform",
+            fr: "Parler d'une plateforme de geolocalisation",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-2.png",
+          title: {
+            en: "Mobile e-commerce application for Mora Market",
+            fr: "Application mobile e-commerce pour Mora Market",
+          },
+          meta: {
+            en: "Mora Market · mobile commerce product",
+            fr: "Mora Market · produit mobile e-commerce",
+          },
+          desc: {
+            en: "A mobile commerce application designed to make ordering, discovery and engagement more direct from the smartphone.",
+            fr: "Une application mobile e-commerce concue pour rendre l'achat, la decouverte et l'engagement plus directs depuis le smartphone.",
+          },
+          points: [
+            {
+              en: "Opens a sales channel that is closer to everyday customer habits",
+              fr: "Ouvre un canal de vente plus proche des usages quotidiens des clients",
+            },
+            {
+              en: "Supports repeat usage, promotions and ongoing interaction with the brand",
+              fr: "Favorise la recurrence d'usage, les promotions et les interactions avec la marque",
+            },
+            {
+              en: "Completes the web platform with a mobile experience that stays aligned with business goals",
+              fr: "Complete la plateforme web avec une experience mobile coherente avec les objectifs business",
+            },
+          ],
+          cta: {
+            en: "Discuss a mobile product",
+            fr: "Parler d'un produit mobile",
+          },
+        },
+        {
+          url: "#contact",
           imgUrl: "assets/images/portfolio/portfolio-3.png",
           title: {
-            en: "Entry/Exit system management",
-            fr: "Système de gestion d'entrée et sortie",
+            en: "Planning, events and tasks for construction teams",
+            fr: "Planning, evenements et taches pour equipes BTP",
           },
-          desc: { en: "2018", fr: "2018" },
-          category: { slug: "web", name: "Web" },
+          meta: {
+            en: "Versusmind · field coordination tool",
+            fr: "Versusmind · outil de coordination terrain",
+          },
+          desc: {
+            en: "A coordination tool to organize planning, events and tasks in a construction environment involving multiple stakeholders.",
+            fr: "Un outil de coordination pour organiser planning, evenements et taches dans un environnement BTP impliquant plusieurs intervenants.",
+          },
+          points: [
+            {
+              en: "Clarifies who does what, when and on which priority",
+              fr: "Clarifie qui fait quoi, quand et sur quelles priorites",
+            },
+            {
+              en: "Reduces missed actions and fragmented communication between field actors",
+              fr: "Reduit les oublis et la dispersion de l'information entre les acteurs terrain",
+            },
+            {
+              en: "Accelerates the digitalization of internal coordination that is often still informal",
+              fr: "Accelere la digitalisation d'une coordination interne souvent geree de facon informelle",
+            },
+          ],
+          cta: {
+            en: "Discuss an internal tool",
+            fr: "Parler d'un outil interne",
+          },
         },
         {
-          url: "#",
+          url: "#contact",
           imgUrl: "assets/images/portfolio/portfolio-4.png",
-          title: { en: "BMI Calculator", fr: "Calculateur IMC" },
-          desc: { en: "April 2019", fr: "Avril 2019" },
-          category: { slug: "mobile", name: "Mobile" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-5.png",
-          title: { en: "Music player", fr: "Music Player" },
-          desc: { en: "2021", fr: "2021" },
-          category: { slug: "desktop", name: "Desktop" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-6.png",
-          title: { en: "Skilleos", fr: "Skilleos" },
-          desc: { en: "2021", fr: "2021" },
-          category: { slug: "web", name: "Web" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-5.png",
-          title: { en: "Meteo application", fr: "Meteo" },
-          desc: { en: "2021", fr: "2021" },
-          category: { slug: "mobile", name: "Mobile" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-6.png",
-          title: { en: "Calculator", fr: "Calculatrice" },
-          desc: { en: "2023", fr: "2023" },
-          category: { slug: "mobile", name: "Mobile" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-7.png",
           title: {
-            en: "Touristic pathway management",
-            fr: "Gestion de parcours touristique",
+            en: "Patient management, medical record and billing",
+            fr: "Gestion patient, dossier medical et facturation",
           },
-          desc: { en: "2023", fr: "2023" },
-          category: { slug: "web", name: "web" },
+          meta: {
+            en: "Versusmind · healthcare operations",
+            fr: "Versusmind · operations et parcours de soin",
+          },
+          desc: {
+            en: "A healthcare system linking patient registration, consultation, examination, medical records, appointments and billing in one continuous flow.",
+            fr: "Un systeme sante qui relie enregistrement patient, consultation, examen, dossier medical, rendez-vous et facturation dans un meme flux continu.",
+          },
+          points: [
+            {
+              en: "Makes the patient journey smoother from intake to discharge",
+              fr: "Fluidifie le parcours patient depuis l'accueil jusqu'a la sortie",
+            },
+            {
+              en: "Improves data reliability between care teams, administration and billing",
+              fr: "Fiabilise les informations partagees entre les equipes de soin, l'administratif et la facturation",
+            },
+            {
+              en: "Reduces duplicate entry and everyday friction in healthcare operations",
+              fr: "Reduit les doubles saisies et les frictions quotidiennes dans le fonctionnement de la structure",
+            },
+          ],
+          cta: {
+            en: "Discuss a healthcare platform",
+            fr: "Parler d'une plateforme sante",
+          },
         },
         {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-7.png",
-          title: { en: "Mail Management", fr: "Gestion de courriers" },
-          desc: { en: "2023", fr: "2023" },
-          category: { slug: "web", name: "web" },
-        },
-        {
-          url: "#",
-          imgUrl: "assets/images/portfolio/portfolio-7.png",
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-5.png",
           title: {
-            en: "Student assigment manager",
-            fr: "Gestion de devoir d'étudiant",
+            en: "Nutrition and exercise tracking on iOS and Android",
+            fr: "Suivi nutritionnel et exercice sur iOS et Android",
           },
-          desc: { en: "2023", fr: "2023" },
-          category: { slug: "web", name: "web" },
+          meta: {
+            en: "MyZenkaiFit · nutrition, strength and cardio tracking",
+            fr: "MyZenkaiFit · nutrition, musculation et cardio",
+          },
+          desc: {
+            en: "A premium mobile product for nutrition, strength training, cardio routines and long-term progress tracking.",
+            fr: "Un produit mobile premium pour la nutrition, la musculation, le cardio et le suivi de progression dans la duree.",
+          },
+          points: [
+            {
+              en: "Helps users follow routines, goals and progress much more easily",
+              fr: "Aide les utilisateurs a suivre plus facilement leurs routines, leurs objectifs et leur progression",
+            },
+            {
+              en: "Supports a stronger premium positioning for coaching, wellness and fitness offers",
+              fr: "Valorise une offre coaching, bien-etre ou fitness avec un produit mobile plus premium",
+            },
+            {
+              en: "Fits subscription, retention and long-term engagement models very well",
+              fr: "Soutient tres bien une logique d'abonnement, de fidelisation et d'engagement dans le temps",
+            },
+          ],
+          cta: {
+            en: "Discuss a fitness application",
+            fr: "Parler d'une application fitness",
+          },
         },
-      ].reverse(),
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-5.png",
+          title: {
+            en: "Field PWA for Rotary surgical campaigns",
+            fr: "PWA terrain pour campagnes chirurgicales Rotary",
+          },
+          meta: {
+            en: "Rotary Club Antananarivo · offline-first medical field operations",
+            fr: "Rotary Club Antananarivo · operations medicales terrain offline-first",
+          },
+          desc: {
+            en: "An offline-first PWA used during surgical campaigns to manage patient registration, operating schedules, post-op follow-up and field statistics.",
+            fr: "Une PWA offline-first utilisee pendant des campagnes chirurgicales pour gerer enregistrement patient, programmes operatoires, suivis post-operatoires et statistiques terrain.",
+          },
+          points: [
+            {
+              en: "Keeps teams operational even when connectivity is unstable or unavailable",
+              fr: "Permet aux equipes de rester operationnelles meme quand la connectivite est instable ou absente",
+            },
+            {
+              en: "Centralizes critical patient, operation and follow-up information in one field tool",
+              fr: "Centralise les informations critiques du patient, de l'operation et du suivi dans un seul outil terrain",
+            },
+            {
+              en: "Improves both medical and logistical coordination during demanding field missions",
+              fr: "Ameliore a la fois la coordination medicale et logistique pendant des missions terrain exigeantes",
+            },
+          ],
+          cta: {
+            en: "Discuss a field operations tool",
+            fr: "Parler d'un outil terrain",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-6.png",
+          title: {
+            en: "Business apps for accounting, document and HR workflows",
+            fr: "Applications metier compta, GED et RH",
+          },
+          meta: {
+            en: "Bocasay · multi-module business apps",
+            fr: "Bocasay · applications metier multi-modules",
+          },
+          desc: {
+            en: "A suite of mobile business applications for accounting firms and HR workflows covering document management, file sharing, mileage, expenses, payroll inputs and alerts.",
+            fr: "Une suite d'applications mobiles metier pour cabinets comptables et workflows RH couvrant GED, partage de fichiers, kilometrage, frais, variables de paie et alertes.",
+          },
+          points: [
+            {
+              en: "Digitalizes several repetitive administrative tasks inside a simpler mobile experience",
+              fr: "Digitalise plusieurs taches administratives repetitives dans une experience mobile plus simple",
+            },
+            {
+              en: "Supports service continuity for apps used regularly by both teams and clients",
+              fr: "Ameliore la continuite de service sur des applications utilisees regulierement par les equipes et les clients",
+            },
+            {
+              en: "Helps service organizations gain fluidity and responsiveness in day-to-day operations",
+              fr: "Aide les structures de services a gagner en fluidite et en reactivite au quotidien",
+            },
+          ],
+          cta: {
+            en: "Discuss a business app suite",
+            fr: "Parler d'une suite applicative metier",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-3.png",
+          title: {
+            en: "Premium Malagasy learning application",
+            fr: "Application premium d'apprentissage du malgache",
+          },
+          meta: {
+            en: "Sekolygasy · premium language learning product",
+            fr: "Sekolygasy · produit premium d'apprentissage linguistique",
+          },
+          desc: {
+            en: "A premium Android and iOS learning product built to make Malagasy practice more regular, engaging and easier to follow.",
+            fr: "Un produit premium Android et iOS concu pour rendre la pratique du malgache plus reguliere, plus engageante et plus simple a suivre.",
+          },
+          points: [
+            {
+              en: "Turns a niche learning need into an accessible and engaging mobile habit",
+              fr: "Transforme un besoin d'apprentissage niche en experience mobile accessible et engageante",
+            },
+            {
+              en: "Supports a premium positioning around content, community and subscription",
+              fr: "Soutient un positionnement premium autour du contenu, de la communaute et de l'abonnement",
+            },
+            {
+              en: "Fits EdTech, language and recurring-content products very well",
+              fr: "Convient tres bien aux produits EdTech, langues et contenus a forte recurrence",
+            },
+          ],
+          cta: {
+            en: "Discuss an EdTech application",
+            fr: "Parler d'une application EdTech",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-3.png",
+          title: {
+            en: "Video streaming e-learning platform",
+            fr: "Plateforme e-learning de cours video en streaming",
+          },
+          meta: {
+            en: "Bocasay · learning and content platform",
+            fr: "Bocasay · plateforme de formation et de contenu",
+          },
+          desc: {
+            en: "An online learning platform built to deliver video courses in streaming and make a training catalog easier to access and monetize.",
+            fr: "Une plateforme de formation en ligne concue pour diffuser des cours video en streaming et mieux valoriser, diffuser et monetiser un catalogue de contenus.",
+          },
+          points: [
+            {
+              en: "Makes training content easier to access and follow over time",
+              fr: "Rend les contenus de formation plus simples a consulter et a suivre dans la duree",
+            },
+            {
+              en: "Provides a stronger base for monetizing a training catalog",
+              fr: "Donne une base plus solide pour monetiser un catalogue de formation",
+            },
+            {
+              en: "Supports a continuous delivery model for training or premium content businesses",
+              fr: "Soutient un modele de diffusion continue pour la formation ou les contenus premium",
+            },
+          ],
+          cta: {
+            en: "Discuss a learning platform",
+            fr: "Parler d'une plateforme de formation",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-4.png",
+          title: {
+            en: "Fablab activity tracking application",
+            fr: "Application de suivi d'activite pour fablab",
+          },
+          meta: {
+            en: "ONG HABAKA · association and member operations",
+            fr: "ONG HABAKA · operations associatives et suivi des membres",
+          },
+          desc: {
+            en: "An activity tracking application for a fablab designed to replace manual logs with a more reliable operational base.",
+            fr: "Une application de suivi d'activite pour fablab concue pour remplacer les registres manuels par une base de travail plus fiable et plus exploitable.",
+          },
+          points: [
+            {
+              en: "Gives better visibility on attendance and use of shared spaces",
+              fr: "Donne une meilleure visibilite sur la frequentation et l'utilisation des espaces partages",
+            },
+            {
+              en: "Makes member tracking and day-to-day organization much easier to manage",
+              fr: "Facilite nettement le suivi des membres et l'organisation quotidienne du lieu",
+            },
+            {
+              en: "Creates a first real digitalization step for associations, labs and shared spaces",
+              fr: "Constitue un premier vrai pas de digitalisation pour des associations, labs et espaces partages",
+            },
+          ],
+          cta: {
+            en: "Discuss a digitalization project",
+            fr: "Parler d'un projet de digitalisation",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-1.png",
+          title: {
+            en: "Automation for vehicle fleet operations",
+            fr: "Automatisation du parc automobile",
+          },
+          meta: {
+            en: "BMOI · internal automation and productivity",
+            fr: "BMOI · automatisation interne et productivite",
+          },
+          desc: {
+            en: "An internal application built to automate manual tasks in the vehicle fleet department and make daily processing more reliable.",
+            fr: "Une application interne concue pour automatiser les taches manuelles du service parc automobile et fiabiliser les traitements du quotidien.",
+          },
+          points: [
+            {
+              en: "Reduces the time spent on repetitive low-value administrative work",
+              fr: "Reduit le temps passe sur des operations repetitives a faible valeur ajoutee",
+            },
+            {
+              en: "Limits the risk of errors caused by fully manual processing",
+              fr: "Diminue le risque d'erreurs liees a des traitements entierement manuels",
+            },
+            {
+              en: "Improves productivity in a support department without disrupting work habits",
+              fr: "Ameliore la productivite d'un service support sans alourdir les habitudes de travail",
+            },
+          ],
+          cta: {
+            en: "Discuss an internal automation tool",
+            fr: "Parler d'un outil d'automatisation interne",
+          },
+        },
+        {
+          url: "#contact",
+          imgUrl: "assets/images/portfolio/portfolio-2.png",
+          title: {
+            en: "Academic records management and generation",
+            fr: "Gestion et generation de releves academiques",
+          },
+          meta: {
+            en: "Sainte Famille Mahamasina · school administration",
+            fr: "Sainte Famille Mahamasina · gestion scolaire",
+          },
+          desc: {
+            en: "A web application to manage academic records and speed up their generation in a more reliable way for the institution.",
+            fr: "Une application web pour gerer les releves academiques et accelerer leur generation de maniere plus fiable pour l'institution.",
+          },
+          points: [
+            {
+              en: "Simplifies record preparation and edition for the administrative team",
+              fr: "Simplifie la preparation et l'edition des releves pour l'administration",
+            },
+            {
+              en: "Reduces manual handling and the risk of academic reporting errors",
+              fr: "Reduit les manipulations manuelles et les risques d'erreur sur les releves",
+            },
+            {
+              en: "Delivers a very concrete time-saving gain for an educational structure",
+              fr: "Apporte un gain de temps tres concret a une structure educative",
+            },
+          ],
+          cta: {
+            en: "Discuss a school management tool",
+            fr: "Parler d'un outil de gestion scolaire",
+          },
+        },
+      ],
 
-      // current page of portfolio items
-      portfolioItemsPage: 0,
-
-      // viewed portfolio items
-      portfolioItems: [],
+      portfolioPreviewCount: 8,
 
       //TESTIMONIALS CONTENT
       testimonials: {
@@ -713,14 +1347,18 @@ const app = Vue.createApp({
 
       contact: {
         title: { en: "Contact", fr: "Contact" },
-        subtitle1: { en: "Have You Any Project?", fr: "Vous avez un projet?" },
+        subtitle1: { en: "A project, an audit or extra delivery capacity?", fr: "Un projet, un audit ou un renfort d'equipe ?" },
         subtitle2: {
-          en: "Please Drop a Message",
-          fr: "Veuillez laisser un message",
+          en: "Let's discuss it clearly",
+          fr: "Échangeons simplement",
         },
         text: {
-          en: "Get in touch and let me know how I can help. Fill out the form and I’ll be in touch as soon as possible.",
-          fr: "Contactez-moi et dites-moi comment je peux vous aider. Remplissez le formulaire et je vous contacterai dès que possible.",
+          en: "Reach out if you need to frame a web or mobile application, recover a delayed project, digitalize an internal process or reinforce your team for a key phase.",
+          fr: "Écrivez-moi si vous souhaitez cadrer une application web ou mobile, reprendre un projet en retard, digitaliser un processus interne ou renforcer votre equipe pendant une phase clé.",
+        },
+        responseNote: {
+          en: "I usually reply with a useful first read: scope, technical angle and recommended next step.",
+          fr: "Je reviens en général avec une première lecture utile: cadrage, angle technique et prochaine étape recommandée.",
         },
         addressLabel: { en: "Address", fr: "Adresse" },
         address: "Madagascar, Antananarivo, 101",
@@ -739,20 +1377,24 @@ const app = Vue.createApp({
           },
           customerEmailLabel: { en: "Email", fr: "Email" },
           customerEmailPlaceholder: {
-            en: "e.g. jean.rakoto@gmail.com",
-            fr: "ex. jean.rakoto@gmail.com",
+            en: "e.g. jean@company.com",
+            fr: "ex. jean@entreprise.com",
           },
           customerPhoneLabel: { en: "Phone", fr: "Téléphone" },
           customerPhonePlaceholder: {
-            en: "Phone Number",
-            fr: "Numéro de télephone",
+            en: "e.g. +261 34 20 905 72",
+            fr: "ex. +261 34 20 905 72",
           },
           messageLabel: { en: "Message", fr: "Message" },
           messagePlaceholder: {
-            en: "Write message...",
-            fr: "Ecrire un message...",
+            en: "Tell me about the context, objective, constraints and ideal timeline...",
+            fr: "Presentez le contexte, l'objectif, les contraintes et le calendrier ideal...",
           },
-          optionalLabel: { en: "Optional", fr: "Optionelle" },
+          optionalLabel: { en: "Optional", fr: "Optionnel" },
+          submitLabel: {
+            en: "Send your brief",
+            fr: "Envoyer votre demande",
+          },
         },
       },
     };
@@ -761,9 +1403,6 @@ const app = Vue.createApp({
   created() {
     // get a theme to use
     this.getAppTheme();
-
-    // get portfolio items
-    this.getPortfolioItems();
   },
 
   mounted() {
@@ -783,12 +1422,13 @@ const app = Vue.createApp({
 
     // hide the preloader screen after loading
     window.addEventListener("load", () =>
-      setTimeout(() => (this.isPreloading = false), 5000)
+      setTimeout(() => (this.isPreloading = false), 700)
     );
 
     // scrolling options
     this.scrollingOptions();
     document.addEventListener("scroll", () => this.scrollingOptions());
+    document.addEventListener("keydown", this.handlePortfolioKeydown);
 
     // initialize popper.js plugin
     document.querySelectorAll(".has-ultimate-tooltip").forEach((el) => {
@@ -797,6 +1437,11 @@ const app = Vue.createApp({
         modifiers: [{ name: "offset", options: { offset: [0, 30] } }],
       });
     });
+  },
+
+  beforeUnmount() {
+    document.removeEventListener("keydown", this.handlePortfolioKeydown);
+    document.body.classList.remove("portfolio-modal-open");
   },
 
   methods: {
@@ -1006,48 +1651,53 @@ const app = Vue.createApp({
 
     // initialize VanillaTilt library in portfolio section
     initializeTilt() {
-      VanillaTilt.init(
-        this.$refs.portfolioItems?.querySelectorAll(".portfolio-item"),
-        {
+      const portfolioItems = [
+        ...(this.$refs.portfolioItems?.querySelectorAll(".portfolio-item") || []),
+      ].filter((item) => !item.vanillaTilt);
+
+      if (portfolioItems.length) {
+        VanillaTilt.init(portfolioItems, {
           max: 8,
           speed: 400,
           glare: true,
           "max-glare": 0.3,
-        }
-      );
+        });
+      }
     },
 
-    // get portfolio items
-    getPortfolioItems() {
-      const size = 7;
+    togglePortfolioItems() {
+      this.showAllPortfolioItems = !this.showAllPortfolioItems;
 
-      // check if there is more works or not
-      if (
-        (this.portfolioItemsPage - 1) * size + size <
-        this.allPortfolioItems.length
-      ) {
-        this.portfolioItemsPage++;
-        const itemsArr = this.allPortfolioItems.slice(
-          (this.portfolioItemsPage - 1) * size,
-          this.portfolioItemsPage * size
-        );
+      if (window.innerWidth >= 992) {
+        this.$nextTick(() => this.initializeTilt());
+      }
+    },
 
-        this.portfolioItems.push(...itemsArr);
+    openPortfolioItem(work, event) {
+      this.portfolioLastFocusedElement = event?.currentTarget || document.activeElement;
+      this.selectedPortfolioItem = work;
+      document.body.classList.add("portfolio-modal-open");
 
-        // initialize VanillaTilt for new items
-        setTimeout(
-          () => this.portfolioItemsPage > 1 && this.initializeTilt(),
-          0
-        );
-      } else {
-        // show the message "No more works" to the user
-        this.setNotify({
-          className: "danger",
-          msg: this.$refs.portfolioItems?.getAttribute(
-            "data-no-more-works-msg"
-          ),
-          time: 3000,
-        });
+      this.$nextTick(() => this.$refs.portfolioModalDialog?.focus());
+    },
+
+    closePortfolioItem() {
+      if (!this.selectedPortfolioItem) {
+        return;
+      }
+
+      const lastFocusedElement = this.portfolioLastFocusedElement;
+
+      this.selectedPortfolioItem = null;
+      this.portfolioLastFocusedElement = null;
+      document.body.classList.remove("portfolio-modal-open");
+
+      this.$nextTick(() => lastFocusedElement?.focus?.());
+    },
+
+    handlePortfolioKeydown(event) {
+      if (event.key === "Escape" && this.selectedPortfolioItem) {
+        this.closePortfolioItem();
       }
     },
 
@@ -1173,7 +1823,7 @@ const app = Vue.createApp({
       // phone validation
       if (
         phone.value.length > 0 &&
-        !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(
+        !/^\+?[0-9().\s-]{6,20}$/im.test(
           phone.value
         )
       ) {
@@ -1264,7 +1914,7 @@ const app = Vue.createApp({
             form
               .querySelectorAll(".valid")
               .forEach((el) => el.classList.remove("valid"));
-          } else if (String(data).includes("successful")) {
+          } else {
             // show error message
             this.setNotify({
               className: "danger",
@@ -1319,6 +1969,39 @@ const app = Vue.createApp({
     // flag to toggle ajax loading spinner
     isAjaxLoading() {
       return this.ajaxLoading.some((state) => state === true);
+    },
+
+    firstPortfolioItems() {
+      return this.allPortfolioItems.slice(0, this.portfolioPreviewCount);
+    },
+
+    visiblePortfolioItems() {
+      return this.showAllPortfolioItems ? this.allPortfolioItems : this.firstPortfolioItems;
+    },
+
+    extraPortfolioItems() {
+      return this.allPortfolioItems.slice(this.portfolioPreviewCount);
+    },
+
+    remainingPortfolioItemsCount() {
+      return this.extraPortfolioItems.length;
+    },
+
+    portfolioToggleLabel() {
+      const count = this.remainingPortfolioItemsCount;
+      const isFrench = this.getLanguageCode() === "fr";
+
+      if (isFrench) {
+        return `Voir ${count} projet${count > 1 ? "s" : ""} de plus`;
+      }
+
+      return `See ${count} more project${count > 1 ? "s" : ""}`;
+    },
+
+    portfolioToggleCloseLabel() {
+      return this.getLanguageCode() === "fr"
+        ? "Voir moins"
+        : "Show fewer projects";
     },
 
     // get the total years of experience
