@@ -7263,14 +7263,30 @@ body.portfolio-modal-open {
 }
 
 .portfolio-modal-media {
-  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.light_theme .portfolio-modal-media {
+  background: #eef1f0;
+}
+
+.dark_theme .portfolio-modal-media {
+  background: #161a1e;
 }
 
 .portfolio-modal-media img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 1rem;
 }
 
 .portfolio-modal-content {
@@ -7415,7 +7431,9 @@ body.portfolio-modal-open {
   }
 
   .portfolio-modal-media {
-    max-height: 240px;
+    height: min(34vh, 260px);
+    max-height: none;
+    padding: 0.5rem;
   }
 
   .portfolio-modal-content {
