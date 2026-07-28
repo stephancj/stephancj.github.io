@@ -7216,8 +7216,8 @@ body.portfolio-modal-open {
 .portfolio-modal-dialog {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  width: min(1020px, 100%);
+  grid-template-columns: minmax(0, 1.6fr) minmax(360px, 0.9fr);
+  width: min(1380px, 100%);
   max-height: calc(100vh - 3rem);
   overflow: hidden;
   border-radius: 1.7rem;
