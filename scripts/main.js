@@ -769,7 +769,7 @@ const app = Vue.createApp({
       allPortfolioItems: [
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-1.png",
+          imgUrl: "assets/images/portfolio/projects/mora-market.jpg",
           title: {
             en: "Marketplace, ERP, CRM and seller space",
             fr: "Marketplace, ERP, CRM et espace vendeur",
@@ -803,7 +803,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-2.png",
+          imgUrl: "assets/images/portfolio/projects/unicargo-express.jpg",
           title: {
             en: "Internal ERP and parcel tracking for Unicargo Express",
             fr: "ERP interne et suivi colis pour Unicargo Express",
@@ -837,7 +837,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-6.png",
+          imgUrl: "assets/images/portfolio/projects/rotaract-amontana.jpg",
           title: {
             en: "Web platform and back-office for Rotaract Amontana",
             fr: "Plateforme web et back-office pour Rotaract Amontana",
@@ -871,7 +871,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-5.png",
+          imgUrl: "assets/images/portfolio/projects/trackeo.jpg",
           title: {
             en: "Real-time geolocation platform Trackeo",
             fr: "Plateforme de geolocalisation temps reel Trackeo",
@@ -905,7 +905,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-2.png",
+          imgUrl: "assets/images/portfolio/projects/mora-market-mobile.jpg",
           title: {
             en: "Mobile e-commerce application for Mora Market",
             fr: "Application mobile e-commerce pour Mora Market",
@@ -939,7 +939,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-3.png",
+          imgUrl: "assets/images/portfolio/projects/btp-versusmind.jpg",
           title: {
             en: "Planning, events and tasks for construction teams",
             fr: "Planning, evenements et taches pour equipes BTP",
@@ -1007,7 +1007,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-5.png",
+          imgUrl: "assets/images/portfolio/projects/myzenkaifit.jpg",
           title: {
             en: "Nutrition and exercise tracking on iOS and Android",
             fr: "Suivi nutritionnel et exercice sur iOS et Android",
@@ -1041,7 +1041,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-5.png",
+          imgUrl: "assets/images/portfolio/projects/rotary-medical-pwa.jpg",
           title: {
             en: "Field PWA for Rotary surgical campaigns",
             fr: "PWA terrain pour campagnes chirurgicales Rotary",
@@ -1075,7 +1075,7 @@ const app = Vue.createApp({
         },
         {
           url: "#contact",
-          imgUrl: "assets/images/portfolio/portfolio-6.png",
+          imgUrl: "assets/images/portfolio/projects/bocasay-business-apps.jpg",
           title: {
             en: "Business apps for accounting, document and HR workflows",
             fr: "Applications metier compta, GED et RH",
