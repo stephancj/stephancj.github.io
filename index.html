@@ -31,6 +31,13 @@
   <!-- title of the browser tab -->
   <title>Stéphan J. Christian | Developpeur web & mobile freelance</title>
 
+  <!-- Prevent uncompiled Vue templates from flashing before the app mounts. -->
+  <style>
+    [v-cloak] {
+      display: none !important;
+    }
+  </style>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
     {
@@ -83,7 +90,7 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <div id="app-inner" ref="appRef" :class="[savedTheme, {'enable-focus-style': isAnyFocus}]"
       @click="isAnyFocus = false" @keyup.tab="isAnyFocus = true">
       <div class="circle-cursor circle-cursor-outer" ref="circleCursorOuter"></div>
