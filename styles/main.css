@@ -7306,12 +7306,56 @@ body.portfolio-modal-open {
   line-height: 1.75;
 }
 
-.portfolio-modal-section h4 {
+.portfolio-modal-section h4,
+.portfolio-modal-responsibility h4 {
   margin-bottom: 0.9rem;
   font-size: 0.92rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.portfolio-modal-responsibilities {
+  margin: 1.5rem 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.light_theme .portfolio-modal-responsibilities {
+  border-color: rgba(31, 122, 114, 0.16);
+}
+
+.dark_theme .portfolio-modal-responsibilities {
+  border-color: rgba(240, 177, 128, 0.16);
+}
+
+.portfolio-modal-responsibility {
+  padding: 1rem 0;
+}
+
+.portfolio-modal-responsibility + .portfolio-modal-responsibility {
+  border-top: 1px solid;
+}
+
+.light_theme .portfolio-modal-responsibility + .portfolio-modal-responsibility {
+  border-color: rgba(31, 122, 114, 0.1);
+}
+
+.dark_theme .portfolio-modal-responsibility + .portfolio-modal-responsibility {
+  border-color: rgba(240, 177, 128, 0.1);
+}
+
+.portfolio-modal-responsibility h4 {
+  margin-bottom: 0.45rem;
+}
+
+.portfolio-modal-responsibility p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.portfolio-modal-role {
+  font-weight: 750;
 }
 
 .portfolio-modal-points {

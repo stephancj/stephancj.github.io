@@ -141,6 +141,14 @@ const app = Vue.createApp({
             en: "Close project details",
             fr: "Fermer le detail du projet",
           },
+          role: {
+            en: "Role",
+            fr: "Rôle",
+          },
+          contributions: {
+            en: "Key contributions",
+            fr: "Contributions principales",
+          },
           clientHighlights: {
             en: "Concrete value delivered",
             fr: "Ce que le projet apporte concretement",
@@ -778,6 +786,14 @@ const app = Vue.createApp({
             en: "Mora Market · e-commerce operations and internal tools",
             fr: "Mora Market · e-commerce, operations et outils internes",
           },
+          role: {
+            en: "Team Lead Developer",
+            fr: "Team Lead Developer",
+          },
+          contributions: {
+            en: "Technical scoping, stack selection, software architecture, management of a five-developer team, backlog management, delivery steering, code review, training, quality standards and CI/CD.",
+            fr: "Cadrage technique, choix de stack, architecture logicielle, management d’une équipe de 5 développeurs, gestion du backlog, pilotage du delivery, code review, formation, standards qualité et CI/CD.",
+          },
           desc: {
             en: "A complete digital backbone bringing together online sales, seller management and internal operations to support marketplace growth on stronger foundations.",
             fr: "Un socle digital complet qui relie vente en ligne, gestion vendeur et operations internes pour faire grandir une marketplace sur des bases plus solides.",
@@ -811,6 +827,14 @@ const app = Vue.createApp({
           meta: {
             en: "Unicargo Express · internal operations and parcel tracking",
             fr: "Unicargo Express · operations internes et suivi logistique",
+          },
+          role: {
+            en: "Freelance Fullstack Lead Developer",
+            fr: "Lead Developer Fullstack freelance",
+          },
+          contributions: {
+            en: "Functional and technical scoping, stack selection, fullstack architecture, desktop and mobile development, project coordination, delivery follow-through, production rollout and store releases.",
+            fr: "Cadrage fonctionnel et technique, choix de stack, architecture fullstack, développement desktop et mobile, coordination du projet, suivi du delivery, mise en production et publication sur les stores.",
           },
           desc: {
             en: "A logistics platform with operator and admin back-office plus parcel tracking to organize internal work and improve shipment visibility.",
@@ -846,6 +870,14 @@ const app = Vue.createApp({
             en: "Rotaract Club Antananarivo Amontana · institutional platform and secure admin space",
             fr: "Rotaract Club Antananarivo Amontana · plateforme institutionnelle et administration securisee",
           },
+          role: {
+            en: "Volunteer Fullstack Developer",
+            fr: "Développeur Fullstack bénévole",
+          },
+          contributions: {
+            en: "Requirements gathering, functional scoping, architecture design, technology selection, fullstack development, AI integration, project management, deployment and maintenance.",
+            fr: "Recueil des besoins, cadrage fonctionnel, conception de l’architecture, choix technologiques, développement fullstack, intégration IA, gestion du projet, déploiement et maintenance.",
+          },
           desc: {
             en: "A full-stack institutional platform combining public website, recruitment, galleries, annual reports and secure administration tools for the club.",
             fr: "Une plateforme institutionnelle full-stack qui combine site public, recrutement, galeries, bilans annuels et outils d'administration securises pour le club.",
@@ -879,6 +911,14 @@ const app = Vue.createApp({
           meta: {
             en: "Trackeo · real-time geolocation and field operations",
             fr: "Trackeo · geolocalisation temps reel et operations terrain",
+          },
+          role: {
+            en: "Software Architect and Fullstack Lead Developer",
+            fr: "Architecte et Lead Developer Fullstack",
+          },
+          contributions: {
+            en: "Product scoping, feasibility study, stack selection, real-time architecture, fullstack development, technical integration, delivery steering and production readiness.",
+            fr: "Cadrage produit, étude de faisabilité, choix de stack, architecture temps réel, développement fullstack, intégration technique, pilotage du delivery et préparation de la mise en production.",
           },
           desc: {
             en: "A real-time geolocation solution to monitor vehicles, trip history, geofences and alerts from an architecture built for operational use.",
@@ -914,6 +954,14 @@ const app = Vue.createApp({
             en: "Mora Market · mobile commerce product",
             fr: "Mora Market · produit mobile e-commerce",
           },
+          role: {
+            en: "Flutter Architect and Lead Developer",
+            fr: "Architecte et Lead Developer Flutter",
+          },
+          contributions: {
+            en: "Mobile scoping, architecture design, Flutter library and standard selection, development, back-end service integration, code review, team support and release preparation.",
+            fr: "Cadrage mobile, conception de l’architecture, choix des bibliothèques et standards Flutter, développement, intégration avec les services back-end, code review, accompagnement de l’équipe et préparation des publications.",
+          },
           desc: {
             en: "A mobile commerce application designed to make ordering, discovery and engagement more direct from the smartphone.",
             fr: "Une application mobile e-commerce concue pour rendre l'achat, la decouverte et l'engagement plus directs depuis le smartphone.",
@@ -947,6 +995,14 @@ const app = Vue.createApp({
           meta: {
             en: "Versusmind · field coordination tool",
             fr: "Versusmind · outil de coordination terrain",
+          },
+          role: {
+            en: "New Technologies Consultant, Web & Mobile Developer",
+            fr: "Consultant nouvelles technologies, développeur Web & Mobile",
+          },
+          contributions: {
+            en: "Web and mobile development, integration into an existing architecture, evolutionary maintenance, refactoring, code review, contribution to technical decisions and Agile delivery.",
+            fr: "Développement web et mobile, intégration dans une architecture existante, maintenance évolutive, refactoring, revue de code, contribution aux décisions techniques et suivi Agile.",
           },
           desc: {
             en: "A coordination tool to organize planning, events and tasks in a construction environment involving multiple stakeholders.",
@@ -982,6 +1038,14 @@ const app = Vue.createApp({
             en: "Versusmind · healthcare operations",
             fr: "Versusmind · operations et parcours de soin",
           },
+          role: {
+            en: "New Technologies Consultant, Fullstack Developer",
+            fr: "Consultant nouvelles technologies, développeur Fullstack",
+          },
+          contributions: {
+            en: "Technical analysis, fullstack development, integration into a complex business system, evolutionary maintenance, refactoring, quality strategy, code review and collaboration within a team of 6 to 12 people.",
+            fr: "Analyse technique, développement fullstack, intégration dans un système métier complexe, maintenance évolutive, refactoring, stratégie qualité, code review et collaboration avec une équipe de 6 à 12 personnes.",
+          },
           desc: {
             en: "A healthcare system linking patient registration, consultation, examination, medical records, appointments and billing in one continuous flow.",
             fr: "Un systeme sante qui relie enregistrement patient, consultation, examen, dossier medical, rendez-vous et facturation dans un meme flux continu.",
@@ -1015,6 +1079,14 @@ const app = Vue.createApp({
           meta: {
             en: "MyZenkaiFit · nutrition, strength and cardio tracking",
             fr: "MyZenkaiFit · nutrition, musculation et cardio",
+          },
+          role: {
+            en: "Product Developer and Freelance Mobile Lead",
+            fr: "Product Developer et Lead Mobile freelance",
+          },
+          contributions: {
+            en: "Product scoping, mobile experience definition, stack selection, application architecture, mobile development, data structuring, delivery steering and iOS and Android release preparation.",
+            fr: "Cadrage produit, définition de l’expérience mobile, choix de stack, architecture applicative, développement mobile, structuration des données, pilotage du delivery et préparation des versions iOS et Android.",
           },
           desc: {
             en: "A premium mobile product for nutrition, strength training, cardio routines and long-term progress tracking.",
@@ -1050,6 +1122,14 @@ const app = Vue.createApp({
             en: "Rotary Club Antananarivo · offline-first medical field operations",
             fr: "Rotary Club Antananarivo · operations medicales terrain offline-first",
           },
+          role: {
+            en: "Volunteer Project Manager and IS Developer",
+            fr: "Chef de projet et développeur SI bénévole",
+          },
+          contributions: {
+            en: "Field requirements gathering, functional scoping, project management, offline-first architecture, technology selection, development, deployment, training and user support.",
+            fr: "Recueil des besoins terrain, cadrage fonctionnel, gestion de projet, conception de l’architecture offline-first, choix technologiques, développement, déploiement, formation et accompagnement des utilisateurs.",
+          },
           desc: {
             en: "An offline-first PWA used during surgical campaigns to manage patient registration, operating schedules, post-op follow-up and field statistics.",
             fr: "Une PWA offline-first utilisee pendant des campagnes chirurgicales pour gerer enregistrement patient, programmes operatoires, suivis post-operatoires et statistiques terrain.",
@@ -1083,6 +1163,14 @@ const app = Vue.createApp({
           meta: {
             en: "Bocasay · multi-module business apps",
             fr: "Bocasay · applications metier multi-modules",
+          },
+          role: {
+            en: "Web & Mobile Application Developer",
+            fr: "Développeur d’applications Web & Mobile",
+          },
+          contributions: {
+            en: "Flutter and web development, evolutionary maintenance, integration into a modular architecture, incident resolution, continuous improvement, CI/CD, deployment automation and store releases.",
+            fr: "Développement Flutter et web, maintenance évolutive, intégration dans une architecture modulaire, résolution d’incidents, amélioration continue, CI/CD, automatisation des déploiements et publication sur les stores.",
           },
           desc: {
             en: "A suite of mobile business applications for accounting firms and HR workflows covering document management, file sharing, mileage, expenses, payroll inputs and alerts.",
@@ -1118,6 +1206,14 @@ const app = Vue.createApp({
             en: "Sekolygasy · premium language learning product",
             fr: "Sekolygasy · produit premium d'apprentissage linguistique",
           },
+          role: {
+            en: "Freelance Mobile Lead Developer",
+            fr: "Lead Mobile Developer freelance",
+          },
+          contributions: {
+            en: "Product scoping, stack selection, fullstack architecture, API development, iOS and Android development, technical project structuring, quality monitoring, version management and closed testing release.",
+            fr: "Cadrage du produit, choix de stack, architecture fullstack, développement API, iOS et Android, structuration technique du projet, suivi qualité, gestion des versions et publication en test fermé.",
+          },
           desc: {
             en: "A premium Android and iOS learning product built to make Malagasy practice more regular, engaging and easier to follow.",
             fr: "Un produit premium Android et iOS concu pour rendre la pratique du malgache plus reguliere, plus engageante et plus simple a suivre.",
@@ -1151,6 +1247,14 @@ const app = Vue.createApp({
           meta: {
             en: "Bocasay · learning and content platform",
             fr: "Bocasay · plateforme de formation et de contenu",
+          },
+          role: {
+            en: "Frontend and Mobile Developer",
+            fr: "Développeur Frontend et mobile",
+          },
+          contributions: {
+            en: "Vue and Nuxt.js development, performance optimization, evolutionary maintenance, incident monitoring, quality improvements and contribution to CI/CD.",
+            fr: "Développement Vue et Nuxt.js, optimisation des performances, maintenance évolutive, suivi des incidents, amélioration de la qualité et contribution au CI/CD.",
           },
           desc: {
             en: "An online learning platform built to deliver video courses in streaming and make a training catalog easier to access and monetize.",
@@ -1186,6 +1290,14 @@ const app = Vue.createApp({
             en: "ONG HABAKA · association and member operations",
             fr: "ONG HABAKA · operations associatives et suivi des membres",
           },
+          role: {
+            en: "Fullstack Developer Intern",
+            fr: "Développeur Fullstack stagiaire",
+          },
+          contributions: {
+            en: "Requirements analysis, solution design, technical choices, data modeling, fullstack development, testing and application delivery.",
+            fr: "Analyse des besoins, conception de la solution, choix techniques, modélisation des données, développement fullstack, tests et livraison de l’application.",
+          },
           desc: {
             en: "An activity tracking application for a fablab designed to replace manual logs with a more reliable operational base.",
             fr: "Une application de suivi d'activite pour fablab concue pour remplacer les registres manuels par une base de travail plus fiable et plus exploitable.",
@@ -1220,6 +1332,14 @@ const app = Vue.createApp({
             en: "BMOI · internal automation and productivity",
             fr: "BMOI · automatisation interne et productivite",
           },
+          role: {
+            en: "Software Developer Intern",
+            fr: "Développeur logiciel stagiaire",
+          },
+          contributions: {
+            en: "Business process analysis, identification of automation opportunities, technical design, internal tool development, testing and rollout support.",
+            fr: "Analyse des processus métier, identification des possibilités d’automatisation, conception technique, développement de l’outil interne, tests et accompagnement à la mise en service.",
+          },
           desc: {
             en: "An internal application built to automate manual tasks in the vehicle fleet department and make daily processing more reliable.",
             fr: "Une application interne concue pour automatiser les taches manuelles du service parc automobile et fiabiliser les traitements du quotidien.",
@@ -1253,6 +1373,14 @@ const app = Vue.createApp({
           meta: {
             en: "Sainte Famille Mahamasina · school administration",
             fr: "Sainte Famille Mahamasina · gestion scolaire",
+          },
+          role: {
+            en: "Web Developer Intern",
+            fr: "Développeur Web stagiaire",
+          },
+          contributions: {
+            en: "Requirements gathering, functional scoping, technical design, data modeling, web development, testing and application delivery.",
+            fr: "Recueil des besoins, cadrage fonctionnel, conception technique, modélisation des données, développement web, tests et livraison de l’application.",
           },
           desc: {
             en: "A web application to manage academic records and speed up their generation in a more reliable way for the institution.",
