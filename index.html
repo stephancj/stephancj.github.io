@@ -7,29 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Stéphan J. Christian" />
   <meta name="description"
-    content="Stéphan J. Christian - Developpeur web & mobile freelance pour startups, PME en digitalisation et equipes produit. Architecture, applications web/mobile, CI/CD et structuration technique." />
+    content="Stéphan J. Christian, Lead Software Engineer et partenaire technique. Cadrage, architecture, produits web et mobile, back-end, IA appliquée et delivery pour startups, PME et équipes produit." />
   <meta name="keywords"
-    content="developpeur web mobile freelance, startup, PME, digitalisation, renfort equipe, Flutter, React, Next.js, Node.js, architecture logicielle, CI/CD, consultant technique" />
+    content="Lead Software Engineer, partenaire technique, consultant technique, architecture logicielle, développement full-stack, développement mobile, IA appliquée, React, Next.js, Flutter, Node.js, CI/CD" />
 
-  <link rel="canonical" href="https://stephancj.github.io/" />
+  <link rel="canonical" href="https://stephanchristian.is-a.dev/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stephancj.github.io/" />
-  <meta property="og:title" content="Stéphan J. Christian | Developpeur web & mobile freelance" />
+  <meta property="og:url" content="https://stephanchristian.is-a.dev/" />
+  <meta property="og:title" content="Stéphan J. Christian | Lead Software Engineer" />
   <meta property="og:description"
-    content="J'accompagne startups, PME et equipes produit sur l'architecture, la realisation d'applications web/mobile et la structuration technique." />
-  <meta property="og:image" content="https://stephancj.github.io/assets/images/hero-img-portrait.png" />
+    content="Je transforme des besoins métiers en produits logiciels fiables : cadrage, architecture, web, mobile, back-end, IA appliquée et pilotage technique." />
+  <meta property="og:image" content="https://stephanchristian.is-a.dev/assets/images/hero-img-portrait.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://stephancj.github.io/" />
-  <meta property="twitter:title" content="Stéphan J. Christian | Developpeur web & mobile freelance" />
-  <meta property="twitter:description" content="Architecture, applications web/mobile, CI/CD et renfort d'equipe pour produits et processus a digitaliser." />
-  <meta property="twitter:image" content="https://stephancj.github.io/assets/images/hero-img-portrait.png" />
+  <meta property="twitter:url" content="https://stephanchristian.is-a.dev/" />
+  <meta property="twitter:title" content="Stéphan J. Christian | Lead Software Engineer" />
+  <meta property="twitter:description" content="Cadrage, architecture et delivery de produits web, mobile et IA appliquée pour startups, PME et équipes produit." />
+  <meta property="twitter:image" content="https://stephanchristian.is-a.dev/assets/images/hero-img-portrait.png" />
 
   <!-- title of the browser tab -->
-  <title>Stéphan J. Christian | Developpeur web & mobile freelance</title>
+  <title>Stéphan J. Christian | Lead Software Engineer</title>
 
   <!-- Prevent uncompiled Vue templates from flashing before the app mounts. -->
   <style>
@@ -44,16 +44,16 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Stéphan J. Christian",
-      "jobTitle": "Web & Mobile Developer",
-      "url": "https://stephancj.github.io",
-      "image": "https://stephancj.github.io/assets/images/hero-img-portrait.png",
+      "jobTitle": "Lead Software Engineer",
+      "url": "https://stephanchristian.is-a.dev",
+      "image": "https://stephanchristian.is-a.dev/assets/images/hero-img-portrait.png",
       "sameAs": [
         "https://www.linkedin.com/in/stephancj/",
         "https://github.com/stephancj",
-        "https://stephancj.github.io"
+        "https://stephanchristian.is-a.dev"
       ],
-      "knowsAbout": ["Web Development", "Mobile Development", "System Architecture", "CI/CD", "Agile Project Management", "Team Coordination"],
-      "description": "Developpeur web & mobile freelance pour startups, PME en digitalisation et equipes produit. Architecture, applications web/mobile et structuration technique."
+      "knowsAbout": ["Software Architecture", "Full-stack Development", "Mobile Development", "Applied AI", "CI/CD", "Agile Delivery", "Team Leadership"],
+      "description": "Lead Software Engineer et partenaire technique pour cadrer, concevoir et livrer des produits web, mobile et IA appliquée."
     }
   </script>
 
@@ -72,9 +72,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- main style file -->
-  <link rel="stylesheet" href="styles/main.css?v=20260616h" />
+  <link rel="stylesheet" href="styles/main.css?v=20260823a" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTBH6T7GKD"></script>
@@ -90,6 +89,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#hero">Aller au contenu principal</a>
   <div id="app" v-cloak>
     <div id="app-inner" ref="appRef" :class="[savedTheme, {'enable-focus-style': isAnyFocus}]"
       @click="isAnyFocus = false" @keyup.tab="isAnyFocus = true">
@@ -116,7 +116,7 @@
         <div class="container">
           <!-- logo -->
           <div class="logo" title="Stéphan">
-            <h1><a href="index.html">Stéphan</a></h1>
+            <div class="site-name"><a href="index.html">Stéphan</a></div>
           </div>
 
           <!-- nav links -->
@@ -216,10 +216,10 @@
       <div id="hero" class="hero-section" ref="heroSection">
         <div class="hero-text aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
           <span class="hero-eyebrow">{{ staticTexts.presentation.greeting[getLanguageCode()] }}</span>
-          <h2 :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`">
+          <h1 :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`">
             <span>{{ staticTexts.presentation.titleTop[getLanguageCode()] }}</span>
             <span>{{ staticTexts.presentation.titleBottom[getLanguageCode()] }}</span>
-          </h2>
+          </h1>
           <p class="hero-lead">{{ staticTexts.presentation.lead[getLanguageCode()] }}</p>
           <div class="hero-actions btns-container">
             <a href="#contact" class="btn get-in-touch-btn">{{ staticTexts.getInTouch[getLanguageCode()] }}</a>
@@ -349,7 +349,7 @@
                   <br />
                   {{ aboutMe.subtitle2[getLanguageCode()] }}
                 </h2>
-                <p align="justify">{{ aboutMe.text[getLanguageCode()] }}</p>
+                <p>{{ aboutMe.text[getLanguageCode()] }}</p>
                 <ul class="about-highlights">
                   <li v-for="highlight in aboutMe.highlights" :key="highlight.title.en">
                     <strong>{{ highlight.title[getLanguageCode()] }}</strong>
@@ -386,13 +386,18 @@
                   <img :src="service.imgUrl" :alt="service.title[getLanguageCode()]" />
                 </div>
                 <p class="service-kicker">{{ service.kicker[getLanguageCode()] }}</p>
-                <h5>{{ service.title[getLanguageCode()] }}</h5>
-                <p align="justify">
+                <h3>{{ service.title[getLanguageCode()] }}</h3>
+                <p>
                   {{ service.text[getLanguageCode()] }}
                 </p>
                 <ul class="service-points">
                   <li v-for="point in service.points" :key="point.en">{{ point[getLanguageCode()] }}</li>
                 </ul>
+                <div class="service-outcome">
+                  <span>{{ services.outcomeLabel[getLanguageCode()] }}</span>
+                  <strong>{{ service.outcome[getLanguageCode()] }}</strong>
+                </div>
+                <a href="#contact" class="service-link">{{ services.cta[getLanguageCode()] }}</a>
               </article>
             </div>
           </div>
@@ -413,7 +418,7 @@
                   <br />
                   {{mySkills.subtitle2[getLanguageCode()]}}
                 </h2>
-                <p align="justify">{{mySkills.text[getLanguageCode()]}}</p>
+                <p>{{mySkills.text[getLanguageCode()]}}</p>
                 <ul class="skills-business-points">
                   <li v-for="item in mySkills.businessItems" :key="item.en">{{ item[getLanguageCode()] }}</li>
                 </ul>
@@ -465,7 +470,7 @@
                 <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
                   <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
                     <template v-if="Object.keys(item).length > 0">
-                      <h3>{{ item.date }}</h3>
+                      <h3>{{ localizedValue(item.date) }}</h3>
                       <div class="ultimate-tooltip">
                         <h4 class="ultimate-tooltip-title">
                           {{ item.schoolName[getLanguageCode()] }}
@@ -487,7 +492,7 @@
               <div class="text-box">
                 <span class="subtitle">{{education.title[getLanguageCode()]}}</span>
                 <h2>{{education.subtitle[getLanguageCode()]}}</h2>
-                <p align="justify">{{education.text[getLanguageCode()]}}</p>
+                <p>{{education.text[getLanguageCode()]}}</p>
               </div>
             </div>
           </div>
@@ -505,7 +510,7 @@
                 <ul class="inner-ul" v-for="(group, index) in experienceChunks" :key="index">
                   <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
                     <template v-if="Object.keys(item).length > 0">
-                      <h3>{{ item.date }}</h3>
+                      <h3>{{ localizedValue(item.date) }}</h3>
                       <div class="ultimate-tooltip">
                         <h4 class="ultimate-tooltip-title">
                           {{ item.companyName[getLanguageCode()] }}
@@ -533,7 +538,7 @@
                   <br />
                   {{experience.subtitle2[getLanguageCode()]}}
                 </h2>
-                <p align="justify">{{experience.text[getLanguageCode()]}}</p>
+                <p>{{experience.text[getLanguageCode()]}}</p>
               </div>
             </div>
           </div>
@@ -545,23 +550,24 @@
       <div v-show="myWorks.isVisible" id="portfolio" class="portfolio-section section" tabindex="-1">
         <div class="container">
           <div class="section-content">
-            <!-- portfolio items -->
-            <ul class="portfolio-items" ref="portfolioItems">
-              <li>
-                <!-- text box -->
-                <div class="text-box">
-                  <span class="subtitle">{{ myWorks.title[getLanguageCode()] }}</span>
-                  <h2>
-                    {{ myWorks.subtitle1[getLanguageCode()] }}
-                    <br />
-                    {{ myWorks.subtitle2[getLanguageCode()] }}
-                  </h2>
-                  <p>{{ myWorks.text[getLanguageCode()] }}</p>
-                </div>
-              </li>
+            <div class="portfolio-heading">
+              <span class="subtitle">{{ myWorks.title[getLanguageCode()] }}</span>
+              <h2>
+                {{ myWorks.subtitle1[getLanguageCode()] }}
+                <br />
+                {{ myWorks.subtitle2[getLanguageCode()] }}
+              </h2>
+              <p>{{ myWorks.text[getLanguageCode()] }}</p>
+            </div>
 
-              <!-- start items list -->
-              <li class="portfolio-item" v-for="work in visiblePortfolioItems" :key="work.title.en">
+            <div class="portfolio-featured-heading">
+              <p class="portfolio-group-kicker">{{ myWorks.featuredKicker[getLanguageCode()] }}</p>
+              <h3>{{ myWorks.featuredTitle[getLanguageCode()] }}</h3>
+              <p>{{ myWorks.featuredText[getLanguageCode()] }}</p>
+            </div>
+
+            <ul class="portfolio-featured-grid" ref="portfolioItems">
+              <li class="portfolio-item portfolio-item-featured" v-for="work in featuredPortfolioItems" :key="`featured-${work.title.en}`">
                 <button
                   type="button"
                   class="portfolio-card"
@@ -574,22 +580,52 @@
                     <p class="case-study-meta">{{ work.meta[getLanguageCode()] }}</p>
                     <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
                     <p class="case-study-summary">{{ work.desc[getLanguageCode()] }}</p>
+                    <p class="case-study-role">{{ work.role[getLanguageCode()] }}</p>
                     <span class="case-study-trigger">{{ staticTexts.portfolio.viewDetails[getLanguageCode()] }}</span>
                   </div>
                 </button>
               </li>
+            </ul>
 
-              <li class="portfolio-more-block" v-if="extraPortfolioItems.length">
+            <div class="portfolio-catalog-heading">
+              <div>
+                <p class="portfolio-group-kicker">{{ myWorks.catalogKicker[getLanguageCode()] }}</p>
+                <h3>{{ myWorks.catalogTitle[getLanguageCode()] }}</h3>
+                <p>{{ myWorks.catalogText[getLanguageCode()] }}</p>
+              </div>
+              <p class="portfolio-count">{{ filteredPortfolioItems.length }} / {{ allPortfolioItems.length }}</p>
+            </div>
+
+            <ul class="portfolio-filters" :aria-label="myWorks.filterLabel[getLanguageCode()]">
+              <li v-for="filter in portfolioFilters" :key="filter.key">
                 <button
                   type="button"
-                  class="more"
-                  @click="togglePortfolioItems"
-                  :aria-expanded="showAllPortfolioItems ? 'true' : 'false'">
-                  {{ showAllPortfolioItems ? portfolioToggleCloseLabel : portfolioToggleLabel }}
+                  :class="{ active: portfolioCategory === filter.key }"
+                  :aria-pressed="portfolioCategory === filter.key ? 'true' : 'false'"
+                  @click="portfolioCategory = filter.key">
+                  {{ filter.label[getLanguageCode()] }}
                 </button>
               </li>
-              <!-- end items list -->
+            </ul>
 
+            <ul class="portfolio-catalog-grid">
+              <li class="portfolio-item portfolio-item-compact" v-for="work in filteredPortfolioItems" :key="`catalog-${work.title.en}`">
+                <button
+                  type="button"
+                  class="portfolio-card"
+                  @click="openPortfolioItem(work, $event)"
+                  :aria-label="work.title[getLanguageCode()]">
+                  <div class="item-img">
+                    <img :src="work.imgUrl" :alt="work.title[getLanguageCode()]" loading="lazy" />
+                  </div>
+                  <div class="item-details">
+                    <p class="case-study-meta">{{ work.meta[getLanguageCode()] }}</p>
+                    <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
+                    <p class="case-study-role">{{ work.role[getLanguageCode()] }}</p>
+                    <span class="case-study-trigger">{{ staticTexts.portfolio.viewDetails[getLanguageCode()] }}</span>
+                  </div>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -672,7 +708,7 @@
               :key="item.quoteAuthor[getLanguageCode()]">
               <div class="testimonials-item">
                 <div class="testimonial-author-img">
-                  <img :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'"
+                  <img :src="item.imgUrl || 'assets/images/testimonials/testimonials-2.jpg'"
                     :alt="item.quoteAuthor[getLanguageCode()]" />
                 </div>
                 <div class="ultimate-tooltip">
@@ -705,7 +741,7 @@
                   <br />
                   {{contact.subtitle2[getLanguageCode()]}}
                 </h2>
-                <p align="justify">{{contact.text[getLanguageCode()]}}</p>
+                <p>{{contact.text[getLanguageCode()]}}</p>
                 <p class="contact-response-note">{{contact.responseNote[getLanguageCode()]}}</p>
               </div>
 
@@ -853,12 +889,12 @@
             <div class="col-lg-6">
               <!-- logo -->
               <div class="logo" title="Stéphan">
-                <h1><a href="index.html">Stéphan</a></h1>
+                <div class="site-name"><a href="index.html">Stéphan</a></div>
               </div>
             </div>
             <div class="col-lg-6">
               &copy; {{ copyrightDate }} Proudly Powered by
-              <a href="https://stephancj.github.io/" target="_blank" rel="noopener">Stéphan J. Christian</a>
+              <a href="https://stephanchristian.is-a.dev/" target="_blank" rel="noopener">Stéphan J. Christian</a>
             </div>
           </div>
         </div>
@@ -895,7 +931,7 @@
   <script src="scripts/plugins.min.js"></script>
 
   <!-- main script file -->
-  <script src="scripts/main.js?v=20260616g"></script>
+  <script src="scripts/main.js?v=20260823a"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script>
     AOS.init();
