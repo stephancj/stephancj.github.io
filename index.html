@@ -72,7 +72,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- main style file -->
-  <link rel="stylesheet" href="styles/main.css?v=20260823a" />
+  <link rel="stylesheet" href="styles/main.css?v=20260831a" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Google tag (gtag.js) -->
@@ -393,11 +393,6 @@
                 <ul class="service-points">
                   <li v-for="point in service.points" :key="point.en">{{ point[getLanguageCode()] }}</li>
                 </ul>
-                <div class="service-outcome">
-                  <span>{{ services.outcomeLabel[getLanguageCode()] }}</span>
-                  <strong>{{ service.outcome[getLanguageCode()] }}</strong>
-                </div>
-                <a href="#contact" class="service-link">{{ services.cta[getLanguageCode()] }}</a>
               </article>
             </div>
           </div>
@@ -470,7 +465,7 @@
                 <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
                   <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
                     <template v-if="Object.keys(item).length > 0">
-                      <h3>{{ localizedValue(item.date) }}</h3>
+                      <h3>{{ item.date }}</h3>
                       <div class="ultimate-tooltip">
                         <h4 class="ultimate-tooltip-title">
                           {{ item.schoolName[getLanguageCode()] }}
@@ -510,7 +505,7 @@
                 <ul class="inner-ul" v-for="(group, index) in experienceChunks" :key="index">
                   <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
                     <template v-if="Object.keys(item).length > 0">
-                      <h3>{{ localizedValue(item.date) }}</h3>
+                      <h3>{{ item.date }}</h3>
                       <div class="ultimate-tooltip">
                         <h4 class="ultimate-tooltip-title">
                           {{ item.companyName[getLanguageCode()] }}
@@ -560,14 +555,8 @@
               <p>{{ myWorks.text[getLanguageCode()] }}</p>
             </div>
 
-            <div class="portfolio-featured-heading">
-              <p class="portfolio-group-kicker">{{ myWorks.featuredKicker[getLanguageCode()] }}</p>
-              <h3>{{ myWorks.featuredTitle[getLanguageCode()] }}</h3>
-              <p>{{ myWorks.featuredText[getLanguageCode()] }}</p>
-            </div>
-
             <ul class="portfolio-featured-grid" ref="portfolioItems">
-              <li class="portfolio-item portfolio-item-featured" v-for="work in featuredPortfolioItems" :key="`featured-${work.title.en}`">
+              <li class="portfolio-item portfolio-item-featured" v-for="work in visiblePortfolioItems" :key="work.title.en">
                 <button
                   type="button"
                   class="portfolio-card"
@@ -577,6 +566,9 @@
                     <img :src="work.imgUrl" :alt="work.title[getLanguageCode()]" />
                   </div>
                   <div class="item-details">
+                    <span v-if="work.productType" class="portfolio-product-type">
+                      {{ work.productType[getLanguageCode()] }}
+                    </span>
                     <p class="case-study-meta">{{ work.meta[getLanguageCode()] }}</p>
                     <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
                     <p class="case-study-summary">{{ work.desc[getLanguageCode()] }}</p>
@@ -587,46 +579,11 @@
               </li>
             </ul>
 
-            <div class="portfolio-catalog-heading">
-              <div>
-                <p class="portfolio-group-kicker">{{ myWorks.catalogKicker[getLanguageCode()] }}</p>
-                <h3>{{ myWorks.catalogTitle[getLanguageCode()] }}</h3>
-                <p>{{ myWorks.catalogText[getLanguageCode()] }}</p>
-              </div>
-              <p class="portfolio-count">{{ filteredPortfolioItems.length }} / {{ allPortfolioItems.length }}</p>
+            <div v-if="remainingPortfolioItemsCount" class="portfolio-toggle-wrap">
+              <button type="button" class="portfolio-toggle" @click="togglePortfolioItems">
+                {{ showAllPortfolioItems ? portfolioToggleCloseLabel : portfolioToggleLabel }}
+              </button>
             </div>
-
-            <ul class="portfolio-filters" :aria-label="myWorks.filterLabel[getLanguageCode()]">
-              <li v-for="filter in portfolioFilters" :key="filter.key">
-                <button
-                  type="button"
-                  :class="{ active: portfolioCategory === filter.key }"
-                  :aria-pressed="portfolioCategory === filter.key ? 'true' : 'false'"
-                  @click="portfolioCategory = filter.key">
-                  {{ filter.label[getLanguageCode()] }}
-                </button>
-              </li>
-            </ul>
-
-            <ul class="portfolio-catalog-grid">
-              <li class="portfolio-item portfolio-item-compact" v-for="work in filteredPortfolioItems" :key="`catalog-${work.title.en}`">
-                <button
-                  type="button"
-                  class="portfolio-card"
-                  @click="openPortfolioItem(work, $event)"
-                  :aria-label="work.title[getLanguageCode()]">
-                  <div class="item-img">
-                    <img :src="work.imgUrl" :alt="work.title[getLanguageCode()]" loading="lazy" />
-                  </div>
-                  <div class="item-details">
-                    <p class="case-study-meta">{{ work.meta[getLanguageCode()] }}</p>
-                    <h3 class="title">{{ work.title[getLanguageCode()] }}</h3>
-                    <p class="case-study-role">{{ work.role[getLanguageCode()] }}</p>
-                    <span class="case-study-trigger">{{ staticTexts.portfolio.viewDetails[getLanguageCode()] }}</span>
-                  </div>
-                </button>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -657,6 +614,9 @@
             </div>
 
             <div class="portfolio-modal-content">
+              <span v-if="selectedPortfolioItem.productType" class="portfolio-product-type portfolio-product-type-modal">
+                {{ selectedPortfolioItem.productType[getLanguageCode()] }}
+              </span>
               <p class="case-study-meta">{{ selectedPortfolioItem.meta[getLanguageCode()] }}</p>
               <h3>{{ selectedPortfolioItem.title[getLanguageCode()] }}</h3>
               <p class="portfolio-modal-description">{{ selectedPortfolioItem.desc[getLanguageCode()] }}</p>
@@ -931,7 +891,7 @@
   <script src="scripts/plugins.min.js"></script>
 
   <!-- main script file -->
-  <script src="scripts/main.js?v=20260823a"></script>
+  <script src="scripts/main.js?v=20260831a"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script>
     AOS.init();

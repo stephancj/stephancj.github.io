@@ -7143,6 +7143,32 @@ p {
   text-transform: uppercase;
 }
 
+.portfolio-product-type {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  min-height: 28px;
+  margin: 0;
+  padding: 0.32rem 0.62rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.light_theme .portfolio-product-type {
+  color: #175f59;
+  background: rgba(31, 122, 114, 0.09);
+}
+
+.dark_theme .portfolio-product-type {
+  color: #9ce1d8;
+  background: rgba(92, 197, 185, 0.1);
+}
+
 .light_theme .case-study-summary {
   color: #52606b;
 }
@@ -7218,7 +7244,10 @@ body.portfolio-modal-open {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(360px, 0.9fr);
   width: min(1380px, 100%);
+  height: min(860px, calc(100vh - 3rem));
+  height: min(860px, calc(100dvh - 3rem));
   max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
   overflow: hidden;
   border-radius: 1.7rem;
   outline: none;
@@ -7290,8 +7319,16 @@ body.portfolio-modal-open {
 }
 
 .portfolio-modal-content {
+  min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
   padding: 2.4rem 2.2rem 2.2rem;
+}
+
+.portfolio-product-type-modal {
+  margin-bottom: 0.85rem;
 }
 
 .portfolio-modal-content h3 {
@@ -7471,11 +7508,15 @@ body.portfolio-modal-open {
 
   .portfolio-modal-dialog {
     grid-template-columns: 1fr;
+    grid-template-rows: minmax(150px, 34vh) minmax(0, 1fr);
+    height: calc(100vh - 1.7rem);
+    height: calc(100dvh - 1.7rem);
     max-height: calc(100vh - 1.7rem);
+    max-height: calc(100dvh - 1.7rem);
   }
 
   .portfolio-modal-media {
-    height: min(34vh, 260px);
+    height: auto;
     max-height: none;
     padding: 0.5rem;
   }
@@ -8057,6 +8098,29 @@ footer .logo .site-name {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1.25rem;
   margin: 0 0 7rem;
+}
+
+.portfolio-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -4.5rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-toggle {
+  min-height: 48px;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid var(--theme-accent-line);
+  border-radius: 999px;
+  color: var(--theme-accent);
+  background: var(--theme-surface-strong);
+  font-weight: 750;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.portfolio-toggle:hover {
+  border-color: var(--theme-accent);
+  transform: translateY(-2px);
 }
 
 .portfolio-featured-grid .portfolio-item {
