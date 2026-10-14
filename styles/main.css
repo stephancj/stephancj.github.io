@@ -6253,7 +6253,7 @@ html[dir="rtl"]
 /*------------------------------------------------------------------------------------------*/
 html[dir="ltr"] #app-inner,
 html[dir="ltr"] .form-styled .group label .optional {
-  font-family: "Outfit", sans-serif;
+  font-family: "Commissioner", sans-serif;
 }
 
 html[dir="ltr"] h1,
@@ -6264,14 +6264,14 @@ html[dir="ltr"] h5,
 html[dir="ltr"] h6,
 html[dir="ltr"] strong,
 html[dir="ltr"] label {
-  font-family: "Outfit", sans-serif;
+  font-family: "Commissioner", sans-serif;
   letter-spacing: -0.02em;
 }
 
 .hero-section .hero-text h1,
 .section .section-title h2,
 .section .text-box h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Literata", serif;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.08;
@@ -7980,7 +7980,7 @@ body.portfolio-modal-open {
 
 header .logo .site-name,
 footer .logo .site-name {
-  font-family: "Fraunces", serif;
+  font-family: "Literata", serif;
   font-weight: 700;
 }
 
@@ -8070,7 +8070,7 @@ footer .logo .site-name {
 .portfolio-featured-heading h3,
 .portfolio-catalog-heading h3 {
   margin: 0.25rem 0 0.75rem;
-  font-family: "Fraunces", serif;
+  font-family: "Literata", serif;
   font-size: clamp(1.85rem, 3vw, 2.8rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
