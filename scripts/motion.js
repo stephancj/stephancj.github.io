@@ -22,7 +22,7 @@ window.initPremiumMotion = function (root) {
     animation.finished.then(() => animations.delete(animation), () => animations.delete(animation));
   }
 
-  const selector = ".section-title, .text-box, .about-img, .about-text, .atelier-scene, .lab-heading, .service-console, .constellation-heading, .constellation-field, .engineering-notes, .portfolio-heading, .portfolio-featured-heading, .portfolio-catalog-heading, .portfolio-card, .contact-form, .skills-text, .experience-timeline";
+  const selector = ".section-title, .text-box, .about-img, .about-text, .portrait-composition, .journey-card, .atelier-scene, .lab-heading, .service-console, .constellation-heading, .constellation-field, .engineering-notes, .portfolio-heading, .portfolio-featured-heading, .portfolio-catalog-heading, .portfolio-card, .contact-form, .skills-text, .experience-timeline";
   function register(node) {
     if (!(node instanceof Element)) return;
     const elements = [...node.querySelectorAll(selector)];
@@ -85,6 +85,7 @@ window.initPremiumMotion = function (root) {
       const measurements = [...visibleProjects].filter(el => el.isConnected).map(el => [el, el.getBoundingClientRect()]);
       if (bounds) {
         const progress = Math.min(1, Math.max(0, -bounds.top / bounds.height));
+        hero.style.setProperty("--photo-lift", `${progress * -24}px`);
         hero.style.setProperty("--portrait-lift", `${-progress * 48}px`);
         hero.style.setProperty("--portrait-scale", `${1 + progress * .08}`);
         hero.style.setProperty("--hero-shift", `${progress * -24}px`);
@@ -197,6 +198,7 @@ window.initPremiumMotion = function (root) {
     movingScenes.clear();
     cancelAnimationFrame(scrollFrame);
     scrollFrame = 0;
+    hero?.style.removeProperty("--photo-lift");
     hero?.style.removeProperty("--portrait-lift");
     hero?.style.removeProperty("--portrait-scale");
     hero?.style.removeProperty("--hero-shift");
