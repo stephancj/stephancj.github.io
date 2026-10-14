@@ -53,7 +53,7 @@ window.initPremiumMotion = function (root) {
     }
     sceneObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.target.matches(".atelier-scene, .service-console, .constellation-field")) {
+        if (entry.target.matches(".atelier-scene, .experimental-object, .service-console, .constellation-field")) {
           if (entry.isIntersecting) movingScenes.add(entry.target);
           else movingScenes.delete(entry.target);
           entry.target.classList.toggle("is-moving", entry.isIntersecting && !document.hidden);
@@ -66,7 +66,7 @@ window.initPremiumMotion = function (root) {
       updateScenes();
     });
     if (hero) sceneObserver.observe(hero);
-    root.querySelectorAll(".atelier-scene, .service-console, .constellation-field").forEach(el => sceneObserver.observe(el));
+    root.querySelectorAll(".atelier-scene, .experimental-object, .service-console, .constellation-field").forEach(el => sceneObserver.observe(el));
     refreshScenes();
     mutations = new MutationObserver(records => {
       records.forEach(record => record.addedNodes.forEach(register));
@@ -118,6 +118,11 @@ window.initPremiumMotion = function (root) {
     activeCard?.classList.remove("motion-lit");
     activeCard = null;
     root.querySelector(".hero-portrait")?.style.removeProperty("translate");
+    root.querySelectorAll(".kinetic-word").forEach(el => {
+      ["--word-x", "--word-y", "--word-turn"].forEach(prop => el.style.removeProperty(prop));
+    });
+    root.querySelector(".experimental-object")?.style.removeProperty("--abstract-x");
+    root.querySelector(".experimental-object")?.style.removeProperty("--abstract-y");
     const scene = root.querySelector(".atelier-scene");
     scene?.style.removeProperty("--scene-yaw");
     scene?.style.removeProperty("--scene-pitch");
@@ -131,6 +136,21 @@ window.initPremiumMotion = function (root) {
       frame = 0;
       if (!pending) return;
       const { x, y, target } = pending;
+      const title = root.querySelector(".kinetic-title");
+      if (title) {
+        const words = [...title.querySelectorAll(".kinetic-word")].map(el => [el, el.getBoundingClientRect()]);
+        words.forEach(([el, rect]) => {
+          const dx = x - (rect.left + rect.width / 2);
+          const dy = y - (rect.top + rect.height / 2);
+          const influence = Math.max(0, 1 - Math.hypot(dx, dy) / 240);
+          el.style.setProperty("--word-x", `${dx * influence * .065}px`);
+          el.style.setProperty("--word-y", `${dy * influence * .09}px`);
+          el.style.setProperty("--word-turn", `${dx * influence * .009}deg`);
+        });
+        const object = root.querySelector(".experimental-object");
+        object?.style.setProperty("--abstract-x", `${(x / window.innerWidth - .5) * -32}px`);
+        object?.style.setProperty("--abstract-y", `${(y / window.innerHeight - .5) * -24}px`);
+      }
       const scene = target.closest(".atelier-scene");
       if (scene) {
         const bounds = scene.getBoundingClientRect();

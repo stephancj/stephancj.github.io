@@ -73,7 +73,7 @@
 
   <!-- main style file -->
   <link rel="stylesheet" href="styles/main.css?v=20261014-motion" />
-  <link rel="stylesheet" href="styles/redesign.css?v=20261014-atelier" />
+  <link rel="stylesheet" href="styles/redesign.css?v=20261014-kinetic" />
   <link rel="stylesheet" href="styles/motion.css?v=20261014-motion" />
 
   <!-- Google tag (gtag.js) -->
@@ -217,7 +217,7 @@
       <section id="hero" class="hero-section" ref="heroSection">
         <div class="hero-text">
           <span class="hero-eyebrow">{{ staticTexts.presentation.greeting[getLanguageCode()] }}</span>
-          <h1 :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`"><span>{{ staticTexts.presentation.titleTop[getLanguageCode()] }}</span><span>{{ staticTexts.presentation.titleBottom[getLanguageCode()] }}</span></h1>
+          <h1 class="kinetic-title" :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`"><span class="kinetic-line" v-for="(line, lineIndex) in [staticTexts.presentation.titleTop[getLanguageCode()], staticTexts.presentation.titleBottom[getLanguageCode()]]" :key="line" aria-hidden="true"><span class="kinetic-word" v-for="(word, index) in line.split(' ')" :key="index" :style="{ '--word-index': index + lineIndex * 5 }">{{ word }}{{ index < line.split(' ').length - 1 ? ' ' : '' }}</span></span></h1>
           <p class="hero-lead">{{ staticTexts.presentation.lead[getLanguageCode()] }}</p>
           <div class="hero-actions">
             <a href="#contact" class="btn get-in-touch-btn">{{ staticTexts.getInTouch[getLanguageCode()] }} <span aria-hidden="true">↗</span></a>
@@ -225,28 +225,7 @@
           </div>
           <p class="hero-availability">{{ staticTexts.availability[getLanguageCode()] }}</p>
         </div>
-        <div class="atelier-scene">
-          <div class="scene-orbit" aria-hidden="true"></div>
-          <div class="scene-orbit scene-orbit-two" aria-hidden="true"></div>
-          <div class="scene-coordinate" aria-hidden="true">01 / {{ String(allPortfolioItems.length).padStart(2, '0') }}</div>
-          <div class="product-window">
-            <div class="window-bar"><span class="window-dots" aria-hidden="true">● ● ●</span><span>{{ allPortfolioItems[activeShowcase].meta[getLanguageCode()].split(' · ')[0] }}</span><span aria-hidden="true">↗</span></div>
-            <transition name="showcase" mode="out-in">
-              <button class="window-preview" :key="activeShowcase" @click="openPortfolioItem(allPortfolioItems[activeShowcase], $event)" :aria-label="allPortfolioItems[activeShowcase].title[getLanguageCode()]">
-                <img :src="allPortfolioItems[activeShowcase].imgUrl" :alt="allPortfolioItems[activeShowcase].title[getLanguageCode()]" fetchpriority="high" />
-              </button>
-            </transition>
-          </div>
-          <div class="identity-pass">
-            <img src="assets/images/hero-img-portrait.png" alt="Portrait de Stéphan J. Christian" />
-            <div><strong>Stéphan J. Christian</strong><span>Lead Software Engineer</span></div>
-            <span class="identity-dot" aria-hidden="true"></span>
-          </div>
-          <div class="scene-selector" role="group" :aria-label="staticTexts.viewWork[getLanguageCode()]">
-            <button v-for="(work, index) in allPortfolioItems.slice(0, 3)" :key="work.meta.en" :class="{ active: activeShowcase === index }" :aria-pressed="activeShowcase === index" :aria-label="work.title[getLanguageCode()]" @click="activeShowcase = index"><span>0{{ index + 1 }}</span>{{ work.meta[getLanguageCode()].split(' · ')[0] }}</button>
-          </div>
-          <div class="floating-tech" v-for="(skill, index) in mySkills.skillsItems.slice(0, 3)" :key="skill.title" :class="'floating-tech-' + index"><img :src="skill.imgUrl" alt="" /><span>{{ skill.title }}</span></div>
-        </div>
+        <div class="experimental-object" aria-hidden="true"><div class="sculpture-ring ring-a"></div><div class="sculpture-ring ring-b"></div><div class="sculpture-ring ring-c"></div><span class="sculpture-axis axis-a"></span><span class="sculpture-axis axis-b"></span><span class="sculpture-coordinate">SC / 01</span></div>
         <div class="proof-ribbon">
           <span class="proof-ribbon-title">{{ heroProof.kicker[getLanguageCode()] }}</span>
           <div class="ribbon-item" v-for="item in heroHighlights" :key="item.value.en"><strong>{{ item.value[getLanguageCode()] }}</strong><span>{{ item.label[getLanguageCode()] }}</span></div>
@@ -820,7 +799,7 @@
   <script src="scripts/plugins.min.js"></script>
 
   <!-- main script file -->
-  <script src="scripts/motion.js?v=20261014-motion"></script>
+  <script src="scripts/motion.js?v=20261014-kinetic"></script>
   <script src="scripts/main.js?v=20261014-motion"></script>
 
 </body>

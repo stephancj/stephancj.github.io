@@ -179,3 +179,32 @@
  .is-moving .console-ring{animation:atelier-orbit 60s linear infinite;}
  .is-moving .skill-object{animation:atelier-drift 8s ease-in-out infinite;animation-delay:calc(var(--object-index) * -.45s);}
 }
+/* Experimental hero: responsive typography interacting with an orbital sculpture. */
+#app-inner .hero-section{position:relative;display:block;max-width:1440px;padding:168px 72px 56px;min-height:auto;isolation:isolate;overflow:hidden;}
+#app-inner .hero-text{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px 96px;z-index:2;}
+#app-inner .hero-eyebrow{grid-column:1/-1;max-width:65ch;}
+#app-inner .hero-text .kinetic-title{grid-column:1/-1;max-width:1100px;margin:38px 0 54px;font-size:clamp(3.3rem,7.4vw,7.1rem);font-weight:500;line-height:1.04;letter-spacing:-.065em;display:block;}
+.kinetic-line{display:block;position:relative;}
+#app-inner .hero-text .kinetic-title .kinetic-line:last-child{color:var(--theme-accent);}
+.kinetic-word{display:inline-block;white-space:pre;transform:translate3d(var(--word-x,0px),var(--word-y,0px),0) rotate(var(--word-turn,0deg));transition:transform 650ms cubic-bezier(.22,1,.36,1);transform-origin:center;}
+#app-inner .hero-lead{grid-column:1;grid-row:3;max-width:52ch;font-size:1rem;}
+#app-inner .hero-actions{grid-column:2;grid-row:3;align-self:center;justify-content:flex-end;}
+#app-inner .hero-availability{grid-column:2;grid-row:4;justify-self:end;max-width:44ch;}
+#app-inner .proof-ribbon{position:relative;z-index:2;margin-top:72px;}
+.experimental-object{position:absolute;right:-100px;top:156px;width:600px;height:550px;z-index:0;perspective:1000px;pointer-events:none;opacity:.45;transform:translate3d(var(--abstract-x,0px),var(--abstract-y,0px),0);transition:transform 1100ms cubic-bezier(.22,1,.36,1);}
+.sculpture-ring{position:absolute;inset:9%;border:42px solid var(--theme-accent);border-radius:50%;transform-style:preserve-3d;box-shadow:inset 1px 1px 0 rgba(255,255,255,.5),1px 1px 0 var(--theme-accent-line);}
+.ring-a{transform:rotateY(65deg) rotateZ(-25deg);}
+.ring-b{inset:17%;border-width:28px;transform:rotateX(68deg) rotateZ(32deg);border-color:var(--theme-ink);opacity:.5;}
+.ring-c{inset:28%;border-width:16px;transform:rotateY(-55deg) rotateX(20deg);}
+.sculpture-axis{position:absolute;top:50%;left:3%;width:90%;height:1px;background:var(--theme-accent-line);transform:rotate(-35deg);}
+.axis-b{transform:rotate(55deg);}
+.sculpture-coordinate{position:absolute;top:6%;right:24%;font-size:.6rem;letter-spacing:.2em;color:var(--theme-muted);}
+@keyframes sculpture-a{0%,100%{transform:rotateY(65deg) rotateZ(-25deg);}50%{transform:rotateY(105deg) rotateZ(20deg);}}
+@keyframes sculpture-b{0%,100%{transform:rotateX(68deg) rotateZ(32deg);}50%{transform:rotateX(105deg) rotateZ(-20deg);}}
+@keyframes sculpture-c{0%,100%{transform:rotateY(-55deg) rotateX(20deg);}50%{transform:rotateY(-95deg) rotateX(-15deg);}}
+@media(prefers-reduced-motion:no-preference){.experimental-object.is-moving .ring-a{animation:sculpture-a 14s ease-in-out infinite;}.experimental-object.is-moving .ring-b{animation:sculpture-b 17s ease-in-out infinite;}.experimental-object.is-moving .ring-c{animation:sculpture-c 11s ease-in-out infinite;}}
+@media(max-width:991px){#app-inner .hero-section{padding:132px 32px 48px;}#app-inner .hero-text{gap:24px 40px;}#app-inner .hero-text .kinetic-title{font-size:clamp(3.6rem,8.4vw,6rem);max-width:100%;margin:32px 0;}#app-inner .hero-actions{justify-content:flex-start;}.experimental-object{right:-140px;top:132px;width:500px;height:480px;opacity:.25;}}
+@media(max-width:767px){#app-inner .hero-section{padding:112px 24px 40px;}#app-inner .hero-text{grid-template-columns:1fr;gap:24px;}#app-inner .hero-text .kinetic-title{font-size:clamp(2.6rem,10.8vw,4.8rem);margin:32px 0 24px;letter-spacing:-.06em;line-height:1.08;}#app-inner .hero-lead{grid-column:1;grid-row:3;}#app-inner .hero-actions{grid-column:1;grid-row:4;gap:24px;}#app-inner .hero-availability{grid-column:1;grid-row:5;justify-self:start;}#app-inner .proof-ribbon{margin-top:48px;}.experimental-object{top:158px;right:-150px;width:380px;height:360px;opacity:.16;}.sculpture-ring{border-width:24px;}.ring-b{border-width:18px;}.ring-c{border-width:12px;}}
+@media(prefers-reduced-motion:reduce){.kinetic-word,.experimental-object{transform:none!important;}.sculpture-ring{animation:none!important;}}
+#app-inner .hero-text .kinetic-title .kinetic-word{display:inline-block;color:inherit;}
+#app-inner .hero-text{inset:auto;}
