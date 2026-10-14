@@ -72,9 +72,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- main style file -->
-  <link rel="stylesheet" href="styles/main.css?v=20261014-motion" />
-  <link rel="stylesheet" href="styles/redesign.css?v=20261014-portrait" />
-  <link rel="stylesheet" href="styles/motion.css?v=20261014-motion" />
+  <link rel="stylesheet" href="styles/main.css?v=20261014-refined" />
+  <link rel="stylesheet" href="styles/redesign.css?v=20261014-refined" />
+  <link rel="stylesheet" href="styles/motion.css?v=20261014-refined" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTBH6T7GKD"></script>
@@ -214,24 +214,68 @@
       <!-- end of header -->
 
       <!-- start of hero section -->
-      <section id="hero" class="hero-section" ref="heroSection">
+      <div id="hero" class="hero-section" ref="heroSection">
         <div class="hero-text">
           <span class="hero-eyebrow">{{ staticTexts.presentation.greeting[getLanguageCode()] }}</span>
-          <h1 :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`"><span>{{ staticTexts.presentation.titleTop[getLanguageCode()] }}</span><span>{{ staticTexts.presentation.titleBottom[getLanguageCode()] }}</span></h1>
+          <h1 :aria-label="`${staticTexts.presentation.titleTop[getLanguageCode()]} ${staticTexts.presentation.titleBottom[getLanguageCode()]}`">
+            <span>{{ staticTexts.presentation.titleTop[getLanguageCode()] }}</span>
+            <span>{{ staticTexts.presentation.titleBottom[getLanguageCode()] }}</span>
+          </h1>
           <p class="hero-lead">{{ staticTexts.presentation.lead[getLanguageCode()] }}</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn get-in-touch-btn">{{ staticTexts.getInTouch[getLanguageCode()] }} <span aria-hidden="true">↗</span></a>
-            <a href="#portfolio" class="hero-work-link">{{ staticTexts.viewWork[getLanguageCode()] }}</a>
+          <div class="hero-actions btns-container">
+            <a href="#contact" class="btn get-in-touch-btn">{{ staticTexts.getInTouch[getLanguageCode()] }}</a>
+            <a href="#portfolio" class="btn btn-outline-light hero-secondary-btn">{{ staticTexts.viewWork[getLanguageCode()] }}</a>
           </div>
           <p class="hero-availability">{{ staticTexts.availability[getLanguageCode()] }}</p>
         </div>
-        <div class="portrait-composition"><div class="portrait-halo" aria-hidden="true"></div><span class="portrait-name" aria-hidden="true">STÉPHAN</span><img src="assets/images/hero-img-portrait.png" alt="Portrait de Stéphan J. Christian" fetchpriority="high" /><div class="portrait-signature"><strong>Stéphan J. Christian</strong><span>Lead Software Engineer</span></div><span class="portrait-coordinate" aria-hidden="true">WEB / MOBILE</span></div>
-        <div class="proof-ribbon">
-          <span class="proof-ribbon-title">{{ heroProof.kicker[getLanguageCode()] }}</span>
-          <div class="ribbon-item" v-for="item in heroHighlights" :key="item.value.en"><strong>{{ item.value[getLanguageCode()] }}</strong><span>{{ item.label[getLanguageCode()] }}</span></div>
-          <div class="ribbon-badges"><span v-for="badge in heroProofBadges" :key="badge.en">{{ badge[getLanguageCode()] }}</span></div>
+
+        <div class="hero-visual">
+          <div class="hero-img">
+            <div class="layer" v-clone>
+              <img class="hero-portrait" src="assets/images/hero-img-portrait.png" alt="Portrait de Stéphan J. Christian" fetchpriority="high" />
+            </div>
+          </div>
+
+          <div class="hero-proof-panel">
+            <p class="hero-proof-kicker">{{ heroProof.kicker[getLanguageCode()] }}</p>
+            <ul class="hero-proof-badges">
+              <li v-for="badge in heroProofBadges" :key="badge.en">{{ badge[getLanguageCode()] }}</li>
+            </ul>
+            <ul class="hero-proof-list">
+              <li v-for="item in heroHighlights" :key="item.label.en">
+                <strong>{{ item.value[getLanguageCode()] }}</strong>
+                <span>{{ item.label[getLanguageCode()] }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
+
+        <div class="social">
+          <ul>
+            <li>
+              <a href="mailto:christianstephanjosue@gmail.com" v-tooltip="{text: 'Email', dir: 'right'}">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/stephancj" target="_blank" rel="noreferrer"
+                v-tooltip="{text: 'GitHub', dir: 'right'}">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/stephancj/" target="_blank" rel="noreferrer"
+                v-tooltip="{text: 'LinkedIn', dir: 'right'}">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="scroll-down">
+          <a href="#about" title="Scroll Down">{{ staticTexts.scroll[getLanguageCode()] }}</a>
+        </div>
+      </div>
       <!-- end of hero section -->
 
       <!-- start of statistics section -->
@@ -364,31 +408,89 @@
       <!-- end of skills section -->
 
       <!-- start of education section -->
-      <section id="education" class="section journey-section journey-education" tabindex="-1">
-        <div class="container journey-layout">
-          <div class="journey-intro"><span class="lab-kicker">{{ education.title[getLanguageCode()] }}</span><h2>{{ education.subtitle[getLanguageCode()] }}</h2><p>{{ education.text[getLanguageCode()] }}</p><div class="journey-emblem" aria-hidden="true"><span></span><span></span><span></span><b>05</b></div></div>
-          <div class="journey-track">
-            <details class="journey-card" v-for="(item, index) in education.items.filter(item => Object.keys(item).length)" :key="item.date + item.schoolName.en" :open="index === 0">
-              <summary><span class="journey-node" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span><span class="journey-date">{{ item.date }}</span><span class="journey-organization">{{ item.schoolName[getLanguageCode()] }}</span><span class="journey-role">{{ item.degreeTitle[getLanguageCode()] }}</span><span class="journey-toggle" aria-hidden="true">+</span></summary>
-              <div class="journey-detail"><p>{{ item.desc[getLanguageCode()] }}</p></div>
-            </details>
+      <div id="education" class="experience-section section" tabindex="-1">
+        <div class="container">
+          <div class="section-content row">
+            <!-- timeline -->
+            <div class="experience-timeline col-lg-6">
+              <ul class="outer-ul">
+                <ul class="inner-ul" v-for="(group, index) in educationChunks" :key="index">
+                  <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
+                    <template v-if="Object.keys(item).length > 0">
+                      <h3>{{ item.date }}</h3>
+                      <div class="ultimate-tooltip">
+                        <h4 class="ultimate-tooltip-title">
+                          {{ item.schoolName[getLanguageCode()] }}
+                        </h4>
+                        <h5 class="ultimate-tooltip-subtitle">
+                          {{ item.degreeTitle[getLanguageCode()] }}
+                        </h5>
+                        <p>{{ item.desc[getLanguageCode()] }}</p>
+                      </div>
+                      <div class="ultimate-tooltip-arrow"></div>
+                    </template>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+
+            <!-- text box -->
+            <div class="experience-text col-lg-6">
+              <div class="text-box">
+                <span class="subtitle">{{education.title[getLanguageCode()]}}</span>
+                <h2>{{education.subtitle[getLanguageCode()]}}</h2>
+                <p>{{education.text[getLanguageCode()]}}</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
       <!-- end of education section -->
 
       <!-- start of experience section -->
-      <section id="experience" class="section journey-section journey-experience" tabindex="-1">
-        <div class="container journey-layout">
-          <div class="journey-intro"><span class="lab-kicker">{{ experience.title[getLanguageCode()] }}</span><h2>{{ experience.subtitle1[getLanguageCode()] }} {{ experience.subtitle2[getLanguageCode()] }}</h2><p>{{ experience.text[getLanguageCode()] }}</p><div class="journey-emblem" aria-hidden="true"><span></span><span></span><span></span><b>09</b></div></div>
-          <div class="journey-track">
-            <details class="journey-card" v-for="(item, index) in experience.items.filter(item => Object.keys(item).length)" :key="item.date + item.companyName.en" :open="index === 0">
-              <summary><span class="journey-node" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span><span class="journey-date">{{ item.date }}</span><span class="journey-organization">{{ item.companyName[getLanguageCode()] }}</span><span class="journey-role">{{ item.jobTitle[getLanguageCode()] }}</span><span class="journey-toggle" aria-hidden="true">+</span></summary>
-              <div class="journey-detail"><p>{{ item.desc[getLanguageCode()] }}</p></div>
-            </details>
+      <div id="experience" class="experience-section section" tabindex="-1">
+        <div class="container">
+          <div class="section-content row">
+            <!-- timeline -->
+            <div class="experience-timeline col-lg-6">
+              <ul class="outer-ul">
+                <ul class="inner-ul" v-for="(group, index) in experienceChunks" :key="index">
+                  <li class="has-ultimate-tooltip" tabindex="0" v-for="item in group">
+                    <template v-if="Object.keys(item).length > 0">
+                      <h3>{{ item.date }}</h3>
+                      <div class="ultimate-tooltip">
+                        <h4 class="ultimate-tooltip-title">
+                          {{ item.companyName[getLanguageCode()] }}
+                        </h4>
+                        <h5 class="ultimate-tooltip-subtitle">
+                          {{ item.jobTitle[getLanguageCode()] }}
+                        </h5>
+                        <p style="white-space: pre-line">
+                          {{ item.desc[getLanguageCode()] }}
+                        </p>
+                      </div>
+                      <div class="ultimate-tooltip-arrow"></div>
+                    </template>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+
+            <!-- text box -->
+            <div class="experience-text col-lg-6">
+              <div class="text-box">
+                <span class="subtitle">{{experience.title[getLanguageCode()]}}</span>
+                <h2>
+                  {{experience.subtitle1[getLanguageCode()]}}
+                  <br />
+                  {{experience.subtitle2[getLanguageCode()]}}
+                </h2>
+                <p>{{experience.text[getLanguageCode()]}}</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
       <!-- end of experience section -->
 
       <!-- start of portfolio section -->
@@ -741,8 +843,8 @@
   <script src="scripts/plugins.min.js"></script>
 
   <!-- main script file -->
-  <script src="scripts/motion.js?v=20261014-portrait"></script>
-  <script src="scripts/main.js?v=20261014-motion"></script>
+  <script src="scripts/motion.js?v=20261014-refined"></script>
+  <script src="scripts/main.js?v=20261014-refined"></script>
 
 </body>
 
