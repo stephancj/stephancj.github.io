@@ -935,11 +935,11 @@ html[dir="rtl"] #app-inner {
 }
 
 html[dir="ltr"] #app-inner {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] #app-inner {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] #app-inner {
@@ -990,7 +990,7 @@ html[dir="ltr"] h5,
 html[dir="ltr"] h6,
 html[dir="ltr"] strong,
 html[dir="ltr"] label {
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] h1,
@@ -1001,7 +1001,7 @@ html[dir="rtl"] h5,
 html[dir="rtl"] h6,
 html[dir="rtl"] strong,
 html[dir="rtl"] label {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] h1,
@@ -1087,7 +1087,7 @@ p {
 .form-styled .group label.required-field:after {
   content: "*";
   color: #dc3545;
-  font-family: monospace;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -1106,11 +1106,11 @@ html[dir="rtl"] .form-styled .group label.required-field:after {
 }
 
 html[dir="ltr"] .form-styled .group label .optional {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] .form-styled .group label .optional {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .light_theme .form-styled .group label .optional {
@@ -2250,11 +2250,11 @@ header .logo .site-name {
 }
 
 html[dir="ltr"] header .logo .site-name {
-  font-family: "Saira Stencil One";
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] header .logo .site-name {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="ltr"] header .logo .site-name {
@@ -2364,11 +2364,11 @@ header nav .nav-links li a {
 }
 
 html[dir="ltr"] header nav .nav-links li a {
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] header nav .nav-links li a {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 header nav .nav-links li a {
@@ -3238,11 +3238,11 @@ footer .logo .site-name {
 }
 
 html[dir="ltr"] footer .logo .site-name {
-  font-family: "Saira Stencil One";
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="rtl"] footer .logo .site-name {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="ltr"] footer .logo .site-name {
@@ -6253,7 +6253,7 @@ html[dir="rtl"]
 /*------------------------------------------------------------------------------------------*/
 html[dir="ltr"] #app-inner,
 html[dir="ltr"] .form-styled .group label .optional {
-  font-family: "Outfit", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html[dir="ltr"] h1,
@@ -6264,14 +6264,14 @@ html[dir="ltr"] h5,
 html[dir="ltr"] h6,
 html[dir="ltr"] strong,
 html[dir="ltr"] label {
-  font-family: "Outfit", sans-serif;
+  font-family: "Lato", sans-serif;
   letter-spacing: -0.02em;
 }
 
 .hero-section .hero-text h1,
 .section .section-title h2,
 .section .text-box h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.08;
@@ -7980,7 +7980,7 @@ body.portfolio-modal-open {
 
 header .logo .site-name,
 footer .logo .site-name {
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
 }
 
@@ -8070,7 +8070,7 @@ footer .logo .site-name {
 .portfolio-featured-heading h3,
 .portfolio-catalog-heading h3 {
   margin: 0.25rem 0 0.75rem;
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-size: clamp(1.85rem, 3vw, 2.8rem);
   line-height: 1.08;
   letter-spacing: -0.025em;

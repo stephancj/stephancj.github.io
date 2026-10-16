@@ -1,0 +1,110 @@
+/* Motion polish preserves the existing grid, silhouettes and palette. */
+:root {
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+.hero-portrait {
+  transition: translate 900ms var(--motion-ease);
+}
+
+.services-card,
+.portfolio-card,
+.hero-proof-panel {
+  position: relative;
+  isolation: isolate;
+}
+
+.services-card::after,
+.portfolio-card::before,
+.hero-proof-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(300px circle at var(--light-x, 50%) var(--light-y, 50%), var(--theme-accent-soft), transparent 75%);
+  opacity: 0;
+  transition: opacity 450ms var(--motion-ease);
+}
+
+.motion-lit::after,
+.portfolio-card.motion-lit::before {
+  opacity: .65;
+}
+
+.services-card,
+.portfolio-card,
+.hero-actions .btn,
+.portfolio-toggle,
+.portfolio-filters button,
+.social a {
+  transition: translate 420ms var(--motion-ease), transform 420ms var(--motion-ease),
+    box-shadow 420ms var(--motion-ease), border-color 300ms ease, background-color 300ms ease, color 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .services-card:hover,
+  .portfolio-card:hover {
+    translate: 0 -4px;
+    border-color: var(--theme-accent-line);
+  }
+  .hero-actions .btn:hover,
+  .social a:hover {
+    translate: 0 -3px;
+  }
+  .portfolio-card .item-img img {
+    transition: transform 900ms var(--motion-ease);
+  }
+  .portfolio-card:hover .item-img img {
+    transform: scale(1.035);
+  }
+  .services-card .service-icon img {
+    transition: transform 500ms var(--motion-ease);
+  }
+  .services-card:hover .service-icon img {
+    transform: translateY(-3px) rotate(-4deg);
+  }
+}
+
+.hero-actions .btn:active,
+.portfolio-toggle:active,
+.portfolio-filters button:active {
+  translate: 0 1px;
+  transition-duration: 100ms;
+}
+
+.service-link::after {
+  transition: transform 400ms var(--motion-ease);
+}
+
+.portfolio-modal-transition-enter-active {
+  transition: opacity 380ms ease;
+}
+.portfolio-modal-transition-leave-active {
+  transition: opacity 200ms ease;
+}
+.portfolio-modal-transition-enter-active .portfolio-modal-dialog {
+  transition: transform 500ms var(--motion-ease), opacity 380ms ease;
+}
+.portfolio-modal-transition-leave-active .portfolio-modal-dialog {
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+.portfolio-modal-transition-enter-from .portfolio-modal-dialog {
+  transform: translateY(20px) scale(.985);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  #app-inner *, #app-inner *::before, #app-inner *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .hero-portrait, .services-card, .portfolio-card, .hero-actions .btn, .social a {
+    translate: none !important;
+  }
+  .portfolio-card:hover .item-img img,
+  .services-card:hover .service-icon img { transform: none !important; }
+  .circle-cursor { display: none !important; }
+}

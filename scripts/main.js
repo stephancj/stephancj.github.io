@@ -39,6 +39,8 @@ const app = Vue.createApp({
       // flag to toggle nav menu
       isNavMenuOpen: false,
 
+      activeService: 0,
+      activeShowcase: 0,
       experienceNumber: 0,
       showAllPortfolioItems: false,
       selectedPortfolioItem: null,
@@ -1577,12 +1579,11 @@ const app = Vue.createApp({
       // nav menu tab trap
       this.navMenuTabTrap();
 
-      // apply pan effect hero image
-      this.heroImgPanEffect();
-
       // initialize VanillaTilt library in portfolio section
-      this.initializeTilt();
+      // Project motion is coordinated by the atelier scene.
     }
+
+    this._disposeMotion = window.initPremiumMotion(this.$refs.appRef);
 
     // hide the preloader screen after loading
     window.addEventListener("load", () =>
@@ -1604,6 +1605,7 @@ const app = Vue.createApp({
   },
 
   beforeUnmount() {
+    this._disposeMotion?.();
     document.removeEventListener("keydown", this.handlePortfolioKeydown);
     document.body.classList.remove("portfolio-modal-open");
   },
@@ -1768,26 +1770,6 @@ const app = Vue.createApp({
       });
     },
 
-    // apply pan effect hero image
-    heroImgPanEffect() {
-      const parent = this.$refs.heroSection;
-      const layer1 = parent.querySelectorAll(".layer")[0];
-      const layer2 = parent.querySelectorAll(".layer")[1];
-
-      parent.addEventListener("mousemove", (e) => {
-        const x =
-          ((e.x - parent.getBoundingClientRect().x) / parent.offsetWidth) * 100;
-        const y =
-          ((e.y - parent.getBoundingClientRect().y) / parent.offsetHeight) *
-          100;
-
-        parent.classList.add("parallax-animation");
-
-        layer1.setAttribute("style", `transform-origin: ${x}vw ${y}vh;`);
-        layer2.setAttribute("style", `transform-origin: ${x}vw ${y}vh;`);
-      });
-    },
-
     // scrolling options
     scrollingOptions() {
       const scrollPosition = window.pageYOffset;
@@ -1810,23 +1792,13 @@ const app = Vue.createApp({
 
     // scroll to top
     scrollToTop() {
-      window.scroll({ top: 0, behavior: "smooth" });
+      window.scroll({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     },
 
     // initialize VanillaTilt library in portfolio section
     initializeTilt() {
-      const portfolioItems = [
-        ...(this.$refs.portfolioItems?.querySelectorAll(".portfolio-item") || []),
-      ].filter((item) => !item.vanillaTilt);
+      return;
 
-      if (portfolioItems.length) {
-        VanillaTilt.init(portfolioItems, {
-          max: 8,
-          speed: 400,
-          glare: true,
-          "max-glare": 0.3,
-        });
-      }
     },
 
     togglePortfolioItems() {
