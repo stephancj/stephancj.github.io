@@ -355,7 +355,7 @@
           <div class="lab-stage">
             <div class="service-console">
               <div class="console-ring" aria-hidden="true"><span></span><span></span></div>
-              <div class="console-center" aria-hidden="true"><span>0{{ activeService + 1 }}</span><img :src="services.cards[activeService].imgUrl" alt="" /></div>
+
               <button v-for="(service, index) in services.cards" :key="service.className" class="service-key" :class="['key-' + index, { active: activeService === index }]" :aria-pressed="activeService === index" aria-controls="service-panel" @click="activeService = index"><span class="key-index">0{{ index + 1 }}</span><img :src="service.imgUrl" alt="" /><span>{{ service.kicker[getLanguageCode()] }}</span><span class="key-arrow" aria-hidden="true">↗</span></button>
             </div>
             <div class="service-panels">
