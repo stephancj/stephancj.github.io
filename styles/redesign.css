@@ -93,3 +93,6 @@
 #app-inner .experience-timeline .inner-ul::after{z-index:0;pointer-events:none;}
 #app-inner .experience-timeline .inner-ul:hover,
 #app-inner .experience-timeline .inner-ul:focus-within{z-index:20;}
+/* Date chips must also fully cover the connector beneath them. */
+#app-inner.light_theme .experience-timeline .inner-ul>li{background:#f3f6f5;}
+#app-inner.dark_theme .experience-timeline .inner-ul>li{background:#101a20;}
