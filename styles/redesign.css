@@ -62,7 +62,4 @@
 @keyframes atelier-orbit{from{rotate:0deg;}to{rotate:360deg;}}
 @media(prefers-reduced-motion:no-preference){.is-moving .console-ring{animation:atelier-orbit 60s linear infinite;}.is-moving .skill-object{animation:atelier-drift 8s ease-in-out infinite;animation-delay:calc(var(--object-index) * -.45s);}}
 @media(prefers-reduced-motion:reduce){.service-key,.skill-object{transform:none!important;}}
-/* Keep the accepted stack palette; services inherit the site theme. */
-.light_theme #skills{--theme-bg-top:#f2f1ed;--theme-surface:#fcfcfa;--theme-band:#e8e7e2;--theme-ink:#242422;--theme-muted:#66655f;--theme-accent:#a43d27;--theme-accent-line:rgba(36,36,34,.18);--theme-shadow-strong:rgba(40,37,25,.14);}
-.dark_theme #skills{--theme-bg-top:#181917;--theme-surface:#242521;--theme-band:#20221d;--theme-ink:#f1f0e7;--theme-muted:#b3b4a9;--theme-accent:#f29c7c;--theme-accent-line:rgba(241,240,231,.18);--theme-shadow-strong:rgba(0,0,0,.35);}
 #app-inner #skills{background:var(--theme-bg-top);}
