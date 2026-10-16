@@ -84,3 +84,12 @@
 #app-inner .experience-timeline li:focus-within .ultimate-tooltip{visibility:visible;opacity:1;translate:0 0;}
 #app-inner .experience-timeline li:focus-within .ultimate-tooltip-arrow{visibility:visible;opacity:1;}
 @media(prefers-reduced-motion:reduce){#app-inner .experience-timeline .ultimate-tooltip{translate:none;}}
+/* Opaque timeline details keep the connector from showing through. */
+#app-inner.light_theme .experience-timeline .ultimate-tooltip,
+#app-inner.light_theme .experience-timeline .ultimate-tooltip-arrow{background:#f3f6f5;}
+#app-inner.dark_theme .experience-timeline .ultimate-tooltip,
+#app-inner.dark_theme .experience-timeline .ultimate-tooltip-arrow{background:#101a20;}
+#app-inner .experience-timeline .inner-ul::before,
+#app-inner .experience-timeline .inner-ul::after{z-index:0;pointer-events:none;}
+#app-inner .experience-timeline .inner-ul:hover,
+#app-inner .experience-timeline .inner-ul:focus-within{z-index:20;}
