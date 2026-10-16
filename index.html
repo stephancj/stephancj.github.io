@@ -336,12 +336,6 @@
                   {{ aboutMe.subtitle2[getLanguageCode()] }}
                 </h2>
                 <p>{{ aboutMe.text[getLanguageCode()] }}</p>
-                <ul class="about-highlights">
-                  <li v-for="highlight in aboutMe.highlights" :key="highlight.title.en">
-                    <strong>{{ highlight.title[getLanguageCode()] }}</strong>
-                    <span>{{ highlight.text[getLanguageCode()] }}</span>
-                  </li>
-                </ul>
                 <div class="btns-container">
                   <a href="#contact" class="btn btn-info">{{aboutMe.hireMe[getLanguageCode()]}}</a>
                   <a download href="assets/CV_Stephan.pdf"
